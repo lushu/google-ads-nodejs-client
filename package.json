@@ -1,5 +1,5 @@
 {
-  "name": "googleads-nodejs",
+  "name": "google-ads-nodejs-client",
   "version": "15.0.0",
   "description": "Googleads client for Node.js",
   "repository": "googleapis/nodejs-googleads",
@@ -163,7 +163,7 @@
   },
   "repository": {
       "type": "git",
-      "url": "https://github.com/lushu/googleads-nodejs.git"
+      "url": "https://github.com/lushu/google-ads-nodejs-client.git"
   },
   "engines": {
     "node": ">=v14"
