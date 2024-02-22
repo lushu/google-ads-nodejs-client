@@ -1,8 +1,11 @@
 {
   "name": "google-ads-nodejs-client",
-  "version": "15.0.0",
+  "version": "16.0.0",
   "description": "Googleads client for Node.js",
-  "repository": "googleapis/nodejs-googleads",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lushu/google-ads-nodejs-client.git"
+  },
   "license": "Apache-2.0",
   "author": "Google LLC",
   "main": "build/src/index.js",
@@ -65,7 +68,7 @@
     "campaign feed service",
     "campaign group service",
     "campaign label service",
-    "campaign lifecycle service",
+    "campaign lifecycle goal service",
     "campaign service",
     "campaign shared set service",
     "conversion action service",
@@ -85,7 +88,7 @@
     "customer extension setting service",
     "customer feed service",
     "customer label service",
-    "customer lifecycle service",
+    "customer lifecycle goal service",
     "customer manager link service",
     "customer negative criterion service",
     "customer service",
@@ -106,6 +109,7 @@
     "geo target constant service",
     "google ads field service",
     "google ads service",
+    "identity verification service",
     "invoice service",
     "keyword plan ad group keyword service",
     "keyword plan ad group service",
@@ -160,10 +164,6 @@
     "pack-n-play": "^2.0.3",
     "sinon": "^15.2.0",
     "typescript": "5.1.6"
-  },
-  "repository": {
-      "type": "git",
-      "url": "https://github.com/lushu/google-ads-nodejs-client.git"
   },
   "engines": {
     "node": ">=v14"

@@ -65,7 +65,7 @@ function main() {
   const campaignFeedServiceClient = new googleads.CampaignFeedServiceClient();
   const campaignGroupServiceClient = new googleads.CampaignGroupServiceClient();
   const campaignLabelServiceClient = new googleads.CampaignLabelServiceClient();
-  const campaignLifecycleServiceClient = new googleads.CampaignLifecycleServiceClient();
+  const campaignLifecycleGoalServiceClient = new googleads.CampaignLifecycleGoalServiceClient();
   const campaignServiceClient = new googleads.CampaignServiceClient();
   const campaignSharedSetServiceClient = new googleads.CampaignSharedSetServiceClient();
   const conversionActionServiceClient = new googleads.ConversionActionServiceClient();
@@ -85,7 +85,7 @@ function main() {
   const customerExtensionSettingServiceClient = new googleads.CustomerExtensionSettingServiceClient();
   const customerFeedServiceClient = new googleads.CustomerFeedServiceClient();
   const customerLabelServiceClient = new googleads.CustomerLabelServiceClient();
-  const customerLifecycleServiceClient = new googleads.CustomerLifecycleServiceClient();
+  const customerLifecycleGoalServiceClient = new googleads.CustomerLifecycleGoalServiceClient();
   const customerManagerLinkServiceClient = new googleads.CustomerManagerLinkServiceClient();
   const customerNegativeCriterionServiceClient = new googleads.CustomerNegativeCriterionServiceClient();
   const customerServiceClient = new googleads.CustomerServiceClient();
@@ -106,6 +106,7 @@ function main() {
   const geoTargetConstantServiceClient = new googleads.GeoTargetConstantServiceClient();
   const googleAdsFieldServiceClient = new googleads.GoogleAdsFieldServiceClient();
   const googleAdsServiceClient = new googleads.GoogleAdsServiceClient();
+  const identityVerificationServiceClient = new googleads.IdentityVerificationServiceClient();
   const invoiceServiceClient = new googleads.InvoiceServiceClient();
   const keywordPlanAdGroupKeywordServiceClient = new googleads.KeywordPlanAdGroupKeywordServiceClient();
   const keywordPlanAdGroupServiceClient = new googleads.KeywordPlanAdGroupServiceClient();
