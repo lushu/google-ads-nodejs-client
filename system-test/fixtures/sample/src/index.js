@@ -116,6 +116,7 @@ function main() {
   const keywordPlanServiceClient = new googleads.KeywordPlanServiceClient();
   const keywordThemeConstantServiceClient = new googleads.KeywordThemeConstantServiceClient();
   const labelServiceClient = new googleads.LabelServiceClient();
+  const localServicesLeadServiceClient = new googleads.LocalServicesLeadServiceClient();
   const offlineUserDataJobServiceClient = new googleads.OfflineUserDataJobServiceClient();
   const paymentsAccountServiceClient = new googleads.PaymentsAccountServiceClient();
   const productLinkInvitationServiceClient = new googleads.ProductLinkInvitationServiceClient();
@@ -131,6 +132,7 @@ function main() {
   const thirdPartyAppAnalyticsLinkServiceClient = new googleads.ThirdPartyAppAnalyticsLinkServiceClient();
   const travelAssetSuggestionServiceClient = new googleads.TravelAssetSuggestionServiceClient();
   const userDataServiceClient = new googleads.UserDataServiceClient();
+  const userListCustomerTypeServiceClient = new googleads.UserListCustomerTypeServiceClient();
   const userListServiceClient = new googleads.UserListServiceClient();
 }
 
