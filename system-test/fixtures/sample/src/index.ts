@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {AccountBudgetProposalServiceClient, AccountLinkServiceClient, AdGroupAdLabelServiceClient, AdGroupAdServiceClient, AdGroupAssetServiceClient, AdGroupAssetSetServiceClient, AdGroupBidModifierServiceClient, AdGroupCriterionCustomizerServiceClient, AdGroupCriterionLabelServiceClient, AdGroupCriterionServiceClient, AdGroupCustomizerServiceClient, AdGroupExtensionSettingServiceClient, AdGroupFeedServiceClient, AdGroupLabelServiceClient, AdGroupServiceClient, AdParameterServiceClient, AdServiceClient, AssetGroupAssetServiceClient, AssetGroupListingGroupFilterServiceClient, AssetGroupServiceClient, AssetGroupSignalServiceClient, AssetServiceClient, AssetSetAssetServiceClient, AssetSetServiceClient, AudienceInsightsServiceClient, AudienceServiceClient, BatchJobServiceClient, BiddingDataExclusionServiceClient, BiddingSeasonalityAdjustmentServiceClient, BiddingStrategyServiceClient, BillingSetupServiceClient, BrandSuggestionServiceClient, CampaignAssetServiceClient, CampaignAssetSetServiceClient, CampaignBidModifierServiceClient, CampaignBudgetServiceClient, CampaignConversionGoalServiceClient, CampaignCriterionServiceClient, CampaignCustomizerServiceClient, CampaignDraftServiceClient, CampaignExtensionSettingServiceClient, CampaignFeedServiceClient, CampaignGroupServiceClient, CampaignLabelServiceClient, CampaignLifecycleGoalServiceClient, CampaignServiceClient, CampaignSharedSetServiceClient, ConversionActionServiceClient, ConversionAdjustmentUploadServiceClient, ConversionCustomVariableServiceClient, ConversionGoalCampaignConfigServiceClient, ConversionUploadServiceClient, ConversionValueRuleServiceClient, ConversionValueRuleSetServiceClient, CustomAudienceServiceClient, CustomConversionGoalServiceClient, CustomerAssetServiceClient, CustomerAssetSetServiceClient, CustomerClientLinkServiceClient, CustomerConversionGoalServiceClient, CustomerCustomizerServiceClient, CustomerExtensionSettingServiceClient, CustomerFeedServiceClient, CustomerLabelServiceClient, CustomerLifecycleGoalServiceClient, CustomerManagerLinkServiceClient, CustomerNegativeCriterionServiceClient, CustomerServiceClient, CustomerSkAdNetworkConversionValueSchemaServiceClient, CustomerUserAccessInvitationServiceClient, CustomerUserAccessServiceClient, CustomInterestServiceClient, CustomizerAttributeServiceClient, ExperimentArmServiceClient, ExperimentServiceClient, ExtensionFeedItemServiceClient, FeedItemServiceClient, FeedItemSetLinkServiceClient, FeedItemSetServiceClient, FeedItemTargetServiceClient, FeedMappingServiceClient, FeedServiceClient, GeoTargetConstantServiceClient, GoogleAdsFieldServiceClient, GoogleAdsServiceClient, IdentityVerificationServiceClient, InvoiceServiceClient, KeywordPlanAdGroupKeywordServiceClient, KeywordPlanAdGroupServiceClient, KeywordPlanCampaignKeywordServiceClient, KeywordPlanCampaignServiceClient, KeywordPlanIdeaServiceClient, KeywordPlanServiceClient, KeywordThemeConstantServiceClient, LabelServiceClient, LocalServicesLeadServiceClient, OfflineUserDataJobServiceClient, PaymentsAccountServiceClient, ProductLinkInvitationServiceClient, ProductLinkServiceClient, ReachPlanServiceClient, RecommendationServiceClient, RecommendationSubscriptionServiceClient, RemarketingActionServiceClient, SharedCriterionServiceClient, SharedSetServiceClient, SmartCampaignSettingServiceClient, SmartCampaignSuggestServiceClient, ThirdPartyAppAnalyticsLinkServiceClient, TravelAssetSuggestionServiceClient, UserDataServiceClient, UserListCustomerTypeServiceClient, UserListServiceClient} from 'google-ads';
+import {AccountBudgetProposalServiceClient, AccountLinkServiceClient, AdGroupAdLabelServiceClient, AdGroupAdServiceClient, AdGroupAssetServiceClient, AdGroupAssetSetServiceClient, AdGroupBidModifierServiceClient, AdGroupCriterionCustomizerServiceClient, AdGroupCriterionLabelServiceClient, AdGroupCriterionServiceClient, AdGroupCustomizerServiceClient, AdGroupExtensionSettingServiceClient, AdGroupFeedServiceClient, AdGroupLabelServiceClient, AdGroupServiceClient, AdParameterServiceClient, AdServiceClient, AssetGroupAssetServiceClient, AssetGroupListingGroupFilterServiceClient, AssetGroupServiceClient, AssetGroupSignalServiceClient, AssetServiceClient, AssetSetAssetServiceClient, AssetSetServiceClient, AudienceInsightsServiceClient, AudienceServiceClient, BatchJobServiceClient, BiddingDataExclusionServiceClient, BiddingSeasonalityAdjustmentServiceClient, BiddingStrategyServiceClient, BillingSetupServiceClient, BrandSuggestionServiceClient, CampaignAssetServiceClient, CampaignAssetSetServiceClient, CampaignBidModifierServiceClient, CampaignBudgetServiceClient, CampaignConversionGoalServiceClient, CampaignCriterionServiceClient, CampaignCustomizerServiceClient, CampaignDraftServiceClient, CampaignExtensionSettingServiceClient, CampaignFeedServiceClient, CampaignGroupServiceClient, CampaignLabelServiceClient, CampaignLifecycleGoalServiceClient, CampaignServiceClient, CampaignSharedSetServiceClient, ContentCreatorInsightsServiceClient, ConversionActionServiceClient, ConversionAdjustmentUploadServiceClient, ConversionCustomVariableServiceClient, ConversionGoalCampaignConfigServiceClient, ConversionUploadServiceClient, ConversionValueRuleServiceClient, ConversionValueRuleSetServiceClient, CustomAudienceServiceClient, CustomConversionGoalServiceClient, CustomerAssetServiceClient, CustomerAssetSetServiceClient, CustomerClientLinkServiceClient, CustomerConversionGoalServiceClient, CustomerCustomizerServiceClient, CustomerExtensionSettingServiceClient, CustomerFeedServiceClient, CustomerLabelServiceClient, CustomerLifecycleGoalServiceClient, CustomerManagerLinkServiceClient, CustomerNegativeCriterionServiceClient, CustomerServiceClient, CustomerSkAdNetworkConversionValueSchemaServiceClient, CustomerUserAccessInvitationServiceClient, CustomerUserAccessServiceClient, CustomInterestServiceClient, CustomizerAttributeServiceClient, DataLinkServiceClient, ExperimentArmServiceClient, ExperimentServiceClient, ExtensionFeedItemServiceClient, FeedItemServiceClient, FeedItemSetLinkServiceClient, FeedItemSetServiceClient, FeedItemTargetServiceClient, FeedMappingServiceClient, FeedServiceClient, GeoTargetConstantServiceClient, GoogleAdsFieldServiceClient, GoogleAdsServiceClient, IdentityVerificationServiceClient, InvoiceServiceClient, KeywordPlanAdGroupKeywordServiceClient, KeywordPlanAdGroupServiceClient, KeywordPlanCampaignKeywordServiceClient, KeywordPlanCampaignServiceClient, KeywordPlanIdeaServiceClient, KeywordPlanServiceClient, KeywordThemeConstantServiceClient, LabelServiceClient, LocalServicesLeadServiceClient, OfflineUserDataJobServiceClient, PaymentsAccountServiceClient, ProductLinkInvitationServiceClient, ProductLinkServiceClient, ReachPlanServiceClient, RecommendationServiceClient, RecommendationSubscriptionServiceClient, RemarketingActionServiceClient, ShareablePreviewServiceClient, SharedCriterionServiceClient, SharedSetServiceClient, SmartCampaignSettingServiceClient, SmartCampaignSuggestServiceClient, ThirdPartyAppAnalyticsLinkServiceClient, TravelAssetSuggestionServiceClient, UserDataServiceClient, UserListCustomerTypeServiceClient, UserListServiceClient} from 'google-ads';
 
 // check that the client class type name can be used
 function doStuffWithAccountBudgetProposalServiceClient(client: AccountBudgetProposalServiceClient) {
@@ -160,6 +160,9 @@ function doStuffWithCampaignServiceClient(client: CampaignServiceClient) {
 function doStuffWithCampaignSharedSetServiceClient(client: CampaignSharedSetServiceClient) {
   client.close();
 }
+function doStuffWithContentCreatorInsightsServiceClient(client: ContentCreatorInsightsServiceClient) {
+  client.close();
+}
 function doStuffWithConversionActionServiceClient(client: ConversionActionServiceClient) {
   client.close();
 }
@@ -236,6 +239,9 @@ function doStuffWithCustomInterestServiceClient(client: CustomInterestServiceCli
   client.close();
 }
 function doStuffWithCustomizerAttributeServiceClient(client: CustomizerAttributeServiceClient) {
+  client.close();
+}
+function doStuffWithDataLinkServiceClient(client: DataLinkServiceClient) {
   client.close();
 }
 function doStuffWithExperimentArmServiceClient(client: ExperimentArmServiceClient) {
@@ -329,6 +335,9 @@ function doStuffWithRecommendationSubscriptionServiceClient(client: Recommendati
   client.close();
 }
 function doStuffWithRemarketingActionServiceClient(client: RemarketingActionServiceClient) {
+  client.close();
+}
+function doStuffWithShareablePreviewServiceClient(client: ShareablePreviewServiceClient) {
   client.close();
 }
 function doStuffWithSharedCriterionServiceClient(client: SharedCriterionServiceClient) {
@@ -502,6 +511,9 @@ function main() {
   const campaignSharedSetServiceClient = new CampaignSharedSetServiceClient();
   doStuffWithCampaignSharedSetServiceClient(campaignSharedSetServiceClient);
   // check that the client instance can be created
+  const contentCreatorInsightsServiceClient = new ContentCreatorInsightsServiceClient();
+  doStuffWithContentCreatorInsightsServiceClient(contentCreatorInsightsServiceClient);
+  // check that the client instance can be created
   const conversionActionServiceClient = new ConversionActionServiceClient();
   doStuffWithConversionActionServiceClient(conversionActionServiceClient);
   // check that the client instance can be created
@@ -579,6 +591,9 @@ function main() {
   // check that the client instance can be created
   const customizerAttributeServiceClient = new CustomizerAttributeServiceClient();
   doStuffWithCustomizerAttributeServiceClient(customizerAttributeServiceClient);
+  // check that the client instance can be created
+  const dataLinkServiceClient = new DataLinkServiceClient();
+  doStuffWithDataLinkServiceClient(dataLinkServiceClient);
   // check that the client instance can be created
   const experimentArmServiceClient = new ExperimentArmServiceClient();
   doStuffWithExperimentArmServiceClient(experimentArmServiceClient);
@@ -672,6 +687,9 @@ function main() {
   // check that the client instance can be created
   const remarketingActionServiceClient = new RemarketingActionServiceClient();
   doStuffWithRemarketingActionServiceClient(remarketingActionServiceClient);
+  // check that the client instance can be created
+  const shareablePreviewServiceClient = new ShareablePreviewServiceClient();
+  doStuffWithShareablePreviewServiceClient(shareablePreviewServiceClient);
   // check that the client instance can be created
   const sharedCriterionServiceClient = new SharedCriterionServiceClient();
   doStuffWithSharedCriterionServiceClient(sharedCriterionServiceClient);

@@ -68,6 +68,7 @@ function main() {
   const campaignLifecycleGoalServiceClient = new googleads.CampaignLifecycleGoalServiceClient();
   const campaignServiceClient = new googleads.CampaignServiceClient();
   const campaignSharedSetServiceClient = new googleads.CampaignSharedSetServiceClient();
+  const contentCreatorInsightsServiceClient = new googleads.ContentCreatorInsightsServiceClient();
   const conversionActionServiceClient = new googleads.ConversionActionServiceClient();
   const conversionAdjustmentUploadServiceClient = new googleads.ConversionAdjustmentUploadServiceClient();
   const conversionCustomVariableServiceClient = new googleads.ConversionCustomVariableServiceClient();
@@ -94,6 +95,7 @@ function main() {
   const customerUserAccessServiceClient = new googleads.CustomerUserAccessServiceClient();
   const customInterestServiceClient = new googleads.CustomInterestServiceClient();
   const customizerAttributeServiceClient = new googleads.CustomizerAttributeServiceClient();
+  const dataLinkServiceClient = new googleads.DataLinkServiceClient();
   const experimentArmServiceClient = new googleads.ExperimentArmServiceClient();
   const experimentServiceClient = new googleads.ExperimentServiceClient();
   const extensionFeedItemServiceClient = new googleads.ExtensionFeedItemServiceClient();
@@ -125,6 +127,7 @@ function main() {
   const recommendationServiceClient = new googleads.RecommendationServiceClient();
   const recommendationSubscriptionServiceClient = new googleads.RecommendationSubscriptionServiceClient();
   const remarketingActionServiceClient = new googleads.RemarketingActionServiceClient();
+  const shareablePreviewServiceClient = new googleads.ShareablePreviewServiceClient();
   const sharedCriterionServiceClient = new googleads.SharedCriterionServiceClient();
   const sharedSetServiceClient = new googleads.SharedSetServiceClient();
   const smartCampaignSettingServiceClient = new googleads.SmartCampaignSettingServiceClient();

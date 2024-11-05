@@ -1,6 +1,6 @@
 {
   "name": "google-ads-nodejs-client",
-  "version": "17.0.0",
+  "version": "18.0.0",
   "description": "Googleads client for Node.js",
   "repository": {
     "type": "git",
@@ -71,6 +71,7 @@
     "campaign lifecycle goal service",
     "campaign service",
     "campaign shared set service",
+    "content creator insights service",
     "conversion action service",
     "conversion adjustment upload service",
     "conversion custom variable service",
@@ -97,6 +98,7 @@
     "customer user access service",
     "custom interest service",
     "customizer attribute service",
+    "data link service",
     "experiment arm service",
     "experiment service",
     "extension feed item service",
@@ -128,6 +130,7 @@
     "recommendation service",
     "recommendation subscription service",
     "remarketing action service",
+    "shareable preview service",
     "shared criterion service",
     "shared set service",
     "smart campaign setting service",
