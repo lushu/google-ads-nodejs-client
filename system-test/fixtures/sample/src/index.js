@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -32,8 +32,6 @@ function main() {
   const adGroupCriterionLabelServiceClient = new googleads.AdGroupCriterionLabelServiceClient();
   const adGroupCriterionServiceClient = new googleads.AdGroupCriterionServiceClient();
   const adGroupCustomizerServiceClient = new googleads.AdGroupCustomizerServiceClient();
-  const adGroupExtensionSettingServiceClient = new googleads.AdGroupExtensionSettingServiceClient();
-  const adGroupFeedServiceClient = new googleads.AdGroupFeedServiceClient();
   const adGroupLabelServiceClient = new googleads.AdGroupLabelServiceClient();
   const adGroupServiceClient = new googleads.AdGroupServiceClient();
   const adParameterServiceClient = new googleads.AdParameterServiceClient();
@@ -61,8 +59,6 @@ function main() {
   const campaignCriterionServiceClient = new googleads.CampaignCriterionServiceClient();
   const campaignCustomizerServiceClient = new googleads.CampaignCustomizerServiceClient();
   const campaignDraftServiceClient = new googleads.CampaignDraftServiceClient();
-  const campaignExtensionSettingServiceClient = new googleads.CampaignExtensionSettingServiceClient();
-  const campaignFeedServiceClient = new googleads.CampaignFeedServiceClient();
   const campaignGroupServiceClient = new googleads.CampaignGroupServiceClient();
   const campaignLabelServiceClient = new googleads.CampaignLabelServiceClient();
   const campaignLifecycleGoalServiceClient = new googleads.CampaignLifecycleGoalServiceClient();
@@ -83,8 +79,6 @@ function main() {
   const customerClientLinkServiceClient = new googleads.CustomerClientLinkServiceClient();
   const customerConversionGoalServiceClient = new googleads.CustomerConversionGoalServiceClient();
   const customerCustomizerServiceClient = new googleads.CustomerCustomizerServiceClient();
-  const customerExtensionSettingServiceClient = new googleads.CustomerExtensionSettingServiceClient();
-  const customerFeedServiceClient = new googleads.CustomerFeedServiceClient();
   const customerLabelServiceClient = new googleads.CustomerLabelServiceClient();
   const customerLifecycleGoalServiceClient = new googleads.CustomerLifecycleGoalServiceClient();
   const customerManagerLinkServiceClient = new googleads.CustomerManagerLinkServiceClient();
@@ -98,13 +92,6 @@ function main() {
   const dataLinkServiceClient = new googleads.DataLinkServiceClient();
   const experimentArmServiceClient = new googleads.ExperimentArmServiceClient();
   const experimentServiceClient = new googleads.ExperimentServiceClient();
-  const extensionFeedItemServiceClient = new googleads.ExtensionFeedItemServiceClient();
-  const feedItemServiceClient = new googleads.FeedItemServiceClient();
-  const feedItemSetLinkServiceClient = new googleads.FeedItemSetLinkServiceClient();
-  const feedItemSetServiceClient = new googleads.FeedItemSetServiceClient();
-  const feedItemTargetServiceClient = new googleads.FeedItemTargetServiceClient();
-  const feedMappingServiceClient = new googleads.FeedMappingServiceClient();
-  const feedServiceClient = new googleads.FeedServiceClient();
   const geoTargetConstantServiceClient = new googleads.GeoTargetConstantServiceClient();
   const googleAdsFieldServiceClient = new googleads.GoogleAdsFieldServiceClient();
   const googleAdsServiceClient = new googleads.GoogleAdsServiceClient();
