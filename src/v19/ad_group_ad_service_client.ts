@@ -959,7 +959,7 @@ export class AdGroupAdServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('mutateAdGroupAds request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IMutateAdGroupAdsResponse,
@@ -1061,7 +1061,7 @@ export class AdGroupAdServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'ad_group_ad': request.adGroupAd ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('removeAutomaticallyCreatedAssets request %j', request);
     const wrappedCallback: Callback<
         protos.google.protobuf.IEmpty,

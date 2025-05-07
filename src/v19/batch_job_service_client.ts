@@ -948,7 +948,7 @@ export class BatchJobServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('mutateBatchJob request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IMutateBatchJobResponse,
@@ -1063,7 +1063,7 @@ export class BatchJobServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resourceName ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('addBatchJobOperations request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IAddBatchJobOperationsResponse,
@@ -1167,7 +1167,7 @@ export class BatchJobServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resourceName ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     const wrappedCallback: Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v19.resources.BatchJob.IBatchJobMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1300,7 +1300,7 @@ export class BatchJobServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resourceName ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     const wrappedCallback: PaginationCallback<
       protos.google.ads.googleads.v19.services.IListBatchJobResultsRequest,
       protos.google.ads.googleads.v19.services.IListBatchJobResultsResponse|null|undefined,
@@ -1368,7 +1368,7 @@ export class BatchJobServiceClient {
     });
     const defaultCallSettings = this._defaults['listBatchJobResults'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('listBatchJobResults stream %j', request);
     return this.descriptors.page.listBatchJobResults.createStream(
       this.innerApiCalls.listBatchJobResults as GaxCall,
@@ -1425,7 +1425,7 @@ export class BatchJobServiceClient {
     });
     const defaultCallSettings = this._defaults['listBatchJobResults'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('listBatchJobResults iterate %j', request);
     return this.descriptors.page.listBatchJobResults.asyncIterate(
       this.innerApiCalls['listBatchJobResults'] as GaxCall,
@@ -8931,7 +8931,7 @@ export class BatchJobServiceClient {
         this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
-        this.operationsClient.close();
+        void this.operationsClient.close();
       });
     }
     return Promise.resolve();

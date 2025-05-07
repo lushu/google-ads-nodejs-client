@@ -732,7 +732,7 @@ export class LocalServicesLeadServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const localServicesLeadServiceStubMethods =
-        ['appendLeadConversation'];
+        ['appendLeadConversation', 'provideLeadFeedback'];
     for (const methodName of localServicesLeadServiceStubMethods) {
       const callPromise = this.localServicesLeadServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -905,7 +905,7 @@ export class LocalServicesLeadServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('appendLeadConversation request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IAppendLeadConversationResponse,
@@ -923,6 +923,101 @@ export class LocalServicesLeadServiceClient {
         {}|undefined
       ]) => {
         this._log.info('appendLeadConversation response %j', response);
+        return [response, options, rawResponse];
+      });
+  }
+/**
+ * RPC to provide feedback on Local Services Lead resources.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resourceName
+ *   Required. The resource name of the local services lead that for which the
+ *   feedback is being provided.
+ * @param {google.ads.googleads.v19.enums.LocalServicesLeadSurveyAnswerEnum.SurveyAnswer} request.surveyAnswer
+ *   Required. Survey answer for Local Services Ads Lead.
+ * @param {google.ads.googleads.v19.services.SurveySatisfied} request.surveySatisfied
+ *   Details about various factors for being satisfied with the lead.
+ * @param {google.ads.googleads.v19.services.SurveyDissatisfied} request.surveyDissatisfied
+ *   Details about various factors for not being satisfied with the lead.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing {@link protos.google.ads.googleads.v19.services.ProvideLeadFeedbackResponse|ProvideLeadFeedbackResponse}.
+ *   Please see the {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods | documentation }
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v19/local_services_lead_service.provide_lead_feedback.js</caption>
+ * region_tag:googleads_v19_generated_LocalServicesLeadService_ProvideLeadFeedback_async
+ */
+  provideLeadFeedback(
+      request?: protos.google.ads.googleads.v19.services.IProvideLeadFeedbackRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v19.services.IProvideLeadFeedbackResponse,
+        protos.google.ads.googleads.v19.services.IProvideLeadFeedbackRequest|undefined, {}|undefined
+      ]>;
+  provideLeadFeedback(
+      request: protos.google.ads.googleads.v19.services.IProvideLeadFeedbackRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v19.services.IProvideLeadFeedbackResponse,
+          protos.google.ads.googleads.v19.services.IProvideLeadFeedbackRequest|null|undefined,
+          {}|null|undefined>): void;
+  provideLeadFeedback(
+      request: protos.google.ads.googleads.v19.services.IProvideLeadFeedbackRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v19.services.IProvideLeadFeedbackResponse,
+          protos.google.ads.googleads.v19.services.IProvideLeadFeedbackRequest|null|undefined,
+          {}|null|undefined>): void;
+  provideLeadFeedback(
+      request?: protos.google.ads.googleads.v19.services.IProvideLeadFeedbackRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.ads.googleads.v19.services.IProvideLeadFeedbackResponse,
+          protos.google.ads.googleads.v19.services.IProvideLeadFeedbackRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.ads.googleads.v19.services.IProvideLeadFeedbackResponse,
+          protos.google.ads.googleads.v19.services.IProvideLeadFeedbackRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.ads.googleads.v19.services.IProvideLeadFeedbackResponse,
+        protos.google.ads.googleads.v19.services.IProvideLeadFeedbackRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = this._gaxModule.routingHeader.fromParams({
+      'resource_name': request.resourceName ?? '',
+    });
+    this.initialize().catch(err => {throw err});
+    this._log.info('provideLeadFeedback request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IProvideLeadFeedbackResponse,
+        protos.google.ads.googleads.v19.services.IProvideLeadFeedbackRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('provideLeadFeedback response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.provideLeadFeedback(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IProvideLeadFeedbackResponse,
+        protos.google.ads.googleads.v19.services.IProvideLeadFeedbackRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('provideLeadFeedback response %j', response);
         return [response, options, rawResponse];
       });
   }

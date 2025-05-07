@@ -1050,7 +1050,7 @@ export class GoogleAdsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('mutate request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IMutateGoogleAdsResponse,
@@ -1119,7 +1119,7 @@ export class GoogleAdsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('searchStream stream %j', options);
     return this.innerApiCalls.searchStream(request, options);
   }
@@ -1227,7 +1227,7 @@ export class GoogleAdsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     const wrappedCallback: PaginationCallback<
       protos.google.ads.googleads.v19.services.ISearchGoogleAdsRequest,
       protos.google.ads.googleads.v19.services.ISearchGoogleAdsResponse|null|undefined,
@@ -1301,7 +1301,7 @@ export class GoogleAdsServiceClient {
     });
     const defaultCallSettings = this._defaults['search'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('search stream %j', request);
     return this.descriptors.page.search.createStream(
       this.innerApiCalls.search as GaxCall,
@@ -1364,7 +1364,7 @@ export class GoogleAdsServiceClient {
     });
     const defaultCallSettings = this._defaults['search'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('search iterate %j', request);
     return this.descriptors.page.search.asyncIterate(
       this.innerApiCalls['search'] as GaxCall,

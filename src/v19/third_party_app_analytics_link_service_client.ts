@@ -911,7 +911,7 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resourceName ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('regenerateShareableLinkId request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IRegenerateShareableLinkIdResponse,

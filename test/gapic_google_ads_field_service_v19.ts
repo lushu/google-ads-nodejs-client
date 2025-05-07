@@ -208,11 +208,11 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
               credentials: {client_email: 'bogus', private_key: 'bogus'},
               projectId: 'bogus',
             });
-            client.initialize();
+            client.initialize().catch(err => {throw err});
             assert(client.googleAdsFieldServiceStub);
             client.close().then(() => {
                 done();
-            });
+            }).catch(err => {throw err});
         });
 
         it('has close method for the non-initialized client', done => {
@@ -223,7 +223,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             assert.strictEqual(client.googleAdsFieldServiceStub, undefined);
             client.close().then(() => {
                 done();
-            });
+            }).catch(err => {throw err});
         });
 
         it('has getProjectId method', async () => {
@@ -265,7 +265,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
               credentials: {client_email: 'bogus', private_key: 'bogus'},
               projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             const request = generateSampleMessage(
               new protos.google.ads.googleads.v19.services.GetGoogleAdsFieldRequest()
             );
@@ -292,7 +292,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
               credentials: {client_email: 'bogus', private_key: 'bogus'},
               projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             const request = generateSampleMessage(
               new protos.google.ads.googleads.v19.services.GetGoogleAdsFieldRequest()
             );
@@ -330,7 +330,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
               credentials: {client_email: 'bogus', private_key: 'bogus'},
               projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             const request = generateSampleMessage(
               new protos.google.ads.googleads.v19.services.GetGoogleAdsFieldRequest()
             );
@@ -354,7 +354,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
               credentials: {client_email: 'bogus', private_key: 'bogus'},
               projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             const request = generateSampleMessage(
               new protos.google.ads.googleads.v19.services.GetGoogleAdsFieldRequest()
             );
@@ -362,7 +362,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
               getTypeDefaultValue('.google.ads.googleads.v19.services.GetGoogleAdsFieldRequest', ['resourceName']);
             request.resourceName = defaultValue1;
             const expectedError = new Error('The client has already been closed.');
-            client.close();
+            client.close().catch(err => {throw err});
             await assert.rejects(client.getGoogleAdsField(request), expectedError);
         });
     });
@@ -373,7 +373,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             const request = generateSampleMessage(
               new protos.google.ads.googleads.v19.services.SearchGoogleAdsFieldsRequest()
             );const expectedResponse = [
@@ -391,7 +391,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             const request = generateSampleMessage(
               new protos.google.ads.googleads.v19.services.SearchGoogleAdsFieldsRequest()
             );const expectedResponse = [
@@ -420,7 +420,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             const request = generateSampleMessage(
               new protos.google.ads.googleads.v19.services.SearchGoogleAdsFieldsRequest()
             );
@@ -434,7 +434,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             const request = generateSampleMessage(
               new protos.google.ads.googleads.v19.services.SearchGoogleAdsFieldsRequest()
             );
@@ -468,7 +468,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             const request = generateSampleMessage(
               new protos.google.ads.googleads.v19.services.SearchGoogleAdsFieldsRequest()
             );
@@ -497,7 +497,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
               credentials: {client_email: 'bogus', private_key: 'bogus'},
               projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             const request = generateSampleMessage(
               new protos.google.ads.googleads.v19.services.SearchGoogleAdsFieldsRequest()
             );
@@ -523,7 +523,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             const request = generateSampleMessage(
               new protos.google.ads.googleads.v19.services.SearchGoogleAdsFieldsRequest()
             );
@@ -544,7 +544,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
 
     describe('Path templates', () => {
 
-        describe('accessibleBiddingStrategy', () => {
+        describe('accessibleBiddingStrategy', async () => {
             const fakePath = "/rendered/path/accessibleBiddingStrategy";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -554,7 +554,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.accessibleBiddingStrategyPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.accessibleBiddingStrategyPathTemplate.match =
@@ -582,7 +582,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('accountBudget', () => {
+        describe('accountBudget', async () => {
             const fakePath = "/rendered/path/accountBudget";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -592,7 +592,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.accountBudgetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.accountBudgetPathTemplate.match =
@@ -620,7 +620,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('accountBudgetProposal', () => {
+        describe('accountBudgetProposal', async () => {
             const fakePath = "/rendered/path/accountBudgetProposal";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -630,7 +630,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.accountBudgetProposalPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.accountBudgetProposalPathTemplate.match =
@@ -658,7 +658,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('accountLink', () => {
+        describe('accountLink', async () => {
             const fakePath = "/rendered/path/accountLink";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -668,7 +668,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.accountLinkPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.accountLinkPathTemplate.match =
@@ -696,7 +696,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('ad', () => {
+        describe('ad', async () => {
             const fakePath = "/rendered/path/ad";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -706,7 +706,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adPathTemplate.match =
@@ -734,7 +734,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroup', () => {
+        describe('adGroup', async () => {
             const fakePath = "/rendered/path/adGroup";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -744,7 +744,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupPathTemplate.match =
@@ -772,7 +772,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupAd', () => {
+        describe('adGroupAd', async () => {
             const fakePath = "/rendered/path/adGroupAd";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -783,7 +783,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupAdPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupAdPathTemplate.match =
@@ -818,7 +818,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupAdAssetCombinationView', () => {
+        describe('adGroupAdAssetCombinationView', async () => {
             const fakePath = "/rendered/path/adGroupAdAssetCombinationView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -831,7 +831,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupAdAssetCombinationViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupAdAssetCombinationViewPathTemplate.match =
@@ -880,7 +880,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupAdAssetView', () => {
+        describe('adGroupAdAssetView', async () => {
             const fakePath = "/rendered/path/adGroupAdAssetView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -893,7 +893,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupAdAssetViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupAdAssetViewPathTemplate.match =
@@ -942,7 +942,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupAdLabel', () => {
+        describe('adGroupAdLabel', async () => {
             const fakePath = "/rendered/path/adGroupAdLabel";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -954,7 +954,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupAdLabelPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupAdLabelPathTemplate.match =
@@ -996,7 +996,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupAsset', () => {
+        describe('adGroupAsset', async () => {
             const fakePath = "/rendered/path/adGroupAsset";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1008,7 +1008,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupAssetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupAssetPathTemplate.match =
@@ -1050,7 +1050,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupAssetSet', () => {
+        describe('adGroupAssetSet', async () => {
             const fakePath = "/rendered/path/adGroupAssetSet";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1061,7 +1061,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupAssetSetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupAssetSetPathTemplate.match =
@@ -1096,7 +1096,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupAudienceView', () => {
+        describe('adGroupAudienceView', async () => {
             const fakePath = "/rendered/path/adGroupAudienceView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1107,7 +1107,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupAudienceViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupAudienceViewPathTemplate.match =
@@ -1142,7 +1142,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupBidModifier', () => {
+        describe('adGroupBidModifier', async () => {
             const fakePath = "/rendered/path/adGroupBidModifier";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1153,7 +1153,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupBidModifierPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupBidModifierPathTemplate.match =
@@ -1188,7 +1188,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupCriterion', () => {
+        describe('adGroupCriterion', async () => {
             const fakePath = "/rendered/path/adGroupCriterion";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1199,7 +1199,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupCriterionPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupCriterionPathTemplate.match =
@@ -1234,7 +1234,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupCriterionCustomizer', () => {
+        describe('adGroupCriterionCustomizer', async () => {
             const fakePath = "/rendered/path/adGroupCriterionCustomizer";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1246,7 +1246,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupCriterionCustomizerPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupCriterionCustomizerPathTemplate.match =
@@ -1288,7 +1288,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupCriterionLabel', () => {
+        describe('adGroupCriterionLabel', async () => {
             const fakePath = "/rendered/path/adGroupCriterionLabel";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1300,7 +1300,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupCriterionLabelPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupCriterionLabelPathTemplate.match =
@@ -1342,7 +1342,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupCriterionSimulation', () => {
+        describe('adGroupCriterionSimulation', async () => {
             const fakePath = "/rendered/path/adGroupCriterionSimulation";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1357,7 +1357,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupCriterionSimulationPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupCriterionSimulationPathTemplate.match =
@@ -1420,7 +1420,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupCustomizer', () => {
+        describe('adGroupCustomizer', async () => {
             const fakePath = "/rendered/path/adGroupCustomizer";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1431,7 +1431,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupCustomizerPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupCustomizerPathTemplate.match =
@@ -1466,7 +1466,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupLabel', () => {
+        describe('adGroupLabel', async () => {
             const fakePath = "/rendered/path/adGroupLabel";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1477,7 +1477,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupLabelPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupLabelPathTemplate.match =
@@ -1512,7 +1512,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adGroupSimulation', () => {
+        describe('adGroupSimulation', async () => {
             const fakePath = "/rendered/path/adGroupSimulation";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1526,7 +1526,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adGroupSimulationPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adGroupSimulationPathTemplate.match =
@@ -1582,7 +1582,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adParameter', () => {
+        describe('adParameter', async () => {
             const fakePath = "/rendered/path/adParameter";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1594,7 +1594,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adParameterPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adParameterPathTemplate.match =
@@ -1636,7 +1636,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('adScheduleView', () => {
+        describe('adScheduleView', async () => {
             const fakePath = "/rendered/path/adScheduleView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1647,7 +1647,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.adScheduleViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.adScheduleViewPathTemplate.match =
@@ -1682,7 +1682,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('ageRangeView', () => {
+        describe('ageRangeView', async () => {
             const fakePath = "/rendered/path/ageRangeView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1693,7 +1693,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.ageRangeViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.ageRangeViewPathTemplate.match =
@@ -1728,7 +1728,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('androidPrivacySharedKeyGoogleAdGroup', () => {
+        describe('androidPrivacySharedKeyGoogleAdGroup', async () => {
             const fakePath = "/rendered/path/androidPrivacySharedKeyGoogleAdGroup";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1742,7 +1742,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.androidPrivacySharedKeyGoogleAdGroupPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.androidPrivacySharedKeyGoogleAdGroupPathTemplate.match =
@@ -1798,7 +1798,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('androidPrivacySharedKeyGoogleCampaign', () => {
+        describe('androidPrivacySharedKeyGoogleCampaign', async () => {
             const fakePath = "/rendered/path/androidPrivacySharedKeyGoogleCampaign";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1810,7 +1810,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.androidPrivacySharedKeyGoogleCampaignPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.androidPrivacySharedKeyGoogleCampaignPathTemplate.match =
@@ -1852,7 +1852,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('androidPrivacySharedKeyGoogleNetworkType', () => {
+        describe('androidPrivacySharedKeyGoogleNetworkType', async () => {
             const fakePath = "/rendered/path/androidPrivacySharedKeyGoogleNetworkType";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1865,7 +1865,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.androidPrivacySharedKeyGoogleNetworkTypePathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.androidPrivacySharedKeyGoogleNetworkTypePathTemplate.match =
@@ -1914,7 +1914,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('asset', () => {
+        describe('asset', async () => {
             const fakePath = "/rendered/path/asset";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1924,7 +1924,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.assetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.assetPathTemplate.match =
@@ -1952,7 +1952,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('assetFieldTypeView', () => {
+        describe('assetFieldTypeView', async () => {
             const fakePath = "/rendered/path/assetFieldTypeView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -1962,7 +1962,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.assetFieldTypeViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.assetFieldTypeViewPathTemplate.match =
@@ -1990,7 +1990,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('assetGroup', () => {
+        describe('assetGroup', async () => {
             const fakePath = "/rendered/path/assetGroup";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2000,7 +2000,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.assetGroupPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.assetGroupPathTemplate.match =
@@ -2028,7 +2028,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('assetGroupAsset', () => {
+        describe('assetGroupAsset', async () => {
             const fakePath = "/rendered/path/assetGroupAsset";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2040,7 +2040,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.assetGroupAssetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.assetGroupAssetPathTemplate.match =
@@ -2082,7 +2082,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('assetGroupListingGroupFilter', () => {
+        describe('assetGroupListingGroupFilter', async () => {
             const fakePath = "/rendered/path/assetGroupListingGroupFilter";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2093,7 +2093,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.assetGroupListingGroupFilterPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.assetGroupListingGroupFilterPathTemplate.match =
@@ -2128,7 +2128,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('assetGroupProductGroupView', () => {
+        describe('assetGroupProductGroupView', async () => {
             const fakePath = "/rendered/path/assetGroupProductGroupView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2139,7 +2139,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.assetGroupProductGroupViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.assetGroupProductGroupViewPathTemplate.match =
@@ -2174,7 +2174,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('assetGroupSignal', () => {
+        describe('assetGroupSignal', async () => {
             const fakePath = "/rendered/path/assetGroupSignal";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2185,7 +2185,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.assetGroupSignalPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.assetGroupSignalPathTemplate.match =
@@ -2220,7 +2220,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('assetGroupTopCombinationView', () => {
+        describe('assetGroupTopCombinationView', async () => {
             const fakePath = "/rendered/path/assetGroupTopCombinationView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2231,7 +2231,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.assetGroupTopCombinationViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.assetGroupTopCombinationViewPathTemplate.match =
@@ -2266,7 +2266,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('assetSet', () => {
+        describe('assetSet', async () => {
             const fakePath = "/rendered/path/assetSet";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2276,7 +2276,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.assetSetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.assetSetPathTemplate.match =
@@ -2304,7 +2304,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('assetSetAsset', () => {
+        describe('assetSetAsset', async () => {
             const fakePath = "/rendered/path/assetSetAsset";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2315,7 +2315,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.assetSetAssetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.assetSetAssetPathTemplate.match =
@@ -2350,7 +2350,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('assetSetTypeView', () => {
+        describe('assetSetTypeView', async () => {
             const fakePath = "/rendered/path/assetSetTypeView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2360,7 +2360,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.assetSetTypeViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.assetSetTypeViewPathTemplate.match =
@@ -2388,7 +2388,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('audience', () => {
+        describe('audience', async () => {
             const fakePath = "/rendered/path/audience";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2398,7 +2398,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.audiencePathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.audiencePathTemplate.match =
@@ -2426,7 +2426,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('batchJob', () => {
+        describe('batchJob', async () => {
             const fakePath = "/rendered/path/batchJob";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2436,7 +2436,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.batchJobPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.batchJobPathTemplate.match =
@@ -2464,7 +2464,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('biddingDataExclusion', () => {
+        describe('biddingDataExclusion', async () => {
             const fakePath = "/rendered/path/biddingDataExclusion";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2474,7 +2474,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.biddingDataExclusionPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.biddingDataExclusionPathTemplate.match =
@@ -2502,7 +2502,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('biddingSeasonalityAdjustment', () => {
+        describe('biddingSeasonalityAdjustment', async () => {
             const fakePath = "/rendered/path/biddingSeasonalityAdjustment";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2512,7 +2512,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.match =
@@ -2540,7 +2540,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('biddingStrategy', () => {
+        describe('biddingStrategy', async () => {
             const fakePath = "/rendered/path/biddingStrategy";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2550,7 +2550,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.biddingStrategyPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.biddingStrategyPathTemplate.match =
@@ -2578,7 +2578,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('biddingStrategySimulation', () => {
+        describe('biddingStrategySimulation', async () => {
             const fakePath = "/rendered/path/biddingStrategySimulation";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2592,7 +2592,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.biddingStrategySimulationPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.biddingStrategySimulationPathTemplate.match =
@@ -2648,7 +2648,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('billingSetup', () => {
+        describe('billingSetup', async () => {
             const fakePath = "/rendered/path/billingSetup";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2658,7 +2658,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.billingSetupPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.billingSetupPathTemplate.match =
@@ -2686,7 +2686,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('callView', () => {
+        describe('callView', async () => {
             const fakePath = "/rendered/path/callView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2696,7 +2696,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.callViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.callViewPathTemplate.match =
@@ -2724,7 +2724,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaign', () => {
+        describe('campaign', async () => {
             const fakePath = "/rendered/path/campaign";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2734,7 +2734,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignPathTemplate.match =
@@ -2762,7 +2762,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignAggregateAssetView', () => {
+        describe('campaignAggregateAssetView', async () => {
             const fakePath = "/rendered/path/campaignAggregateAssetView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2775,7 +2775,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignAggregateAssetViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignAggregateAssetViewPathTemplate.match =
@@ -2824,7 +2824,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignAsset', () => {
+        describe('campaignAsset', async () => {
             const fakePath = "/rendered/path/campaignAsset";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2836,7 +2836,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignAssetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignAssetPathTemplate.match =
@@ -2878,7 +2878,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignAssetSet', () => {
+        describe('campaignAssetSet', async () => {
             const fakePath = "/rendered/path/campaignAssetSet";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2889,7 +2889,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignAssetSetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignAssetSetPathTemplate.match =
@@ -2924,7 +2924,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignAudienceView', () => {
+        describe('campaignAudienceView', async () => {
             const fakePath = "/rendered/path/campaignAudienceView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2935,7 +2935,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignAudienceViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignAudienceViewPathTemplate.match =
@@ -2970,7 +2970,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignBidModifier', () => {
+        describe('campaignBidModifier', async () => {
             const fakePath = "/rendered/path/campaignBidModifier";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -2981,7 +2981,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignBidModifierPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignBidModifierPathTemplate.match =
@@ -3016,7 +3016,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignBudget', () => {
+        describe('campaignBudget', async () => {
             const fakePath = "/rendered/path/campaignBudget";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3026,7 +3026,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignBudgetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignBudgetPathTemplate.match =
@@ -3054,7 +3054,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignConversionGoal', () => {
+        describe('campaignConversionGoal', async () => {
             const fakePath = "/rendered/path/campaignConversionGoal";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3066,7 +3066,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignConversionGoalPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignConversionGoalPathTemplate.match =
@@ -3108,7 +3108,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignCriterion', () => {
+        describe('campaignCriterion', async () => {
             const fakePath = "/rendered/path/campaignCriterion";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3119,7 +3119,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignCriterionPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignCriterionPathTemplate.match =
@@ -3154,7 +3154,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignCustomizer', () => {
+        describe('campaignCustomizer', async () => {
             const fakePath = "/rendered/path/campaignCustomizer";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3165,7 +3165,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignCustomizerPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignCustomizerPathTemplate.match =
@@ -3200,7 +3200,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignDraft', () => {
+        describe('campaignDraft', async () => {
             const fakePath = "/rendered/path/campaignDraft";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3211,7 +3211,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignDraftPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignDraftPathTemplate.match =
@@ -3246,7 +3246,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignGroup', () => {
+        describe('campaignGroup', async () => {
             const fakePath = "/rendered/path/campaignGroup";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3256,7 +3256,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignGroupPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignGroupPathTemplate.match =
@@ -3284,7 +3284,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignLabel', () => {
+        describe('campaignLabel', async () => {
             const fakePath = "/rendered/path/campaignLabel";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3295,7 +3295,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignLabelPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignLabelPathTemplate.match =
@@ -3330,7 +3330,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignLifecycleGoal', () => {
+        describe('campaignLifecycleGoal', async () => {
             const fakePath = "/rendered/path/campaignLifecycleGoal";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3340,7 +3340,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignLifecycleGoalPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignLifecycleGoalPathTemplate.match =
@@ -3368,7 +3368,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignSearchTermInsight', () => {
+        describe('campaignSearchTermInsight', async () => {
             const fakePath = "/rendered/path/campaignSearchTermInsight";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3379,7 +3379,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignSearchTermInsightPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignSearchTermInsightPathTemplate.match =
@@ -3414,7 +3414,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignSharedSet', () => {
+        describe('campaignSharedSet', async () => {
             const fakePath = "/rendered/path/campaignSharedSet";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3425,7 +3425,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignSharedSetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignSharedSetPathTemplate.match =
@@ -3460,7 +3460,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('campaignSimulation', () => {
+        describe('campaignSimulation', async () => {
             const fakePath = "/rendered/path/campaignSimulation";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3474,7 +3474,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.campaignSimulationPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.campaignSimulationPathTemplate.match =
@@ -3530,7 +3530,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('carrierConstant', () => {
+        describe('carrierConstant', async () => {
             const fakePath = "/rendered/path/carrierConstant";
             const expectedParameters = {
                 criterion_id: "criterionIdValue",
@@ -3539,7 +3539,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.carrierConstantPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.carrierConstantPathTemplate.match =
@@ -3560,7 +3560,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('changeEvent', () => {
+        describe('changeEvent', async () => {
             const fakePath = "/rendered/path/changeEvent";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3572,7 +3572,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.changeEventPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.changeEventPathTemplate.match =
@@ -3614,7 +3614,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('changeStatus', () => {
+        describe('changeStatus', async () => {
             const fakePath = "/rendered/path/changeStatus";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3624,7 +3624,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.changeStatusPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.changeStatusPathTemplate.match =
@@ -3652,7 +3652,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('channelAggregateAssetView', () => {
+        describe('channelAggregateAssetView', async () => {
             const fakePath = "/rendered/path/channelAggregateAssetView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3665,7 +3665,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.channelAggregateAssetViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.channelAggregateAssetViewPathTemplate.match =
@@ -3714,7 +3714,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('clickView', () => {
+        describe('clickView', async () => {
             const fakePath = "/rendered/path/clickView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3725,7 +3725,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.clickViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.clickViewPathTemplate.match =
@@ -3760,7 +3760,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('combinedAudience', () => {
+        describe('combinedAudience', async () => {
             const fakePath = "/rendered/path/combinedAudience";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3770,7 +3770,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.combinedAudiencePathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.combinedAudiencePathTemplate.match =
@@ -3798,7 +3798,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('contentCriterionView', () => {
+        describe('contentCriterionView', async () => {
             const fakePath = "/rendered/path/contentCriterionView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3809,7 +3809,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.contentCriterionViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.contentCriterionViewPathTemplate.match =
@@ -3844,7 +3844,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('conversionAction', () => {
+        describe('conversionAction', async () => {
             const fakePath = "/rendered/path/conversionAction";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3854,7 +3854,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.conversionActionPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.conversionActionPathTemplate.match =
@@ -3882,7 +3882,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('conversionCustomVariable', () => {
+        describe('conversionCustomVariable', async () => {
             const fakePath = "/rendered/path/conversionCustomVariable";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3892,7 +3892,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.conversionCustomVariablePathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.conversionCustomVariablePathTemplate.match =
@@ -3920,7 +3920,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('conversionGoalCampaignConfig', () => {
+        describe('conversionGoalCampaignConfig', async () => {
             const fakePath = "/rendered/path/conversionGoalCampaignConfig";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3930,7 +3930,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.conversionGoalCampaignConfigPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.conversionGoalCampaignConfigPathTemplate.match =
@@ -3958,7 +3958,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('conversionValueRule', () => {
+        describe('conversionValueRule', async () => {
             const fakePath = "/rendered/path/conversionValueRule";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -3968,7 +3968,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.conversionValueRulePathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.conversionValueRulePathTemplate.match =
@@ -3996,7 +3996,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('conversionValueRuleSet', () => {
+        describe('conversionValueRuleSet', async () => {
             const fakePath = "/rendered/path/conversionValueRuleSet";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4006,7 +4006,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.conversionValueRuleSetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.conversionValueRuleSetPathTemplate.match =
@@ -4034,7 +4034,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('currencyConstant', () => {
+        describe('currencyConstant', async () => {
             const fakePath = "/rendered/path/currencyConstant";
             const expectedParameters = {
                 code: "codeValue",
@@ -4043,7 +4043,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.currencyConstantPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.currencyConstantPathTemplate.match =
@@ -4064,7 +4064,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customAudience', () => {
+        describe('customAudience', async () => {
             const fakePath = "/rendered/path/customAudience";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4074,7 +4074,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customAudiencePathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customAudiencePathTemplate.match =
@@ -4102,7 +4102,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customConversionGoal', () => {
+        describe('customConversionGoal', async () => {
             const fakePath = "/rendered/path/customConversionGoal";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4112,7 +4112,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customConversionGoalPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customConversionGoalPathTemplate.match =
@@ -4140,7 +4140,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customInterest', () => {
+        describe('customInterest', async () => {
             const fakePath = "/rendered/path/customInterest";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4150,7 +4150,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customInterestPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customInterestPathTemplate.match =
@@ -4178,7 +4178,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customer', () => {
+        describe('customer', async () => {
             const fakePath = "/rendered/path/customer";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4187,7 +4187,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerPathTemplate.match =
@@ -4208,7 +4208,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customerAsset', () => {
+        describe('customerAsset', async () => {
             const fakePath = "/rendered/path/customerAsset";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4219,7 +4219,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerAssetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerAssetPathTemplate.match =
@@ -4254,7 +4254,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customerAssetSet', () => {
+        describe('customerAssetSet', async () => {
             const fakePath = "/rendered/path/customerAssetSet";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4264,7 +4264,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerAssetSetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerAssetSetPathTemplate.match =
@@ -4292,7 +4292,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customerClient', () => {
+        describe('customerClient', async () => {
             const fakePath = "/rendered/path/customerClient";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4302,7 +4302,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerClientPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerClientPathTemplate.match =
@@ -4330,7 +4330,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customerClientLink', () => {
+        describe('customerClientLink', async () => {
             const fakePath = "/rendered/path/customerClientLink";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4341,7 +4341,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerClientLinkPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerClientLinkPathTemplate.match =
@@ -4376,7 +4376,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customerConversionGoal', () => {
+        describe('customerConversionGoal', async () => {
             const fakePath = "/rendered/path/customerConversionGoal";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4387,7 +4387,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerConversionGoalPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerConversionGoalPathTemplate.match =
@@ -4422,7 +4422,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customerCustomizer', () => {
+        describe('customerCustomizer', async () => {
             const fakePath = "/rendered/path/customerCustomizer";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4432,7 +4432,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerCustomizerPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerCustomizerPathTemplate.match =
@@ -4460,7 +4460,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customerLabel', () => {
+        describe('customerLabel', async () => {
             const fakePath = "/rendered/path/customerLabel";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4470,7 +4470,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerLabelPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerLabelPathTemplate.match =
@@ -4498,7 +4498,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customerLifecycleGoal', () => {
+        describe('customerLifecycleGoal', async () => {
             const fakePath = "/rendered/path/customerLifecycleGoal";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4507,7 +4507,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerLifecycleGoalPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerLifecycleGoalPathTemplate.match =
@@ -4528,7 +4528,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customerManagerLink', () => {
+        describe('customerManagerLink', async () => {
             const fakePath = "/rendered/path/customerManagerLink";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4539,7 +4539,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerManagerLinkPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerManagerLinkPathTemplate.match =
@@ -4574,7 +4574,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customerNegativeCriterion', () => {
+        describe('customerNegativeCriterion', async () => {
             const fakePath = "/rendered/path/customerNegativeCriterion";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4584,7 +4584,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerNegativeCriterionPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerNegativeCriterionPathTemplate.match =
@@ -4612,7 +4612,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customerSearchTermInsight', () => {
+        describe('customerSearchTermInsight', async () => {
             const fakePath = "/rendered/path/customerSearchTermInsight";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4622,7 +4622,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerSearchTermInsightPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerSearchTermInsightPathTemplate.match =
@@ -4650,7 +4650,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customerSkAdNetworkConversionValueSchema', () => {
+        describe('customerSkAdNetworkConversionValueSchema', async () => {
             const fakePath = "/rendered/path/customerSkAdNetworkConversionValueSchema";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4660,7 +4660,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerSkAdNetworkConversionValueSchemaPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerSkAdNetworkConversionValueSchemaPathTemplate.match =
@@ -4688,7 +4688,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customerUserAccess', () => {
+        describe('customerUserAccess', async () => {
             const fakePath = "/rendered/path/customerUserAccess";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4698,7 +4698,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerUserAccessPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerUserAccessPathTemplate.match =
@@ -4726,7 +4726,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customerUserAccessInvitation', () => {
+        describe('customerUserAccessInvitation', async () => {
             const fakePath = "/rendered/path/customerUserAccessInvitation";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4736,7 +4736,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customerUserAccessInvitationPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customerUserAccessInvitationPathTemplate.match =
@@ -4764,7 +4764,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('customizerAttribute', () => {
+        describe('customizerAttribute', async () => {
             const fakePath = "/rendered/path/customizerAttribute";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4774,7 +4774,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.customizerAttributePathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.customizerAttributePathTemplate.match =
@@ -4802,7 +4802,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('dataLink', () => {
+        describe('dataLink', async () => {
             const fakePath = "/rendered/path/dataLink";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4813,7 +4813,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.dataLinkPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.dataLinkPathTemplate.match =
@@ -4848,7 +4848,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('detailPlacementView', () => {
+        describe('detailPlacementView', async () => {
             const fakePath = "/rendered/path/detailPlacementView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4858,7 +4858,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.detailPlacementViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.detailPlacementViewPathTemplate.match =
@@ -4886,7 +4886,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('detailedDemographic', () => {
+        describe('detailedDemographic', async () => {
             const fakePath = "/rendered/path/detailedDemographic";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4896,7 +4896,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.detailedDemographicPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.detailedDemographicPathTemplate.match =
@@ -4924,7 +4924,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('displayKeywordView', () => {
+        describe('displayKeywordView', async () => {
             const fakePath = "/rendered/path/displayKeywordView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4935,7 +4935,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.displayKeywordViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.displayKeywordViewPathTemplate.match =
@@ -4970,7 +4970,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('distanceView', () => {
+        describe('distanceView', async () => {
             const fakePath = "/rendered/path/distanceView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -4981,7 +4981,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.distanceViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.distanceViewPathTemplate.match =
@@ -5016,7 +5016,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('domainCategory', () => {
+        describe('domainCategory', async () => {
             const fakePath = "/rendered/path/domainCategory";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5027,7 +5027,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.domainCategoryPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.domainCategoryPathTemplate.match =
@@ -5062,7 +5062,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('dynamicSearchAdsSearchTermView', () => {
+        describe('dynamicSearchAdsSearchTermView', async () => {
             const fakePath = "/rendered/path/dynamicSearchAdsSearchTermView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5076,7 +5076,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.dynamicSearchAdsSearchTermViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.dynamicSearchAdsSearchTermViewPathTemplate.match =
@@ -5132,7 +5132,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('expandedLandingPageView', () => {
+        describe('expandedLandingPageView', async () => {
             const fakePath = "/rendered/path/expandedLandingPageView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5142,7 +5142,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.expandedLandingPageViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.expandedLandingPageViewPathTemplate.match =
@@ -5170,7 +5170,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('experiment', () => {
+        describe('experiment', async () => {
             const fakePath = "/rendered/path/experiment";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5180,7 +5180,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.experimentPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.experimentPathTemplate.match =
@@ -5208,7 +5208,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('experimentArm', () => {
+        describe('experimentArm', async () => {
             const fakePath = "/rendered/path/experimentArm";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5219,7 +5219,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.experimentArmPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.experimentArmPathTemplate.match =
@@ -5254,7 +5254,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('genderView', () => {
+        describe('genderView', async () => {
             const fakePath = "/rendered/path/genderView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5265,7 +5265,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.genderViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.genderViewPathTemplate.match =
@@ -5300,7 +5300,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('geoTargetConstant', () => {
+        describe('geoTargetConstant', async () => {
             const fakePath = "/rendered/path/geoTargetConstant";
             const expectedParameters = {
                 criterion_id: "criterionIdValue",
@@ -5309,7 +5309,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.geoTargetConstantPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.geoTargetConstantPathTemplate.match =
@@ -5330,7 +5330,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('geographicView', () => {
+        describe('geographicView', async () => {
             const fakePath = "/rendered/path/geographicView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5341,7 +5341,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.geographicViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.geographicViewPathTemplate.match =
@@ -5376,7 +5376,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('googleAdsField', () => {
+        describe('googleAdsField', async () => {
             const fakePath = "/rendered/path/googleAdsField";
             const expectedParameters = {
                 google_ads_field: "googleAdsFieldValue",
@@ -5385,7 +5385,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.googleAdsFieldPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.googleAdsFieldPathTemplate.match =
@@ -5406,7 +5406,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('groupPlacementView', () => {
+        describe('groupPlacementView', async () => {
             const fakePath = "/rendered/path/groupPlacementView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5416,7 +5416,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.groupPlacementViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.groupPlacementViewPathTemplate.match =
@@ -5444,7 +5444,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('hotelGroupView', () => {
+        describe('hotelGroupView', async () => {
             const fakePath = "/rendered/path/hotelGroupView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5455,7 +5455,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.hotelGroupViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.hotelGroupViewPathTemplate.match =
@@ -5490,7 +5490,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('hotelPerformanceView', () => {
+        describe('hotelPerformanceView', async () => {
             const fakePath = "/rendered/path/hotelPerformanceView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5499,7 +5499,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.hotelPerformanceViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.hotelPerformanceViewPathTemplate.match =
@@ -5520,7 +5520,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('hotelReconciliation', () => {
+        describe('hotelReconciliation', async () => {
             const fakePath = "/rendered/path/hotelReconciliation";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5530,7 +5530,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.hotelReconciliationPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.hotelReconciliationPathTemplate.match =
@@ -5558,7 +5558,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('incomeRangeView', () => {
+        describe('incomeRangeView', async () => {
             const fakePath = "/rendered/path/incomeRangeView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5569,7 +5569,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.incomeRangeViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.incomeRangeViewPathTemplate.match =
@@ -5604,7 +5604,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('invoice', () => {
+        describe('invoice', async () => {
             const fakePath = "/rendered/path/invoice";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5614,7 +5614,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.invoicePathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.invoicePathTemplate.match =
@@ -5642,7 +5642,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('keywordPlan', () => {
+        describe('keywordPlan', async () => {
             const fakePath = "/rendered/path/keywordPlan";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5652,7 +5652,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.keywordPlanPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.keywordPlanPathTemplate.match =
@@ -5680,7 +5680,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('keywordPlanAdGroup', () => {
+        describe('keywordPlanAdGroup', async () => {
             const fakePath = "/rendered/path/keywordPlanAdGroup";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5690,7 +5690,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.keywordPlanAdGroupPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.keywordPlanAdGroupPathTemplate.match =
@@ -5718,7 +5718,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('keywordPlanAdGroupKeyword', () => {
+        describe('keywordPlanAdGroupKeyword', async () => {
             const fakePath = "/rendered/path/keywordPlanAdGroupKeyword";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5728,7 +5728,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.keywordPlanAdGroupKeywordPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.keywordPlanAdGroupKeywordPathTemplate.match =
@@ -5756,7 +5756,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('keywordPlanCampaign', () => {
+        describe('keywordPlanCampaign', async () => {
             const fakePath = "/rendered/path/keywordPlanCampaign";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5766,7 +5766,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.keywordPlanCampaignPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.keywordPlanCampaignPathTemplate.match =
@@ -5794,7 +5794,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('keywordPlanCampaignKeyword', () => {
+        describe('keywordPlanCampaignKeyword', async () => {
             const fakePath = "/rendered/path/keywordPlanCampaignKeyword";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5804,7 +5804,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.keywordPlanCampaignKeywordPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.keywordPlanCampaignKeywordPathTemplate.match =
@@ -5832,7 +5832,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('keywordThemeConstant', () => {
+        describe('keywordThemeConstant', async () => {
             const fakePath = "/rendered/path/keywordThemeConstant";
             const expectedParameters = {
                 express_category_id: "expressCategoryIdValue",
@@ -5842,7 +5842,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.keywordThemeConstantPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.keywordThemeConstantPathTemplate.match =
@@ -5870,7 +5870,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('keywordView', () => {
+        describe('keywordView', async () => {
             const fakePath = "/rendered/path/keywordView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5881,7 +5881,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.keywordViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.keywordViewPathTemplate.match =
@@ -5916,7 +5916,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('label', () => {
+        describe('label', async () => {
             const fakePath = "/rendered/path/label";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5926,7 +5926,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.labelPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.labelPathTemplate.match =
@@ -5954,7 +5954,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('landingPageView', () => {
+        describe('landingPageView', async () => {
             const fakePath = "/rendered/path/landingPageView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -5964,7 +5964,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.landingPageViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.landingPageViewPathTemplate.match =
@@ -5992,7 +5992,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('languageConstant', () => {
+        describe('languageConstant', async () => {
             const fakePath = "/rendered/path/languageConstant";
             const expectedParameters = {
                 criterion_id: "criterionIdValue",
@@ -6001,7 +6001,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.languageConstantPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.languageConstantPathTemplate.match =
@@ -6022,7 +6022,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('leadFormSubmissionData', () => {
+        describe('leadFormSubmissionData', async () => {
             const fakePath = "/rendered/path/leadFormSubmissionData";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6032,7 +6032,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.leadFormSubmissionDataPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.leadFormSubmissionDataPathTemplate.match =
@@ -6060,7 +6060,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('lifeEvent', () => {
+        describe('lifeEvent', async () => {
             const fakePath = "/rendered/path/lifeEvent";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6070,7 +6070,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.lifeEventPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.lifeEventPathTemplate.match =
@@ -6098,7 +6098,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('localServicesEmployee', () => {
+        describe('localServicesEmployee', async () => {
             const fakePath = "/rendered/path/localServicesEmployee";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6108,7 +6108,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.localServicesEmployeePathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.localServicesEmployeePathTemplate.match =
@@ -6136,7 +6136,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('localServicesLead', () => {
+        describe('localServicesLead', async () => {
             const fakePath = "/rendered/path/localServicesLead";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6146,7 +6146,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.localServicesLeadPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.localServicesLeadPathTemplate.match =
@@ -6174,7 +6174,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('localServicesLeadConversation', () => {
+        describe('localServicesLeadConversation', async () => {
             const fakePath = "/rendered/path/localServicesLeadConversation";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6184,7 +6184,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.localServicesLeadConversationPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.localServicesLeadConversationPathTemplate.match =
@@ -6212,7 +6212,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('localServicesVerificationArtifact', () => {
+        describe('localServicesVerificationArtifact', async () => {
             const fakePath = "/rendered/path/localServicesVerificationArtifact";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6222,7 +6222,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.localServicesVerificationArtifactPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.localServicesVerificationArtifactPathTemplate.match =
@@ -6250,7 +6250,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('locationView', () => {
+        describe('locationView', async () => {
             const fakePath = "/rendered/path/locationView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6261,7 +6261,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.locationViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.locationViewPathTemplate.match =
@@ -6296,7 +6296,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('managedPlacementView', () => {
+        describe('managedPlacementView', async () => {
             const fakePath = "/rendered/path/managedPlacementView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6307,7 +6307,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.managedPlacementViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.managedPlacementViewPathTemplate.match =
@@ -6342,7 +6342,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('mediaFile', () => {
+        describe('mediaFile', async () => {
             const fakePath = "/rendered/path/mediaFile";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6352,7 +6352,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.mediaFilePathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.mediaFilePathTemplate.match =
@@ -6380,7 +6380,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('mobileAppCategoryConstant', () => {
+        describe('mobileAppCategoryConstant', async () => {
             const fakePath = "/rendered/path/mobileAppCategoryConstant";
             const expectedParameters = {
                 mobile_app_category_id: "mobileAppCategoryIdValue",
@@ -6389,7 +6389,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.mobileAppCategoryConstantPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.mobileAppCategoryConstantPathTemplate.match =
@@ -6410,7 +6410,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('mobileDeviceConstant', () => {
+        describe('mobileDeviceConstant', async () => {
             const fakePath = "/rendered/path/mobileDeviceConstant";
             const expectedParameters = {
                 criterion_id: "criterionIdValue",
@@ -6419,7 +6419,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.mobileDeviceConstantPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.mobileDeviceConstantPathTemplate.match =
@@ -6440,7 +6440,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('offlineConversionUploadClientSummary', () => {
+        describe('offlineConversionUploadClientSummary', async () => {
             const fakePath = "/rendered/path/offlineConversionUploadClientSummary";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6450,7 +6450,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.offlineConversionUploadClientSummaryPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.offlineConversionUploadClientSummaryPathTemplate.match =
@@ -6478,7 +6478,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('offlineConversionUploadConversionActionSummary', () => {
+        describe('offlineConversionUploadConversionActionSummary', async () => {
             const fakePath = "/rendered/path/offlineConversionUploadConversionActionSummary";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6489,7 +6489,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.offlineConversionUploadConversionActionSummaryPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.offlineConversionUploadConversionActionSummaryPathTemplate.match =
@@ -6524,7 +6524,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('offlineUserDataJob', () => {
+        describe('offlineUserDataJob', async () => {
             const fakePath = "/rendered/path/offlineUserDataJob";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6534,7 +6534,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.offlineUserDataJobPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.offlineUserDataJobPathTemplate.match =
@@ -6562,7 +6562,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('operatingSystemVersionConstant', () => {
+        describe('operatingSystemVersionConstant', async () => {
             const fakePath = "/rendered/path/operatingSystemVersionConstant";
             const expectedParameters = {
                 criterion_id: "criterionIdValue",
@@ -6571,7 +6571,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.operatingSystemVersionConstantPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.operatingSystemVersionConstantPathTemplate.match =
@@ -6592,7 +6592,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('paidOrganicSearchTermView', () => {
+        describe('paidOrganicSearchTermView', async () => {
             const fakePath = "/rendered/path/paidOrganicSearchTermView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6603,7 +6603,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.paidOrganicSearchTermViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.paidOrganicSearchTermViewPathTemplate.match =
@@ -6638,7 +6638,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('parentalStatusView', () => {
+        describe('parentalStatusView', async () => {
             const fakePath = "/rendered/path/parentalStatusView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6649,7 +6649,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.parentalStatusViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.parentalStatusViewPathTemplate.match =
@@ -6684,7 +6684,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('paymentsAccount', () => {
+        describe('paymentsAccount', async () => {
             const fakePath = "/rendered/path/paymentsAccount";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6694,7 +6694,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.paymentsAccountPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.paymentsAccountPathTemplate.match =
@@ -6722,7 +6722,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('perStoreView', () => {
+        describe('perStoreView', async () => {
             const fakePath = "/rendered/path/perStoreView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6732,7 +6732,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.perStoreViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.perStoreViewPathTemplate.match =
@@ -6760,7 +6760,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('performanceMaxPlacementView', () => {
+        describe('performanceMaxPlacementView', async () => {
             const fakePath = "/rendered/path/performanceMaxPlacementView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6769,7 +6769,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.performanceMaxPlacementViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.performanceMaxPlacementViewPathTemplate.match =
@@ -6790,7 +6790,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('productCategoryConstant', () => {
+        describe('productCategoryConstant', async () => {
             const fakePath = "/rendered/path/productCategoryConstant";
             const expectedParameters = {
                 level: "levelValue",
@@ -6800,7 +6800,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.productCategoryConstantPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.productCategoryConstantPathTemplate.match =
@@ -6828,7 +6828,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('productGroupView', () => {
+        describe('productGroupView', async () => {
             const fakePath = "/rendered/path/productGroupView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6839,7 +6839,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.productGroupViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.productGroupViewPathTemplate.match =
@@ -6874,7 +6874,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('productLink', () => {
+        describe('productLink', async () => {
             const fakePath = "/rendered/path/productLink";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6884,7 +6884,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.productLinkPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.productLinkPathTemplate.match =
@@ -6912,7 +6912,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('productLinkInvitation', () => {
+        describe('productLinkInvitation', async () => {
             const fakePath = "/rendered/path/productLinkInvitation";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6922,7 +6922,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.productLinkInvitationPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.productLinkInvitationPathTemplate.match =
@@ -6950,7 +6950,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('qualifyingQuestion', () => {
+        describe('qualifyingQuestion', async () => {
             const fakePath = "/rendered/path/qualifyingQuestion";
             const expectedParameters = {
                 qualifying_question_id: "qualifyingQuestionIdValue",
@@ -6959,7 +6959,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.qualifyingQuestionPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.qualifyingQuestionPathTemplate.match =
@@ -6980,7 +6980,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('recommendation', () => {
+        describe('recommendation', async () => {
             const fakePath = "/rendered/path/recommendation";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -6990,7 +6990,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.recommendationPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.recommendationPathTemplate.match =
@@ -7018,7 +7018,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('recommendationSubscription', () => {
+        describe('recommendationSubscription', async () => {
             const fakePath = "/rendered/path/recommendationSubscription";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7028,7 +7028,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.recommendationSubscriptionPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.recommendationSubscriptionPathTemplate.match =
@@ -7056,7 +7056,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('remarketingAction', () => {
+        describe('remarketingAction', async () => {
             const fakePath = "/rendered/path/remarketingAction";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7066,7 +7066,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.remarketingActionPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.remarketingActionPathTemplate.match =
@@ -7094,7 +7094,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('searchTermView', () => {
+        describe('searchTermView', async () => {
             const fakePath = "/rendered/path/searchTermView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7106,7 +7106,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.searchTermViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.searchTermViewPathTemplate.match =
@@ -7148,7 +7148,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('sharedCriterion', () => {
+        describe('sharedCriterion', async () => {
             const fakePath = "/rendered/path/sharedCriterion";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7159,7 +7159,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.sharedCriterionPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.sharedCriterionPathTemplate.match =
@@ -7194,7 +7194,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('sharedSet', () => {
+        describe('sharedSet', async () => {
             const fakePath = "/rendered/path/sharedSet";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7204,7 +7204,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.sharedSetPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.sharedSetPathTemplate.match =
@@ -7232,7 +7232,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('shoppingPerformanceView', () => {
+        describe('shoppingPerformanceView', async () => {
             const fakePath = "/rendered/path/shoppingPerformanceView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7241,7 +7241,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.shoppingPerformanceViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.shoppingPerformanceViewPathTemplate.match =
@@ -7262,7 +7262,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('shoppingProduct', () => {
+        describe('shoppingProduct', async () => {
             const fakePath = "/rendered/path/shoppingProduct";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7276,7 +7276,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.shoppingProductPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.shoppingProductPathTemplate.match =
@@ -7332,7 +7332,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('smartCampaignSearchTermView', () => {
+        describe('smartCampaignSearchTermView', async () => {
             const fakePath = "/rendered/path/smartCampaignSearchTermView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7343,7 +7343,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.smartCampaignSearchTermViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.smartCampaignSearchTermViewPathTemplate.match =
@@ -7378,7 +7378,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('smartCampaignSetting', () => {
+        describe('smartCampaignSetting', async () => {
             const fakePath = "/rendered/path/smartCampaignSetting";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7388,7 +7388,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.smartCampaignSettingPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.smartCampaignSettingPathTemplate.match =
@@ -7416,7 +7416,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('thirdPartyAppAnalyticsLink', () => {
+        describe('thirdPartyAppAnalyticsLink', async () => {
             const fakePath = "/rendered/path/thirdPartyAppAnalyticsLink";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7426,7 +7426,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.thirdPartyAppAnalyticsLinkPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.thirdPartyAppAnalyticsLinkPathTemplate.match =
@@ -7454,7 +7454,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('topicConstant', () => {
+        describe('topicConstant', async () => {
             const fakePath = "/rendered/path/topicConstant";
             const expectedParameters = {
                 topic_id: "topicIdValue",
@@ -7463,7 +7463,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.topicConstantPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.topicConstantPathTemplate.match =
@@ -7484,7 +7484,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('topicView', () => {
+        describe('topicView', async () => {
             const fakePath = "/rendered/path/topicView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7495,7 +7495,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.topicViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.topicViewPathTemplate.match =
@@ -7530,7 +7530,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('travelActivityGroupView', () => {
+        describe('travelActivityGroupView', async () => {
             const fakePath = "/rendered/path/travelActivityGroupView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7541,7 +7541,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.travelActivityGroupViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.travelActivityGroupViewPathTemplate.match =
@@ -7576,7 +7576,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('travelActivityPerformanceView', () => {
+        describe('travelActivityPerformanceView', async () => {
             const fakePath = "/rendered/path/travelActivityPerformanceView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7585,7 +7585,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.travelActivityPerformanceViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.travelActivityPerformanceViewPathTemplate.match =
@@ -7606,7 +7606,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('userInterest', () => {
+        describe('userInterest', async () => {
             const fakePath = "/rendered/path/userInterest";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7616,7 +7616,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.userInterestPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.userInterestPathTemplate.match =
@@ -7644,7 +7644,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('userList', () => {
+        describe('userList', async () => {
             const fakePath = "/rendered/path/userList";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7654,7 +7654,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.userListPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.userListPathTemplate.match =
@@ -7682,7 +7682,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('userListCustomerType', () => {
+        describe('userListCustomerType', async () => {
             const fakePath = "/rendered/path/userListCustomerType";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7693,7 +7693,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.userListCustomerTypePathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.userListCustomerTypePathTemplate.match =
@@ -7728,7 +7728,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('userLocationView', () => {
+        describe('userLocationView', async () => {
             const fakePath = "/rendered/path/userLocationView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7739,7 +7739,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.userLocationViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.userLocationViewPathTemplate.match =
@@ -7774,7 +7774,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('video', () => {
+        describe('video', async () => {
             const fakePath = "/rendered/path/video";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7784,7 +7784,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.videoPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.videoPathTemplate.match =
@@ -7812,7 +7812,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
             });
         });
 
-        describe('webpageView', () => {
+        describe('webpageView', async () => {
             const fakePath = "/rendered/path/webpageView";
             const expectedParameters = {
                 customer_id: "customerIdValue",
@@ -7823,7 +7823,7 @@ describe('v19.GoogleAdsFieldServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
-            client.initialize();
+            await client.initialize();
             client.pathTemplates.webpageViewPathTemplate.render =
                 sinon.stub().returns(fakePath);
             client.pathTemplates.webpageViewPathTemplate.match =

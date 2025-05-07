@@ -922,7 +922,7 @@ export class AudienceInsightsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('generateInsightsFinderReport request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IGenerateInsightsFinderReportResponse,
@@ -1046,7 +1046,7 @@ export class AudienceInsightsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('listAudienceInsightsAttributes request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IListAudienceInsightsAttributesResponse,
@@ -1137,7 +1137,7 @@ export class AudienceInsightsServiceClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('listInsightsEligibleDates request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IListInsightsEligibleDatesResponse,
@@ -1255,7 +1255,7 @@ export class AudienceInsightsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('generateAudienceCompositionInsights request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IGenerateAudienceCompositionInsightsResponse,
@@ -1363,7 +1363,7 @@ export class AudienceInsightsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('generateSuggestedTargetingInsights request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IGenerateSuggestedTargetingInsightsResponse,
@@ -1477,7 +1477,7 @@ export class AudienceInsightsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('generateAudienceOverlapInsights request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IGenerateAudienceOverlapInsightsResponse,
@@ -1584,7 +1584,7 @@ export class AudienceInsightsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('generateTargetingSuggestionMetrics request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IGenerateTargetingSuggestionMetricsResponse,

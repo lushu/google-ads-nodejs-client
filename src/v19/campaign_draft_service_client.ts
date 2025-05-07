@@ -963,7 +963,7 @@ export class CampaignDraftServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('mutateCampaignDrafts request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IMutateCampaignDraftsResponse,
@@ -1074,7 +1074,7 @@ export class CampaignDraftServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'campaign_draft': request.campaignDraft ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     const wrappedCallback: Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1204,7 +1204,7 @@ export class CampaignDraftServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resourceName ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     const wrappedCallback: PaginationCallback<
       protos.google.ads.googleads.v19.services.IListCampaignDraftAsyncErrorsRequest,
       protos.google.ads.googleads.v19.services.IListCampaignDraftAsyncErrorsResponse|null|undefined,
@@ -1269,7 +1269,7 @@ export class CampaignDraftServiceClient {
     });
     const defaultCallSettings = this._defaults['listCampaignDraftAsyncErrors'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('listCampaignDraftAsyncErrors stream %j', request);
     return this.descriptors.page.listCampaignDraftAsyncErrors.createStream(
       this.innerApiCalls.listCampaignDraftAsyncErrors as GaxCall,
@@ -1323,7 +1323,7 @@ export class CampaignDraftServiceClient {
     });
     const defaultCallSettings = this._defaults['listCampaignDraftAsyncErrors'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('listCampaignDraftAsyncErrors iterate %j', request);
     return this.descriptors.page.listCampaignDraftAsyncErrors.asyncIterate(
       this.innerApiCalls['listCampaignDraftAsyncErrors'] as GaxCall,
@@ -8829,7 +8829,7 @@ export class CampaignDraftServiceClient {
         this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
-        this.operationsClient.close();
+        void this.operationsClient.close();
       });
     }
     return Promise.resolve();

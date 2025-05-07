@@ -943,7 +943,7 @@ export class KeywordPlanIdeaServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('generateKeywordHistoricalMetrics request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IGenerateKeywordHistoricalMetricsResponse,
@@ -1046,7 +1046,7 @@ export class KeywordPlanIdeaServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('generateAdGroupThemes request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IGenerateAdGroupThemesResponse,
@@ -1157,7 +1157,7 @@ export class KeywordPlanIdeaServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('generateKeywordForecastMetrics request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IGenerateKeywordForecastMetricsResponse,
@@ -1303,7 +1303,7 @@ export class KeywordPlanIdeaServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     const wrappedCallback: PaginationCallback<
       protos.google.ads.googleads.v19.services.IGenerateKeywordIdeasRequest,
       protos.google.ads.googleads.v19.services.IGenerateKeywordIdeaResponse|null|undefined,
@@ -1400,7 +1400,7 @@ export class KeywordPlanIdeaServiceClient {
     });
     const defaultCallSettings = this._defaults['generateKeywordIdeas'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('generateKeywordIdeas stream %j', request);
     return this.descriptors.page.generateKeywordIdeas.createStream(
       this.innerApiCalls.generateKeywordIdeas as GaxCall,
@@ -1486,7 +1486,7 @@ export class KeywordPlanIdeaServiceClient {
     });
     const defaultCallSettings = this._defaults['generateKeywordIdeas'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('generateKeywordIdeas iterate %j', request);
     return this.descriptors.page.generateKeywordIdeas.asyncIterate(
       this.innerApiCalls['generateKeywordIdeas'] as GaxCall,

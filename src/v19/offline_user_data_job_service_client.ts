@@ -949,7 +949,7 @@ export class OfflineUserDataJobServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('createOfflineUserDataJob request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.ICreateOfflineUserDataJobResponse,
@@ -1060,7 +1060,7 @@ export class OfflineUserDataJobServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resourceName ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('addOfflineUserDataJobOperations request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IAddOfflineUserDataJobOperationsResponse,
@@ -1167,7 +1167,7 @@ export class OfflineUserDataJobServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resourceName ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     const wrappedCallback: Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v19.resources.IOfflineUserDataJobMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -8703,7 +8703,7 @@ export class OfflineUserDataJobServiceClient {
         this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
-        this.operationsClient.close();
+        void this.operationsClient.close();
       });
     }
     return Promise.resolve();

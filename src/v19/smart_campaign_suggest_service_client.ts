@@ -905,7 +905,7 @@ export class SmartCampaignSuggestServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('suggestSmartCampaignBudgetOptions request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.ISuggestSmartCampaignBudgetOptionsResponse,
@@ -999,7 +999,7 @@ export class SmartCampaignSuggestServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('suggestSmartCampaignAd request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.ISuggestSmartCampaignAdResponse,
@@ -1098,7 +1098,7 @@ export class SmartCampaignSuggestServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('suggestKeywordThemes request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.ISuggestKeywordThemesResponse,

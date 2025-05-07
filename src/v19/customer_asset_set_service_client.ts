@@ -917,7 +917,7 @@ export class CustomerAssetSetServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('mutateCustomerAssetSets request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IMutateCustomerAssetSetsResponse,

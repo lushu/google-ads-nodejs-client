@@ -3471,7 +3471,7 @@ export namespace google {
                         imageAsset?: (google.ads.googleads.v19.common.IAdImageAsset|null);
 
                         /** ImageAdInfo data */
-                        data?: (Uint8Array|string|null);
+                        data?: (Uint8Array|Buffer|string|null);
 
                         /** ImageAdInfo adIdToCopyImageFrom */
                         adIdToCopyImageFrom?: (number|Long|string|null);
@@ -3514,7 +3514,7 @@ export namespace google {
                         public imageAsset?: (google.ads.googleads.v19.common.IAdImageAsset|null);
 
                         /** ImageAdInfo data. */
-                        public data?: (Uint8Array|string|null);
+                        public data?: (Uint8Array|Buffer|string|null);
 
                         /** ImageAdInfo adIdToCopyImageFrom. */
                         public adIdToCopyImageFrom?: (number|Long|string|null);
@@ -4145,6 +4145,97 @@ export namespace google {
                         public static getTypeUrl(typeUrlPrefix?: string): string;
                     }
 
+                    /** Properties of a YouTubeAudioAdInfo. */
+                    interface IYouTubeAudioAdInfo {
+                    }
+
+                    /** Represents a YouTubeAudioAdInfo. */
+                    class YouTubeAudioAdInfo implements IYouTubeAudioAdInfo {
+
+                        /**
+                         * Constructs a new YouTubeAudioAdInfo.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.common.IYouTubeAudioAdInfo);
+
+                        /**
+                         * Creates a new YouTubeAudioAdInfo instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns YouTubeAudioAdInfo instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.common.IYouTubeAudioAdInfo): google.ads.googleads.v19.common.YouTubeAudioAdInfo;
+
+                        /**
+                         * Encodes the specified YouTubeAudioAdInfo message. Does not implicitly {@link google.ads.googleads.v19.common.YouTubeAudioAdInfo.verify|verify} messages.
+                         * @param message YouTubeAudioAdInfo message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.common.IYouTubeAudioAdInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified YouTubeAudioAdInfo message, length delimited. Does not implicitly {@link google.ads.googleads.v19.common.YouTubeAudioAdInfo.verify|verify} messages.
+                         * @param message YouTubeAudioAdInfo message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.common.IYouTubeAudioAdInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a YouTubeAudioAdInfo message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns YouTubeAudioAdInfo
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.common.YouTubeAudioAdInfo;
+
+                        /**
+                         * Decodes a YouTubeAudioAdInfo message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns YouTubeAudioAdInfo
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.common.YouTubeAudioAdInfo;
+
+                        /**
+                         * Verifies a YouTubeAudioAdInfo message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a YouTubeAudioAdInfo message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns YouTubeAudioAdInfo
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.common.YouTubeAudioAdInfo;
+
+                        /**
+                         * Creates a plain object from a YouTubeAudioAdInfo message. Also converts values to other types if specified.
+                         * @param message YouTubeAudioAdInfo
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.common.YouTubeAudioAdInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this YouTubeAudioAdInfo to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for YouTubeAudioAdInfo
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
                     /** Properties of a VideoAdInfo. */
                     interface IVideoAdInfo {
 
@@ -4165,6 +4256,9 @@ export namespace google {
 
                         /** VideoAdInfo inFeed */
                         inFeed?: (google.ads.googleads.v19.common.IInFeedVideoAdInfo|null);
+
+                        /** VideoAdInfo audio */
+                        audio?: (google.ads.googleads.v19.common.IYouTubeAudioAdInfo|null);
                     }
 
                     /** Represents a VideoAdInfo. */
@@ -4194,8 +4288,11 @@ export namespace google {
                         /** VideoAdInfo inFeed. */
                         public inFeed?: (google.ads.googleads.v19.common.IInFeedVideoAdInfo|null);
 
+                        /** VideoAdInfo audio. */
+                        public audio?: (google.ads.googleads.v19.common.IYouTubeAudioAdInfo|null);
+
                         /** VideoAdInfo format. */
-                        public format?: ("inStream"|"bumper"|"outStream"|"nonSkippable"|"inFeed");
+                        public format?: ("inStream"|"bumper"|"outStream"|"nonSkippable"|"inFeed"|"audio");
 
                         /**
                          * Creates a new VideoAdInfo instance using the specified properties.
@@ -7727,7 +7824,7 @@ export namespace google {
                     interface IMediaBundleAsset {
 
                         /** MediaBundleAsset data */
-                        data?: (Uint8Array|string|null);
+                        data?: (Uint8Array|Buffer|string|null);
                     }
 
                     /** Represents a MediaBundleAsset. */
@@ -7740,7 +7837,7 @@ export namespace google {
                         constructor(properties?: google.ads.googleads.v19.common.IMediaBundleAsset);
 
                         /** MediaBundleAsset data. */
-                        public data?: (Uint8Array|string|null);
+                        public data?: (Uint8Array|Buffer|string|null);
 
                         /**
                          * Creates a new MediaBundleAsset instance using the specified properties.
@@ -7824,7 +7921,7 @@ export namespace google {
                     interface IImageAsset {
 
                         /** ImageAsset data */
-                        data?: (Uint8Array|string|null);
+                        data?: (Uint8Array|Buffer|string|null);
 
                         /** ImageAsset fileSize */
                         fileSize?: (number|Long|string|null);
@@ -7846,7 +7943,7 @@ export namespace google {
                         constructor(properties?: google.ads.googleads.v19.common.IImageAsset);
 
                         /** ImageAsset data. */
-                        public data?: (Uint8Array|string|null);
+                        public data?: (Uint8Array|Buffer|string|null);
 
                         /** ImageAsset fileSize. */
                         public fileSize?: (number|Long|string|null);
@@ -28284,6 +28381,9 @@ export namespace google {
                         /** Metrics biddableAppPostInstallConversions */
                         biddableAppPostInstallConversions?: (number|null);
 
+                        /** Metrics biddableCohortAppPostInstallConversions */
+                        biddableCohortAppPostInstallConversions?: (number|null);
+
                         /** Metrics benchmarkCtr */
                         benchmarkCtr?: (number|null);
 
@@ -28778,6 +28878,12 @@ export namespace google {
 
                         /** Metrics videoViewRateShorts */
                         videoViewRateShorts?: (number|null);
+
+                        /** Metrics coviewedImpressions */
+                        coviewedImpressions?: (number|Long|string|null);
+
+                        /** Metrics primaryImpressions */
+                        primaryImpressions?: (number|Long|string|null);
                     }
 
                     /** Represents a Metrics. */
@@ -28905,6 +29011,9 @@ export namespace google {
 
                         /** Metrics biddableAppPostInstallConversions. */
                         public biddableAppPostInstallConversions?: (number|null);
+
+                        /** Metrics biddableCohortAppPostInstallConversions. */
+                        public biddableCohortAppPostInstallConversions?: (number|null);
 
                         /** Metrics benchmarkCtr. */
                         public benchmarkCtr?: (number|null);
@@ -29400,6 +29509,12 @@ export namespace google {
 
                         /** Metrics videoViewRateShorts. */
                         public videoViewRateShorts?: (number|null);
+
+                        /** Metrics coviewedImpressions. */
+                        public coviewedImpressions?: (number|Long|string|null);
+
+                        /** Metrics primaryImpressions. */
+                        public primaryImpressions?: (number|Long|string|null);
 
                         /**
                          * Creates a new Metrics instance using the specified properties.
@@ -31657,6 +31772,12 @@ export namespace google {
 
                         /** Segments newVersusReturningCustomers */
                         newVersusReturningCustomers?: (google.ads.googleads.v19.enums.ConvertingUserPriorEngagementTypeAndLtvBucketEnum.ConvertingUserPriorEngagementTypeAndLtvBucket|keyof typeof google.ads.googleads.v19.enums.ConvertingUserPriorEngagementTypeAndLtvBucketEnum.ConvertingUserPriorEngagementTypeAndLtvBucket|null);
+
+                        /** Segments adjustedAgeRange */
+                        adjustedAgeRange?: (google.ads.googleads.v19.enums.AgeRangeTypeEnum.AgeRangeType|keyof typeof google.ads.googleads.v19.enums.AgeRangeTypeEnum.AgeRangeType|null);
+
+                        /** Segments adjustedGender */
+                        adjustedGender?: (google.ads.googleads.v19.enums.GenderTypeEnum.GenderType|keyof typeof google.ads.googleads.v19.enums.GenderTypeEnum.GenderType|null);
                     }
 
                     /** Represents a Segments. */
@@ -32000,6 +32121,12 @@ export namespace google {
 
                         /** Segments newVersusReturningCustomers. */
                         public newVersusReturningCustomers: (google.ads.googleads.v19.enums.ConvertingUserPriorEngagementTypeAndLtvBucketEnum.ConvertingUserPriorEngagementTypeAndLtvBucket|keyof typeof google.ads.googleads.v19.enums.ConvertingUserPriorEngagementTypeAndLtvBucketEnum.ConvertingUserPriorEngagementTypeAndLtvBucket);
+
+                        /** Segments adjustedAgeRange. */
+                        public adjustedAgeRange: (google.ads.googleads.v19.enums.AgeRangeTypeEnum.AgeRangeType|keyof typeof google.ads.googleads.v19.enums.AgeRangeTypeEnum.AgeRangeType);
+
+                        /** Segments adjustedGender. */
+                        public adjustedGender: (google.ads.googleads.v19.enums.GenderTypeEnum.GenderType|keyof typeof google.ads.googleads.v19.enums.GenderTypeEnum.GenderType);
 
                         /**
                          * Creates a new Segments instance using the specified properties.
@@ -43473,7 +43600,8 @@ export namespace google {
                         enum TargetFrequencyTimeUnit {
                             UNSPECIFIED = 0,
                             UNKNOWN = 1,
-                            WEEKLY = 2
+                            WEEKLY = 2,
+                            MONTHLY = 3
                         }
                     }
 
@@ -43796,7 +43924,8 @@ export namespace google {
                             VIDEO_SEQUENCE = 17,
                             APP_CAMPAIGN_FOR_PRE_REGISTRATION = 18,
                             VIDEO_REACH_TARGET_FREQUENCY = 19,
-                            TRAVEL_ACTIVITIES = 20
+                            TRAVEL_ACTIVITIES = 20,
+                            YOUTUBE_AUDIO = 22
                         }
                     }
 
@@ -51555,7 +51684,8 @@ export namespace google {
                             VIDEO_RESPONSIVE = 16,
                             VIDEO_EFFICIENT_REACH = 17,
                             SMART_CAMPAIGN_ADS = 18,
-                            TRAVEL_ADS = 19
+                            TRAVEL_ADS = 19,
+                            YOUTUBE_AUDIO = 20
                         }
                     }
 
@@ -51770,6 +51900,107 @@ export namespace google {
                         }
                     }
 
+                    /** Properties of an AdStrengthActionItemTypeEnum. */
+                    interface IAdStrengthActionItemTypeEnum {
+                    }
+
+                    /** Represents an AdStrengthActionItemTypeEnum. */
+                    class AdStrengthActionItemTypeEnum implements IAdStrengthActionItemTypeEnum {
+
+                        /**
+                         * Constructs a new AdStrengthActionItemTypeEnum.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.enums.IAdStrengthActionItemTypeEnum);
+
+                        /**
+                         * Creates a new AdStrengthActionItemTypeEnum instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns AdStrengthActionItemTypeEnum instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.enums.IAdStrengthActionItemTypeEnum): google.ads.googleads.v19.enums.AdStrengthActionItemTypeEnum;
+
+                        /**
+                         * Encodes the specified AdStrengthActionItemTypeEnum message. Does not implicitly {@link google.ads.googleads.v19.enums.AdStrengthActionItemTypeEnum.verify|verify} messages.
+                         * @param message AdStrengthActionItemTypeEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.enums.IAdStrengthActionItemTypeEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified AdStrengthActionItemTypeEnum message, length delimited. Does not implicitly {@link google.ads.googleads.v19.enums.AdStrengthActionItemTypeEnum.verify|verify} messages.
+                         * @param message AdStrengthActionItemTypeEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.enums.IAdStrengthActionItemTypeEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes an AdStrengthActionItemTypeEnum message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns AdStrengthActionItemTypeEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.enums.AdStrengthActionItemTypeEnum;
+
+                        /**
+                         * Decodes an AdStrengthActionItemTypeEnum message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns AdStrengthActionItemTypeEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.enums.AdStrengthActionItemTypeEnum;
+
+                        /**
+                         * Verifies an AdStrengthActionItemTypeEnum message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates an AdStrengthActionItemTypeEnum message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns AdStrengthActionItemTypeEnum
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.enums.AdStrengthActionItemTypeEnum;
+
+                        /**
+                         * Creates a plain object from an AdStrengthActionItemTypeEnum message. Also converts values to other types if specified.
+                         * @param message AdStrengthActionItemTypeEnum
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.enums.AdStrengthActionItemTypeEnum, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this AdStrengthActionItemTypeEnum to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for AdStrengthActionItemTypeEnum
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    namespace AdStrengthActionItemTypeEnum {
+
+                        /** AdStrengthActionItemType enum. */
+                        enum AdStrengthActionItemType {
+                            UNSPECIFIED = 0,
+                            UNKNOWN = 1,
+                            ADD_ASSET = 2
+                        }
+                    }
+
                     /** Properties of an AdTypeEnum. */
                     interface IAdTypeEnum {
                     }
@@ -51897,7 +52128,8 @@ export namespace google {
                             DEMAND_GEN_CAROUSEL_AD = 41,
                             TRAVEL_AD = 37,
                             DEMAND_GEN_VIDEO_RESPONSIVE_AD = 42,
-                            DEMAND_GEN_PRODUCT_AD = 39
+                            DEMAND_GEN_PRODUCT_AD = 39,
+                            YOUTUBE_AUDIO_AD = 44
                         }
                     }
 
@@ -52629,6 +52861,109 @@ export namespace google {
                         }
                     }
 
+                    /** Properties of an AssetCoverageVideoAspectRatioRequirementEnum. */
+                    interface IAssetCoverageVideoAspectRatioRequirementEnum {
+                    }
+
+                    /** Represents an AssetCoverageVideoAspectRatioRequirementEnum. */
+                    class AssetCoverageVideoAspectRatioRequirementEnum implements IAssetCoverageVideoAspectRatioRequirementEnum {
+
+                        /**
+                         * Constructs a new AssetCoverageVideoAspectRatioRequirementEnum.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.enums.IAssetCoverageVideoAspectRatioRequirementEnum);
+
+                        /**
+                         * Creates a new AssetCoverageVideoAspectRatioRequirementEnum instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns AssetCoverageVideoAspectRatioRequirementEnum instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.enums.IAssetCoverageVideoAspectRatioRequirementEnum): google.ads.googleads.v19.enums.AssetCoverageVideoAspectRatioRequirementEnum;
+
+                        /**
+                         * Encodes the specified AssetCoverageVideoAspectRatioRequirementEnum message. Does not implicitly {@link google.ads.googleads.v19.enums.AssetCoverageVideoAspectRatioRequirementEnum.verify|verify} messages.
+                         * @param message AssetCoverageVideoAspectRatioRequirementEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.enums.IAssetCoverageVideoAspectRatioRequirementEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified AssetCoverageVideoAspectRatioRequirementEnum message, length delimited. Does not implicitly {@link google.ads.googleads.v19.enums.AssetCoverageVideoAspectRatioRequirementEnum.verify|verify} messages.
+                         * @param message AssetCoverageVideoAspectRatioRequirementEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.enums.IAssetCoverageVideoAspectRatioRequirementEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes an AssetCoverageVideoAspectRatioRequirementEnum message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns AssetCoverageVideoAspectRatioRequirementEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.enums.AssetCoverageVideoAspectRatioRequirementEnum;
+
+                        /**
+                         * Decodes an AssetCoverageVideoAspectRatioRequirementEnum message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns AssetCoverageVideoAspectRatioRequirementEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.enums.AssetCoverageVideoAspectRatioRequirementEnum;
+
+                        /**
+                         * Verifies an AssetCoverageVideoAspectRatioRequirementEnum message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates an AssetCoverageVideoAspectRatioRequirementEnum message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns AssetCoverageVideoAspectRatioRequirementEnum
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.enums.AssetCoverageVideoAspectRatioRequirementEnum;
+
+                        /**
+                         * Creates a plain object from an AssetCoverageVideoAspectRatioRequirementEnum message. Also converts values to other types if specified.
+                         * @param message AssetCoverageVideoAspectRatioRequirementEnum
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.enums.AssetCoverageVideoAspectRatioRequirementEnum, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this AssetCoverageVideoAspectRatioRequirementEnum to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for AssetCoverageVideoAspectRatioRequirementEnum
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    namespace AssetCoverageVideoAspectRatioRequirementEnum {
+
+                        /** AssetCoverageVideoAspectRatioRequirement enum. */
+                        enum AssetCoverageVideoAspectRatioRequirement {
+                            UNSPECIFIED = 0,
+                            UNKNOWN = 1,
+                            HORIZONTAL = 2,
+                            SQUARE = 3,
+                            VERTICAL = 4
+                        }
+                    }
+
                     /** Properties of an AssetFieldTypeEnum. */
                     interface IAssetFieldTypeEnum {
                     }
@@ -52754,7 +53089,8 @@ export namespace google {
                             BUSINESS_LOGO = 27,
                             HOTEL_PROPERTY = 28,
                             DEMAND_GEN_CAROUSEL_CARD = 30,
-                            BUSINESS_MESSAGE = 31
+                            BUSINESS_MESSAGE = 31,
+                            TALL_PORTRAIT_MARKETING_IMAGE = 32
                         }
                     }
 
@@ -57436,6 +57772,7 @@ export namespace google {
                             AD_GROUP_CRITERION = 5,
                             CAMPAIGN = 6,
                             CAMPAIGN_CRITERION = 7,
+                            CAMPAIGN_BUDGET = 8,
                             FEED = 9,
                             FEED_ITEM = 10,
                             AD_GROUP_FEED = 11,
@@ -57448,7 +57785,9 @@ export namespace google {
                             CAMPAIGN_ASSET = 18,
                             AD_GROUP_ASSET = 19,
                             COMBINED_AUDIENCE = 20,
-                            ASSET_GROUP = 21
+                            ASSET_GROUP = 21,
+                            ASSET_SET = 22,
+                            CAMPAIGN_ASSET_SET = 23
                         }
                     }
 
@@ -58102,6 +58441,108 @@ export namespace google {
                             ACTIVATION_NEEDED = 2,
                             ENABLED = 3,
                             PAUSED = 4
+                        }
+                    }
+
+                    /** Properties of a ConversionCustomerTypeEnum. */
+                    interface IConversionCustomerTypeEnum {
+                    }
+
+                    /** Represents a ConversionCustomerTypeEnum. */
+                    class ConversionCustomerTypeEnum implements IConversionCustomerTypeEnum {
+
+                        /**
+                         * Constructs a new ConversionCustomerTypeEnum.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.enums.IConversionCustomerTypeEnum);
+
+                        /**
+                         * Creates a new ConversionCustomerTypeEnum instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns ConversionCustomerTypeEnum instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.enums.IConversionCustomerTypeEnum): google.ads.googleads.v19.enums.ConversionCustomerTypeEnum;
+
+                        /**
+                         * Encodes the specified ConversionCustomerTypeEnum message. Does not implicitly {@link google.ads.googleads.v19.enums.ConversionCustomerTypeEnum.verify|verify} messages.
+                         * @param message ConversionCustomerTypeEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.enums.IConversionCustomerTypeEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified ConversionCustomerTypeEnum message, length delimited. Does not implicitly {@link google.ads.googleads.v19.enums.ConversionCustomerTypeEnum.verify|verify} messages.
+                         * @param message ConversionCustomerTypeEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.enums.IConversionCustomerTypeEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a ConversionCustomerTypeEnum message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns ConversionCustomerTypeEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.enums.ConversionCustomerTypeEnum;
+
+                        /**
+                         * Decodes a ConversionCustomerTypeEnum message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns ConversionCustomerTypeEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.enums.ConversionCustomerTypeEnum;
+
+                        /**
+                         * Verifies a ConversionCustomerTypeEnum message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a ConversionCustomerTypeEnum message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns ConversionCustomerTypeEnum
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.enums.ConversionCustomerTypeEnum;
+
+                        /**
+                         * Creates a plain object from a ConversionCustomerTypeEnum message. Also converts values to other types if specified.
+                         * @param message ConversionCustomerTypeEnum
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.enums.ConversionCustomerTypeEnum, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this ConversionCustomerTypeEnum to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for ConversionCustomerTypeEnum
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    namespace ConversionCustomerTypeEnum {
+
+                        /** ConversionCustomerType enum. */
+                        enum ConversionCustomerType {
+                            UNSPECIFIED = 0,
+                            UNKNOWN = 1,
+                            NEW = 2,
+                            RETURNING = 3
                         }
                     }
 
@@ -60409,6 +60850,210 @@ export namespace google {
                             UNSPECIFIED = 0,
                             UNKNOWN = 1,
                             VIDEO = 2
+                        }
+                    }
+
+                    /** Properties of a DemandGenChannelConfigEnum. */
+                    interface IDemandGenChannelConfigEnum {
+                    }
+
+                    /** Represents a DemandGenChannelConfigEnum. */
+                    class DemandGenChannelConfigEnum implements IDemandGenChannelConfigEnum {
+
+                        /**
+                         * Constructs a new DemandGenChannelConfigEnum.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.enums.IDemandGenChannelConfigEnum);
+
+                        /**
+                         * Creates a new DemandGenChannelConfigEnum instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns DemandGenChannelConfigEnum instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.enums.IDemandGenChannelConfigEnum): google.ads.googleads.v19.enums.DemandGenChannelConfigEnum;
+
+                        /**
+                         * Encodes the specified DemandGenChannelConfigEnum message. Does not implicitly {@link google.ads.googleads.v19.enums.DemandGenChannelConfigEnum.verify|verify} messages.
+                         * @param message DemandGenChannelConfigEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.enums.IDemandGenChannelConfigEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified DemandGenChannelConfigEnum message, length delimited. Does not implicitly {@link google.ads.googleads.v19.enums.DemandGenChannelConfigEnum.verify|verify} messages.
+                         * @param message DemandGenChannelConfigEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.enums.IDemandGenChannelConfigEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a DemandGenChannelConfigEnum message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns DemandGenChannelConfigEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.enums.DemandGenChannelConfigEnum;
+
+                        /**
+                         * Decodes a DemandGenChannelConfigEnum message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns DemandGenChannelConfigEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.enums.DemandGenChannelConfigEnum;
+
+                        /**
+                         * Verifies a DemandGenChannelConfigEnum message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a DemandGenChannelConfigEnum message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns DemandGenChannelConfigEnum
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.enums.DemandGenChannelConfigEnum;
+
+                        /**
+                         * Creates a plain object from a DemandGenChannelConfigEnum message. Also converts values to other types if specified.
+                         * @param message DemandGenChannelConfigEnum
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.enums.DemandGenChannelConfigEnum, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this DemandGenChannelConfigEnum to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for DemandGenChannelConfigEnum
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    namespace DemandGenChannelConfigEnum {
+
+                        /** DemandGenChannelConfig enum. */
+                        enum DemandGenChannelConfig {
+                            UNSPECIFIED = 0,
+                            UNKNOWN = 1,
+                            CHANNEL_STRATEGY = 2,
+                            SELECTED_CHANNELS = 3
+                        }
+                    }
+
+                    /** Properties of a DemandGenChannelStrategyEnum. */
+                    interface IDemandGenChannelStrategyEnum {
+                    }
+
+                    /** Represents a DemandGenChannelStrategyEnum. */
+                    class DemandGenChannelStrategyEnum implements IDemandGenChannelStrategyEnum {
+
+                        /**
+                         * Constructs a new DemandGenChannelStrategyEnum.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.enums.IDemandGenChannelStrategyEnum);
+
+                        /**
+                         * Creates a new DemandGenChannelStrategyEnum instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns DemandGenChannelStrategyEnum instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.enums.IDemandGenChannelStrategyEnum): google.ads.googleads.v19.enums.DemandGenChannelStrategyEnum;
+
+                        /**
+                         * Encodes the specified DemandGenChannelStrategyEnum message. Does not implicitly {@link google.ads.googleads.v19.enums.DemandGenChannelStrategyEnum.verify|verify} messages.
+                         * @param message DemandGenChannelStrategyEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.enums.IDemandGenChannelStrategyEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified DemandGenChannelStrategyEnum message, length delimited. Does not implicitly {@link google.ads.googleads.v19.enums.DemandGenChannelStrategyEnum.verify|verify} messages.
+                         * @param message DemandGenChannelStrategyEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.enums.IDemandGenChannelStrategyEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a DemandGenChannelStrategyEnum message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns DemandGenChannelStrategyEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.enums.DemandGenChannelStrategyEnum;
+
+                        /**
+                         * Decodes a DemandGenChannelStrategyEnum message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns DemandGenChannelStrategyEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.enums.DemandGenChannelStrategyEnum;
+
+                        /**
+                         * Verifies a DemandGenChannelStrategyEnum message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a DemandGenChannelStrategyEnum message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns DemandGenChannelStrategyEnum
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.enums.DemandGenChannelStrategyEnum;
+
+                        /**
+                         * Creates a plain object from a DemandGenChannelStrategyEnum message. Also converts values to other types if specified.
+                         * @param message DemandGenChannelStrategyEnum
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.enums.DemandGenChannelStrategyEnum, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this DemandGenChannelStrategyEnum to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for DemandGenChannelStrategyEnum
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    namespace DemandGenChannelStrategyEnum {
+
+                        /** DemandGenChannelStrategy enum. */
+                        enum DemandGenChannelStrategy {
+                            UNSPECIFIED = 0,
+                            UNKNOWN = 1,
+                            ALL_CHANNELS = 2,
+                            ALL_OWNED_AND_OPERATED_CHANNELS = 3
                         }
                     }
 
@@ -64073,6 +64718,110 @@ export namespace google {
                         }
                     }
 
+                    /** Properties of a LocalServicesLeadCreditIssuanceDecisionEnum. */
+                    interface ILocalServicesLeadCreditIssuanceDecisionEnum {
+                    }
+
+                    /** Represents a LocalServicesLeadCreditIssuanceDecisionEnum. */
+                    class LocalServicesLeadCreditIssuanceDecisionEnum implements ILocalServicesLeadCreditIssuanceDecisionEnum {
+
+                        /**
+                         * Constructs a new LocalServicesLeadCreditIssuanceDecisionEnum.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.enums.ILocalServicesLeadCreditIssuanceDecisionEnum);
+
+                        /**
+                         * Creates a new LocalServicesLeadCreditIssuanceDecisionEnum instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns LocalServicesLeadCreditIssuanceDecisionEnum instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.enums.ILocalServicesLeadCreditIssuanceDecisionEnum): google.ads.googleads.v19.enums.LocalServicesLeadCreditIssuanceDecisionEnum;
+
+                        /**
+                         * Encodes the specified LocalServicesLeadCreditIssuanceDecisionEnum message. Does not implicitly {@link google.ads.googleads.v19.enums.LocalServicesLeadCreditIssuanceDecisionEnum.verify|verify} messages.
+                         * @param message LocalServicesLeadCreditIssuanceDecisionEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.enums.ILocalServicesLeadCreditIssuanceDecisionEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified LocalServicesLeadCreditIssuanceDecisionEnum message, length delimited. Does not implicitly {@link google.ads.googleads.v19.enums.LocalServicesLeadCreditIssuanceDecisionEnum.verify|verify} messages.
+                         * @param message LocalServicesLeadCreditIssuanceDecisionEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.enums.ILocalServicesLeadCreditIssuanceDecisionEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a LocalServicesLeadCreditIssuanceDecisionEnum message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns LocalServicesLeadCreditIssuanceDecisionEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.enums.LocalServicesLeadCreditIssuanceDecisionEnum;
+
+                        /**
+                         * Decodes a LocalServicesLeadCreditIssuanceDecisionEnum message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns LocalServicesLeadCreditIssuanceDecisionEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.enums.LocalServicesLeadCreditIssuanceDecisionEnum;
+
+                        /**
+                         * Verifies a LocalServicesLeadCreditIssuanceDecisionEnum message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a LocalServicesLeadCreditIssuanceDecisionEnum message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns LocalServicesLeadCreditIssuanceDecisionEnum
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.enums.LocalServicesLeadCreditIssuanceDecisionEnum;
+
+                        /**
+                         * Creates a plain object from a LocalServicesLeadCreditIssuanceDecisionEnum message. Also converts values to other types if specified.
+                         * @param message LocalServicesLeadCreditIssuanceDecisionEnum
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.enums.LocalServicesLeadCreditIssuanceDecisionEnum, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this LocalServicesLeadCreditIssuanceDecisionEnum to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for LocalServicesLeadCreditIssuanceDecisionEnum
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    namespace LocalServicesLeadCreditIssuanceDecisionEnum {
+
+                        /** CreditIssuanceDecision enum. */
+                        enum CreditIssuanceDecision {
+                            UNSPECIFIED = 0,
+                            UNKNOWN = 1,
+                            SUCCESS_NOT_REACHED_THRESHOLD = 2,
+                            SUCCESS_REACHED_THRESHOLD = 3,
+                            FAIL_OVER_THRESHOLD = 4,
+                            FAIL_NOT_ELIGIBLE = 5
+                        }
+                    }
+
                     /** Properties of a LocalServicesCreditStateEnum. */
                     interface ILocalServicesCreditStateEnum {
                     }
@@ -64280,6 +65029,323 @@ export namespace google {
                             DISABLED = 7,
                             CONSUMER_DECLINED = 8,
                             WIPED_OUT = 9
+                        }
+                    }
+
+                    /** Properties of a LocalServicesLeadSurveyAnswerEnum. */
+                    interface ILocalServicesLeadSurveyAnswerEnum {
+                    }
+
+                    /** Represents a LocalServicesLeadSurveyAnswerEnum. */
+                    class LocalServicesLeadSurveyAnswerEnum implements ILocalServicesLeadSurveyAnswerEnum {
+
+                        /**
+                         * Constructs a new LocalServicesLeadSurveyAnswerEnum.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.enums.ILocalServicesLeadSurveyAnswerEnum);
+
+                        /**
+                         * Creates a new LocalServicesLeadSurveyAnswerEnum instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns LocalServicesLeadSurveyAnswerEnum instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.enums.ILocalServicesLeadSurveyAnswerEnum): google.ads.googleads.v19.enums.LocalServicesLeadSurveyAnswerEnum;
+
+                        /**
+                         * Encodes the specified LocalServicesLeadSurveyAnswerEnum message. Does not implicitly {@link google.ads.googleads.v19.enums.LocalServicesLeadSurveyAnswerEnum.verify|verify} messages.
+                         * @param message LocalServicesLeadSurveyAnswerEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.enums.ILocalServicesLeadSurveyAnswerEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified LocalServicesLeadSurveyAnswerEnum message, length delimited. Does not implicitly {@link google.ads.googleads.v19.enums.LocalServicesLeadSurveyAnswerEnum.verify|verify} messages.
+                         * @param message LocalServicesLeadSurveyAnswerEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.enums.ILocalServicesLeadSurveyAnswerEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a LocalServicesLeadSurveyAnswerEnum message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns LocalServicesLeadSurveyAnswerEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.enums.LocalServicesLeadSurveyAnswerEnum;
+
+                        /**
+                         * Decodes a LocalServicesLeadSurveyAnswerEnum message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns LocalServicesLeadSurveyAnswerEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.enums.LocalServicesLeadSurveyAnswerEnum;
+
+                        /**
+                         * Verifies a LocalServicesLeadSurveyAnswerEnum message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a LocalServicesLeadSurveyAnswerEnum message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns LocalServicesLeadSurveyAnswerEnum
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.enums.LocalServicesLeadSurveyAnswerEnum;
+
+                        /**
+                         * Creates a plain object from a LocalServicesLeadSurveyAnswerEnum message. Also converts values to other types if specified.
+                         * @param message LocalServicesLeadSurveyAnswerEnum
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.enums.LocalServicesLeadSurveyAnswerEnum, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this LocalServicesLeadSurveyAnswerEnum to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for LocalServicesLeadSurveyAnswerEnum
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    namespace LocalServicesLeadSurveyAnswerEnum {
+
+                        /** SurveyAnswer enum. */
+                        enum SurveyAnswer {
+                            UNSPECIFIED = 0,
+                            UNKNOWN = 1,
+                            VERY_SATISFIED = 2,
+                            SATISFIED = 3,
+                            NEUTRAL = 4,
+                            DISSATISFIED = 5,
+                            VERY_DISSATISFIED = 6
+                        }
+                    }
+
+                    /** Properties of a LocalServicesLeadSurveyDissatisfiedReasonEnum. */
+                    interface ILocalServicesLeadSurveyDissatisfiedReasonEnum {
+                    }
+
+                    /** Represents a LocalServicesLeadSurveyDissatisfiedReasonEnum. */
+                    class LocalServicesLeadSurveyDissatisfiedReasonEnum implements ILocalServicesLeadSurveyDissatisfiedReasonEnum {
+
+                        /**
+                         * Constructs a new LocalServicesLeadSurveyDissatisfiedReasonEnum.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.enums.ILocalServicesLeadSurveyDissatisfiedReasonEnum);
+
+                        /**
+                         * Creates a new LocalServicesLeadSurveyDissatisfiedReasonEnum instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns LocalServicesLeadSurveyDissatisfiedReasonEnum instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.enums.ILocalServicesLeadSurveyDissatisfiedReasonEnum): google.ads.googleads.v19.enums.LocalServicesLeadSurveyDissatisfiedReasonEnum;
+
+                        /**
+                         * Encodes the specified LocalServicesLeadSurveyDissatisfiedReasonEnum message. Does not implicitly {@link google.ads.googleads.v19.enums.LocalServicesLeadSurveyDissatisfiedReasonEnum.verify|verify} messages.
+                         * @param message LocalServicesLeadSurveyDissatisfiedReasonEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.enums.ILocalServicesLeadSurveyDissatisfiedReasonEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified LocalServicesLeadSurveyDissatisfiedReasonEnum message, length delimited. Does not implicitly {@link google.ads.googleads.v19.enums.LocalServicesLeadSurveyDissatisfiedReasonEnum.verify|verify} messages.
+                         * @param message LocalServicesLeadSurveyDissatisfiedReasonEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.enums.ILocalServicesLeadSurveyDissatisfiedReasonEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a LocalServicesLeadSurveyDissatisfiedReasonEnum message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns LocalServicesLeadSurveyDissatisfiedReasonEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.enums.LocalServicesLeadSurveyDissatisfiedReasonEnum;
+
+                        /**
+                         * Decodes a LocalServicesLeadSurveyDissatisfiedReasonEnum message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns LocalServicesLeadSurveyDissatisfiedReasonEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.enums.LocalServicesLeadSurveyDissatisfiedReasonEnum;
+
+                        /**
+                         * Verifies a LocalServicesLeadSurveyDissatisfiedReasonEnum message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a LocalServicesLeadSurveyDissatisfiedReasonEnum message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns LocalServicesLeadSurveyDissatisfiedReasonEnum
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.enums.LocalServicesLeadSurveyDissatisfiedReasonEnum;
+
+                        /**
+                         * Creates a plain object from a LocalServicesLeadSurveyDissatisfiedReasonEnum message. Also converts values to other types if specified.
+                         * @param message LocalServicesLeadSurveyDissatisfiedReasonEnum
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.enums.LocalServicesLeadSurveyDissatisfiedReasonEnum, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this LocalServicesLeadSurveyDissatisfiedReasonEnum to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for LocalServicesLeadSurveyDissatisfiedReasonEnum
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    namespace LocalServicesLeadSurveyDissatisfiedReasonEnum {
+
+                        /** SurveyDissatisfiedReason enum. */
+                        enum SurveyDissatisfiedReason {
+                            UNSPECIFIED = 0,
+                            UNKNOWN = 1,
+                            OTHER_DISSATISFIED_REASON = 2,
+                            GEO_MISMATCH = 3,
+                            JOB_TYPE_MISMATCH = 4,
+                            NOT_READY_TO_BOOK = 5,
+                            SPAM = 6,
+                            DUPLICATE = 7,
+                            SOLICITATION = 8
+                        }
+                    }
+
+                    /** Properties of a LocalServicesLeadSurveySatisfiedReasonEnum. */
+                    interface ILocalServicesLeadSurveySatisfiedReasonEnum {
+                    }
+
+                    /** Represents a LocalServicesLeadSurveySatisfiedReasonEnum. */
+                    class LocalServicesLeadSurveySatisfiedReasonEnum implements ILocalServicesLeadSurveySatisfiedReasonEnum {
+
+                        /**
+                         * Constructs a new LocalServicesLeadSurveySatisfiedReasonEnum.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.enums.ILocalServicesLeadSurveySatisfiedReasonEnum);
+
+                        /**
+                         * Creates a new LocalServicesLeadSurveySatisfiedReasonEnum instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns LocalServicesLeadSurveySatisfiedReasonEnum instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.enums.ILocalServicesLeadSurveySatisfiedReasonEnum): google.ads.googleads.v19.enums.LocalServicesLeadSurveySatisfiedReasonEnum;
+
+                        /**
+                         * Encodes the specified LocalServicesLeadSurveySatisfiedReasonEnum message. Does not implicitly {@link google.ads.googleads.v19.enums.LocalServicesLeadSurveySatisfiedReasonEnum.verify|verify} messages.
+                         * @param message LocalServicesLeadSurveySatisfiedReasonEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.enums.ILocalServicesLeadSurveySatisfiedReasonEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified LocalServicesLeadSurveySatisfiedReasonEnum message, length delimited. Does not implicitly {@link google.ads.googleads.v19.enums.LocalServicesLeadSurveySatisfiedReasonEnum.verify|verify} messages.
+                         * @param message LocalServicesLeadSurveySatisfiedReasonEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.enums.ILocalServicesLeadSurveySatisfiedReasonEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a LocalServicesLeadSurveySatisfiedReasonEnum message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns LocalServicesLeadSurveySatisfiedReasonEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.enums.LocalServicesLeadSurveySatisfiedReasonEnum;
+
+                        /**
+                         * Decodes a LocalServicesLeadSurveySatisfiedReasonEnum message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns LocalServicesLeadSurveySatisfiedReasonEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.enums.LocalServicesLeadSurveySatisfiedReasonEnum;
+
+                        /**
+                         * Verifies a LocalServicesLeadSurveySatisfiedReasonEnum message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a LocalServicesLeadSurveySatisfiedReasonEnum message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns LocalServicesLeadSurveySatisfiedReasonEnum
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.enums.LocalServicesLeadSurveySatisfiedReasonEnum;
+
+                        /**
+                         * Creates a plain object from a LocalServicesLeadSurveySatisfiedReasonEnum message. Also converts values to other types if specified.
+                         * @param message LocalServicesLeadSurveySatisfiedReasonEnum
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.enums.LocalServicesLeadSurveySatisfiedReasonEnum, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this LocalServicesLeadSurveySatisfiedReasonEnum to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for LocalServicesLeadSurveySatisfiedReasonEnum
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    namespace LocalServicesLeadSurveySatisfiedReasonEnum {
+
+                        /** SurveySatisfiedReason enum. */
+                        enum SurveySatisfiedReason {
+                            UNSPECIFIED = 0,
+                            UNKNOWN = 1,
+                            OTHER_SATISFIED_REASON = 2,
+                            BOOKED_CUSTOMER = 3,
+                            LIKELY_BOOKED_CUSTOMER = 4,
+                            SERVICE_RELATED = 5,
+                            HIGH_VALUE_SERVICE = 6
                         }
                     }
 
@@ -67321,6 +68387,110 @@ export namespace google {
                         }
                     }
 
+                    /** Properties of a ReachPlanConversionRateModelEnum. */
+                    interface IReachPlanConversionRateModelEnum {
+                    }
+
+                    /** Represents a ReachPlanConversionRateModelEnum. */
+                    class ReachPlanConversionRateModelEnum implements IReachPlanConversionRateModelEnum {
+
+                        /**
+                         * Constructs a new ReachPlanConversionRateModelEnum.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.enums.IReachPlanConversionRateModelEnum);
+
+                        /**
+                         * Creates a new ReachPlanConversionRateModelEnum instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns ReachPlanConversionRateModelEnum instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.enums.IReachPlanConversionRateModelEnum): google.ads.googleads.v19.enums.ReachPlanConversionRateModelEnum;
+
+                        /**
+                         * Encodes the specified ReachPlanConversionRateModelEnum message. Does not implicitly {@link google.ads.googleads.v19.enums.ReachPlanConversionRateModelEnum.verify|verify} messages.
+                         * @param message ReachPlanConversionRateModelEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.enums.IReachPlanConversionRateModelEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified ReachPlanConversionRateModelEnum message, length delimited. Does not implicitly {@link google.ads.googleads.v19.enums.ReachPlanConversionRateModelEnum.verify|verify} messages.
+                         * @param message ReachPlanConversionRateModelEnum message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.enums.IReachPlanConversionRateModelEnum, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a ReachPlanConversionRateModelEnum message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns ReachPlanConversionRateModelEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.enums.ReachPlanConversionRateModelEnum;
+
+                        /**
+                         * Decodes a ReachPlanConversionRateModelEnum message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns ReachPlanConversionRateModelEnum
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.enums.ReachPlanConversionRateModelEnum;
+
+                        /**
+                         * Verifies a ReachPlanConversionRateModelEnum message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a ReachPlanConversionRateModelEnum message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns ReachPlanConversionRateModelEnum
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.enums.ReachPlanConversionRateModelEnum;
+
+                        /**
+                         * Creates a plain object from a ReachPlanConversionRateModelEnum message. Also converts values to other types if specified.
+                         * @param message ReachPlanConversionRateModelEnum
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.enums.ReachPlanConversionRateModelEnum, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this ReachPlanConversionRateModelEnum to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for ReachPlanConversionRateModelEnum
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    namespace ReachPlanConversionRateModelEnum {
+
+                        /** ReachPlanConversionRateModel enum. */
+                        enum ReachPlanConversionRateModel {
+                            UNSPECIFIED = 0,
+                            UNKNOWN = 1,
+                            CUSTOMER_HISTORY = 2,
+                            INVENTORY_AGGRESSIVE = 3,
+                            INVENTORY_CONSERVATIVE = 4,
+                            INVENTORY_MEDIAN = 5
+                        }
+                    }
+
                     /** Properties of a ReachPlanNetworkEnum. */
                     interface IReachPlanNetworkEnum {
                     }
@@ -67521,6 +68691,8 @@ export namespace google {
                         enum ReachPlanSurface {
                             UNSPECIFIED = 0,
                             UNKNOWN = 1,
+                            DISCOVER_FEED = 7,
+                            GMAIL = 8,
                             IN_FEED = 2,
                             IN_STREAM_BUMPER = 3,
                             IN_STREAM_NON_SKIPPABLE = 4,
@@ -74236,7 +75408,8 @@ export namespace google {
                             ADVANCED_PROTECTION_NOT_ENROLLED = 24,
                             ORGANIZATION_NOT_RECOGNIZED = 26,
                             ORGANIZATION_NOT_APPROVED = 27,
-                            ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN = 28
+                            ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN = 28,
+                            DEVELOPER_TOKEN_INVALID = 29
                         }
                     }
 
@@ -75765,6 +76938,7 @@ export namespace google {
                             CANNOT_ENABLE_BROAD_MATCH_FOR_PROMOTING_TRIAL_CAMPAIGN = 94,
                             REQUIRED_BUSINESS_NAME_ASSET_NOT_LINKED = 95,
                             REQUIRED_LOGO_ASSET_NOT_LINKED = 96,
+                            BRAND_TARGETING_OVERRIDES_NOT_SUPPORTED = 97,
                             BRAND_GUIDELINES_NOT_ENABLED_FOR_CAMPAIGN = 98,
                             BRAND_GUIDELINES_MAIN_AND_ACCENT_COLORS_REQUIRED = 99,
                             BRAND_GUIDELINES_COLOR_INVALID_FORMAT = 100,
@@ -77780,7 +78954,8 @@ export namespace google {
                             CANNOT_RECOGNIZE_BRAND = 155,
                             BRAND_SHARED_SET_DOES_NOT_EXIST = 156,
                             CANNOT_ADD_REMOVED_BRAND_SHARED_SET = 157,
-                            ONLY_EXCLUSION_BRAND_LIST_ALLOWED_FOR_CAMPAIGN_TYPE = 158
+                            ONLY_EXCLUSION_BRAND_LIST_ALLOWED_FOR_CAMPAIGN_TYPE = 158,
+                            LOCATION_TARGETING_NOT_ELIGIBLE_FOR_RESTRICTED_CAMPAIGN = 166
                         }
                     }
 
@@ -93066,6 +94241,9 @@ export namespace google {
 
                         /** AdGroup primaryStatusReasons */
                         primaryStatusReasons?: (google.ads.googleads.v19.enums.AdGroupPrimaryStatusReasonEnum.AdGroupPrimaryStatusReason[]|null);
+
+                        /** AdGroup demandGenAdGroupSettings */
+                        demandGenAdGroupSettings?: (google.ads.googleads.v19.resources.AdGroup.IDemandGenAdGroupSettings|null);
                     }
 
                     /** Represents an AdGroup. */
@@ -93181,6 +94359,9 @@ export namespace google {
 
                         /** AdGroup primaryStatusReasons. */
                         public primaryStatusReasons: google.ads.googleads.v19.enums.AdGroupPrimaryStatusReasonEnum.AdGroupPrimaryStatusReason[];
+
+                        /** AdGroup demandGenAdGroupSettings. */
+                        public demandGenAdGroupSettings?: (google.ads.googleads.v19.resources.AdGroup.IDemandGenAdGroupSettings|null);
 
                         /**
                          * Creates a new AdGroup instance using the specified properties.
@@ -93357,6 +94538,348 @@ export namespace google {
                              * @returns The default type url
                              */
                             public static getTypeUrl(typeUrlPrefix?: string): string;
+                        }
+
+                        /** Properties of a DemandGenAdGroupSettings. */
+                        interface IDemandGenAdGroupSettings {
+
+                            /** DemandGenAdGroupSettings channelControls */
+                            channelControls?: (google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.IDemandGenChannelControls|null);
+                        }
+
+                        /** Represents a DemandGenAdGroupSettings. */
+                        class DemandGenAdGroupSettings implements IDemandGenAdGroupSettings {
+
+                            /**
+                             * Constructs a new DemandGenAdGroupSettings.
+                             * @param [properties] Properties to set
+                             */
+                            constructor(properties?: google.ads.googleads.v19.resources.AdGroup.IDemandGenAdGroupSettings);
+
+                            /** DemandGenAdGroupSettings channelControls. */
+                            public channelControls?: (google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.IDemandGenChannelControls|null);
+
+                            /**
+                             * Creates a new DemandGenAdGroupSettings instance using the specified properties.
+                             * @param [properties] Properties to set
+                             * @returns DemandGenAdGroupSettings instance
+                             */
+                            public static create(properties?: google.ads.googleads.v19.resources.AdGroup.IDemandGenAdGroupSettings): google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings;
+
+                            /**
+                             * Encodes the specified DemandGenAdGroupSettings message. Does not implicitly {@link google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.verify|verify} messages.
+                             * @param message DemandGenAdGroupSettings message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encode(message: google.ads.googleads.v19.resources.AdGroup.IDemandGenAdGroupSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Encodes the specified DemandGenAdGroupSettings message, length delimited. Does not implicitly {@link google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.verify|verify} messages.
+                             * @param message DemandGenAdGroupSettings message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encodeDelimited(message: google.ads.googleads.v19.resources.AdGroup.IDemandGenAdGroupSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Decodes a DemandGenAdGroupSettings message from the specified reader or buffer.
+                             * @param reader Reader or buffer to decode from
+                             * @param [length] Message length if known beforehand
+                             * @returns DemandGenAdGroupSettings
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings;
+
+                            /**
+                             * Decodes a DemandGenAdGroupSettings message from the specified reader or buffer, length delimited.
+                             * @param reader Reader or buffer to decode from
+                             * @returns DemandGenAdGroupSettings
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings;
+
+                            /**
+                             * Verifies a DemandGenAdGroupSettings message.
+                             * @param message Plain object to verify
+                             * @returns `null` if valid, otherwise the reason why it is not
+                             */
+                            public static verify(message: { [k: string]: any }): (string|null);
+
+                            /**
+                             * Creates a DemandGenAdGroupSettings message from a plain object. Also converts values to their respective internal types.
+                             * @param object Plain object
+                             * @returns DemandGenAdGroupSettings
+                             */
+                            public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings;
+
+                            /**
+                             * Creates a plain object from a DemandGenAdGroupSettings message. Also converts values to other types if specified.
+                             * @param message DemandGenAdGroupSettings
+                             * @param [options] Conversion options
+                             * @returns Plain object
+                             */
+                            public static toObject(message: google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                            /**
+                             * Converts this DemandGenAdGroupSettings to JSON.
+                             * @returns JSON object
+                             */
+                            public toJSON(): { [k: string]: any };
+
+                            /**
+                             * Gets the default type url for DemandGenAdGroupSettings
+                             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                             * @returns The default type url
+                             */
+                            public static getTypeUrl(typeUrlPrefix?: string): string;
+                        }
+
+                        namespace DemandGenAdGroupSettings {
+
+                            /** Properties of a DemandGenChannelControls. */
+                            interface IDemandGenChannelControls {
+
+                                /** DemandGenChannelControls channelConfig */
+                                channelConfig?: (google.ads.googleads.v19.enums.DemandGenChannelConfigEnum.DemandGenChannelConfig|keyof typeof google.ads.googleads.v19.enums.DemandGenChannelConfigEnum.DemandGenChannelConfig|null);
+
+                                /** DemandGenChannelControls channelStrategy */
+                                channelStrategy?: (google.ads.googleads.v19.enums.DemandGenChannelStrategyEnum.DemandGenChannelStrategy|keyof typeof google.ads.googleads.v19.enums.DemandGenChannelStrategyEnum.DemandGenChannelStrategy|null);
+
+                                /** DemandGenChannelControls selectedChannels */
+                                selectedChannels?: (google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.IDemandGenSelectedChannels|null);
+                            }
+
+                            /** Represents a DemandGenChannelControls. */
+                            class DemandGenChannelControls implements IDemandGenChannelControls {
+
+                                /**
+                                 * Constructs a new DemandGenChannelControls.
+                                 * @param [properties] Properties to set
+                                 */
+                                constructor(properties?: google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.IDemandGenChannelControls);
+
+                                /** DemandGenChannelControls channelConfig. */
+                                public channelConfig: (google.ads.googleads.v19.enums.DemandGenChannelConfigEnum.DemandGenChannelConfig|keyof typeof google.ads.googleads.v19.enums.DemandGenChannelConfigEnum.DemandGenChannelConfig);
+
+                                /** DemandGenChannelControls channelStrategy. */
+                                public channelStrategy?: (google.ads.googleads.v19.enums.DemandGenChannelStrategyEnum.DemandGenChannelStrategy|keyof typeof google.ads.googleads.v19.enums.DemandGenChannelStrategyEnum.DemandGenChannelStrategy|null);
+
+                                /** DemandGenChannelControls selectedChannels. */
+                                public selectedChannels?: (google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.IDemandGenSelectedChannels|null);
+
+                                /** DemandGenChannelControls channelConfiguration. */
+                                public channelConfiguration?: ("channelStrategy"|"selectedChannels");
+
+                                /**
+                                 * Creates a new DemandGenChannelControls instance using the specified properties.
+                                 * @param [properties] Properties to set
+                                 * @returns DemandGenChannelControls instance
+                                 */
+                                public static create(properties?: google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.IDemandGenChannelControls): google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls;
+
+                                /**
+                                 * Encodes the specified DemandGenChannelControls message. Does not implicitly {@link google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.verify|verify} messages.
+                                 * @param message DemandGenChannelControls message or plain object to encode
+                                 * @param [writer] Writer to encode to
+                                 * @returns Writer
+                                 */
+                                public static encode(message: google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.IDemandGenChannelControls, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                                /**
+                                 * Encodes the specified DemandGenChannelControls message, length delimited. Does not implicitly {@link google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.verify|verify} messages.
+                                 * @param message DemandGenChannelControls message or plain object to encode
+                                 * @param [writer] Writer to encode to
+                                 * @returns Writer
+                                 */
+                                public static encodeDelimited(message: google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.IDemandGenChannelControls, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                                /**
+                                 * Decodes a DemandGenChannelControls message from the specified reader or buffer.
+                                 * @param reader Reader or buffer to decode from
+                                 * @param [length] Message length if known beforehand
+                                 * @returns DemandGenChannelControls
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls;
+
+                                /**
+                                 * Decodes a DemandGenChannelControls message from the specified reader or buffer, length delimited.
+                                 * @param reader Reader or buffer to decode from
+                                 * @returns DemandGenChannelControls
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls;
+
+                                /**
+                                 * Verifies a DemandGenChannelControls message.
+                                 * @param message Plain object to verify
+                                 * @returns `null` if valid, otherwise the reason why it is not
+                                 */
+                                public static verify(message: { [k: string]: any }): (string|null);
+
+                                /**
+                                 * Creates a DemandGenChannelControls message from a plain object. Also converts values to their respective internal types.
+                                 * @param object Plain object
+                                 * @returns DemandGenChannelControls
+                                 */
+                                public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls;
+
+                                /**
+                                 * Creates a plain object from a DemandGenChannelControls message. Also converts values to other types if specified.
+                                 * @param message DemandGenChannelControls
+                                 * @param [options] Conversion options
+                                 * @returns Plain object
+                                 */
+                                public static toObject(message: google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                                /**
+                                 * Converts this DemandGenChannelControls to JSON.
+                                 * @returns JSON object
+                                 */
+                                public toJSON(): { [k: string]: any };
+
+                                /**
+                                 * Gets the default type url for DemandGenChannelControls
+                                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                                 * @returns The default type url
+                                 */
+                                public static getTypeUrl(typeUrlPrefix?: string): string;
+                            }
+
+                            namespace DemandGenChannelControls {
+
+                                /** Properties of a DemandGenSelectedChannels. */
+                                interface IDemandGenSelectedChannels {
+
+                                    /** DemandGenSelectedChannels youtubeInStream */
+                                    youtubeInStream?: (boolean|null);
+
+                                    /** DemandGenSelectedChannels youtubeInFeed */
+                                    youtubeInFeed?: (boolean|null);
+
+                                    /** DemandGenSelectedChannels youtubeShorts */
+                                    youtubeShorts?: (boolean|null);
+
+                                    /** DemandGenSelectedChannels discover */
+                                    discover?: (boolean|null);
+
+                                    /** DemandGenSelectedChannels gmail */
+                                    gmail?: (boolean|null);
+
+                                    /** DemandGenSelectedChannels display */
+                                    display?: (boolean|null);
+                                }
+
+                                /** Represents a DemandGenSelectedChannels. */
+                                class DemandGenSelectedChannels implements IDemandGenSelectedChannels {
+
+                                    /**
+                                     * Constructs a new DemandGenSelectedChannels.
+                                     * @param [properties] Properties to set
+                                     */
+                                    constructor(properties?: google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.IDemandGenSelectedChannels);
+
+                                    /** DemandGenSelectedChannels youtubeInStream. */
+                                    public youtubeInStream: boolean;
+
+                                    /** DemandGenSelectedChannels youtubeInFeed. */
+                                    public youtubeInFeed: boolean;
+
+                                    /** DemandGenSelectedChannels youtubeShorts. */
+                                    public youtubeShorts: boolean;
+
+                                    /** DemandGenSelectedChannels discover. */
+                                    public discover: boolean;
+
+                                    /** DemandGenSelectedChannels gmail. */
+                                    public gmail: boolean;
+
+                                    /** DemandGenSelectedChannels display. */
+                                    public display: boolean;
+
+                                    /**
+                                     * Creates a new DemandGenSelectedChannels instance using the specified properties.
+                                     * @param [properties] Properties to set
+                                     * @returns DemandGenSelectedChannels instance
+                                     */
+                                    public static create(properties?: google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.IDemandGenSelectedChannels): google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.DemandGenSelectedChannels;
+
+                                    /**
+                                     * Encodes the specified DemandGenSelectedChannels message. Does not implicitly {@link google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.DemandGenSelectedChannels.verify|verify} messages.
+                                     * @param message DemandGenSelectedChannels message or plain object to encode
+                                     * @param [writer] Writer to encode to
+                                     * @returns Writer
+                                     */
+                                    public static encode(message: google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.IDemandGenSelectedChannels, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                                    /**
+                                     * Encodes the specified DemandGenSelectedChannels message, length delimited. Does not implicitly {@link google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.DemandGenSelectedChannels.verify|verify} messages.
+                                     * @param message DemandGenSelectedChannels message or plain object to encode
+                                     * @param [writer] Writer to encode to
+                                     * @returns Writer
+                                     */
+                                    public static encodeDelimited(message: google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.IDemandGenSelectedChannels, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                                    /**
+                                     * Decodes a DemandGenSelectedChannels message from the specified reader or buffer.
+                                     * @param reader Reader or buffer to decode from
+                                     * @param [length] Message length if known beforehand
+                                     * @returns DemandGenSelectedChannels
+                                     * @throws {Error} If the payload is not a reader or valid buffer
+                                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                     */
+                                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.DemandGenSelectedChannels;
+
+                                    /**
+                                     * Decodes a DemandGenSelectedChannels message from the specified reader or buffer, length delimited.
+                                     * @param reader Reader or buffer to decode from
+                                     * @returns DemandGenSelectedChannels
+                                     * @throws {Error} If the payload is not a reader or valid buffer
+                                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                     */
+                                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.DemandGenSelectedChannels;
+
+                                    /**
+                                     * Verifies a DemandGenSelectedChannels message.
+                                     * @param message Plain object to verify
+                                     * @returns `null` if valid, otherwise the reason why it is not
+                                     */
+                                    public static verify(message: { [k: string]: any }): (string|null);
+
+                                    /**
+                                     * Creates a DemandGenSelectedChannels message from a plain object. Also converts values to their respective internal types.
+                                     * @param object Plain object
+                                     * @returns DemandGenSelectedChannels
+                                     */
+                                    public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.DemandGenSelectedChannels;
+
+                                    /**
+                                     * Creates a plain object from a DemandGenSelectedChannels message. Also converts values to other types if specified.
+                                     * @param message DemandGenSelectedChannels
+                                     * @param [options] Conversion options
+                                     * @returns Plain object
+                                     */
+                                    public static toObject(message: google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings.DemandGenChannelControls.DemandGenSelectedChannels, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                                    /**
+                                     * Converts this DemandGenSelectedChannels to JSON.
+                                     * @returns JSON object
+                                     */
+                                    public toJSON(): { [k: string]: any };
+
+                                    /**
+                                     * Gets the default type url for DemandGenSelectedChannels
+                                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                                     * @returns The default type url
+                                     */
+                                    public static getTypeUrl(typeUrlPrefix?: string): string;
+                                }
+                            }
                         }
                     }
 
@@ -97544,6 +99067,9 @@ export namespace google {
 
                         /** AssetGroup adStrength */
                         adStrength?: (google.ads.googleads.v19.enums.AdStrengthEnum.AdStrength|keyof typeof google.ads.googleads.v19.enums.AdStrengthEnum.AdStrength|null);
+
+                        /** AssetGroup assetCoverage */
+                        assetCoverage?: (google.ads.googleads.v19.resources.IAssetCoverage|null);
                     }
 
                     /** Represents an AssetGroup. */
@@ -97590,6 +99116,9 @@ export namespace google {
 
                         /** AssetGroup adStrength. */
                         public adStrength: (google.ads.googleads.v19.enums.AdStrengthEnum.AdStrength|keyof typeof google.ads.googleads.v19.enums.AdStrengthEnum.AdStrength);
+
+                        /** AssetGroup assetCoverage. */
+                        public assetCoverage?: (google.ads.googleads.v19.resources.IAssetCoverage|null);
 
                         /**
                          * Creates a new AssetGroup instance using the specified properties.
@@ -97667,6 +99196,321 @@ export namespace google {
                          * @returns The default type url
                          */
                         public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    /** Properties of an AssetCoverage. */
+                    interface IAssetCoverage {
+
+                        /** AssetCoverage adStrengthActionItems */
+                        adStrengthActionItems?: (google.ads.googleads.v19.resources.IAdStrengthActionItem[]|null);
+                    }
+
+                    /** Represents an AssetCoverage. */
+                    class AssetCoverage implements IAssetCoverage {
+
+                        /**
+                         * Constructs a new AssetCoverage.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.resources.IAssetCoverage);
+
+                        /** AssetCoverage adStrengthActionItems. */
+                        public adStrengthActionItems: google.ads.googleads.v19.resources.IAdStrengthActionItem[];
+
+                        /**
+                         * Creates a new AssetCoverage instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns AssetCoverage instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.resources.IAssetCoverage): google.ads.googleads.v19.resources.AssetCoverage;
+
+                        /**
+                         * Encodes the specified AssetCoverage message. Does not implicitly {@link google.ads.googleads.v19.resources.AssetCoverage.verify|verify} messages.
+                         * @param message AssetCoverage message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.resources.IAssetCoverage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified AssetCoverage message, length delimited. Does not implicitly {@link google.ads.googleads.v19.resources.AssetCoverage.verify|verify} messages.
+                         * @param message AssetCoverage message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.resources.IAssetCoverage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes an AssetCoverage message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns AssetCoverage
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.resources.AssetCoverage;
+
+                        /**
+                         * Decodes an AssetCoverage message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns AssetCoverage
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.resources.AssetCoverage;
+
+                        /**
+                         * Verifies an AssetCoverage message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates an AssetCoverage message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns AssetCoverage
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.resources.AssetCoverage;
+
+                        /**
+                         * Creates a plain object from an AssetCoverage message. Also converts values to other types if specified.
+                         * @param message AssetCoverage
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.resources.AssetCoverage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this AssetCoverage to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for AssetCoverage
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    /** Properties of an AdStrengthActionItem. */
+                    interface IAdStrengthActionItem {
+
+                        /** AdStrengthActionItem actionItemType */
+                        actionItemType?: (google.ads.googleads.v19.enums.AdStrengthActionItemTypeEnum.AdStrengthActionItemType|keyof typeof google.ads.googleads.v19.enums.AdStrengthActionItemTypeEnum.AdStrengthActionItemType|null);
+
+                        /** AdStrengthActionItem addAssetDetails */
+                        addAssetDetails?: (google.ads.googleads.v19.resources.AdStrengthActionItem.IAddAssetDetails|null);
+                    }
+
+                    /** Represents an AdStrengthActionItem. */
+                    class AdStrengthActionItem implements IAdStrengthActionItem {
+
+                        /**
+                         * Constructs a new AdStrengthActionItem.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.resources.IAdStrengthActionItem);
+
+                        /** AdStrengthActionItem actionItemType. */
+                        public actionItemType: (google.ads.googleads.v19.enums.AdStrengthActionItemTypeEnum.AdStrengthActionItemType|keyof typeof google.ads.googleads.v19.enums.AdStrengthActionItemTypeEnum.AdStrengthActionItemType);
+
+                        /** AdStrengthActionItem addAssetDetails. */
+                        public addAssetDetails?: (google.ads.googleads.v19.resources.AdStrengthActionItem.IAddAssetDetails|null);
+
+                        /** AdStrengthActionItem actionDetails. */
+                        public actionDetails?: "addAssetDetails";
+
+                        /**
+                         * Creates a new AdStrengthActionItem instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns AdStrengthActionItem instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.resources.IAdStrengthActionItem): google.ads.googleads.v19.resources.AdStrengthActionItem;
+
+                        /**
+                         * Encodes the specified AdStrengthActionItem message. Does not implicitly {@link google.ads.googleads.v19.resources.AdStrengthActionItem.verify|verify} messages.
+                         * @param message AdStrengthActionItem message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.resources.IAdStrengthActionItem, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified AdStrengthActionItem message, length delimited. Does not implicitly {@link google.ads.googleads.v19.resources.AdStrengthActionItem.verify|verify} messages.
+                         * @param message AdStrengthActionItem message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.resources.IAdStrengthActionItem, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes an AdStrengthActionItem message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns AdStrengthActionItem
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.resources.AdStrengthActionItem;
+
+                        /**
+                         * Decodes an AdStrengthActionItem message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns AdStrengthActionItem
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.resources.AdStrengthActionItem;
+
+                        /**
+                         * Verifies an AdStrengthActionItem message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates an AdStrengthActionItem message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns AdStrengthActionItem
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.resources.AdStrengthActionItem;
+
+                        /**
+                         * Creates a plain object from an AdStrengthActionItem message. Also converts values to other types if specified.
+                         * @param message AdStrengthActionItem
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.resources.AdStrengthActionItem, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this AdStrengthActionItem to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for AdStrengthActionItem
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    namespace AdStrengthActionItem {
+
+                        /** Properties of an AddAssetDetails. */
+                        interface IAddAssetDetails {
+
+                            /** AddAssetDetails assetFieldType */
+                            assetFieldType?: (google.ads.googleads.v19.enums.AssetFieldTypeEnum.AssetFieldType|keyof typeof google.ads.googleads.v19.enums.AssetFieldTypeEnum.AssetFieldType|null);
+
+                            /** AddAssetDetails assetCount */
+                            assetCount?: (number|null);
+
+                            /** AddAssetDetails videoAspectRatioRequirement */
+                            videoAspectRatioRequirement?: (google.ads.googleads.v19.enums.AssetCoverageVideoAspectRatioRequirementEnum.AssetCoverageVideoAspectRatioRequirement|keyof typeof google.ads.googleads.v19.enums.AssetCoverageVideoAspectRatioRequirementEnum.AssetCoverageVideoAspectRatioRequirement|null);
+                        }
+
+                        /** Represents an AddAssetDetails. */
+                        class AddAssetDetails implements IAddAssetDetails {
+
+                            /**
+                             * Constructs a new AddAssetDetails.
+                             * @param [properties] Properties to set
+                             */
+                            constructor(properties?: google.ads.googleads.v19.resources.AdStrengthActionItem.IAddAssetDetails);
+
+                            /** AddAssetDetails assetFieldType. */
+                            public assetFieldType: (google.ads.googleads.v19.enums.AssetFieldTypeEnum.AssetFieldType|keyof typeof google.ads.googleads.v19.enums.AssetFieldTypeEnum.AssetFieldType);
+
+                            /** AddAssetDetails assetCount. */
+                            public assetCount?: (number|null);
+
+                            /** AddAssetDetails videoAspectRatioRequirement. */
+                            public videoAspectRatioRequirement?: (google.ads.googleads.v19.enums.AssetCoverageVideoAspectRatioRequirementEnum.AssetCoverageVideoAspectRatioRequirement|keyof typeof google.ads.googleads.v19.enums.AssetCoverageVideoAspectRatioRequirementEnum.AssetCoverageVideoAspectRatioRequirement|null);
+
+                            /**
+                             * Creates a new AddAssetDetails instance using the specified properties.
+                             * @param [properties] Properties to set
+                             * @returns AddAssetDetails instance
+                             */
+                            public static create(properties?: google.ads.googleads.v19.resources.AdStrengthActionItem.IAddAssetDetails): google.ads.googleads.v19.resources.AdStrengthActionItem.AddAssetDetails;
+
+                            /**
+                             * Encodes the specified AddAssetDetails message. Does not implicitly {@link google.ads.googleads.v19.resources.AdStrengthActionItem.AddAssetDetails.verify|verify} messages.
+                             * @param message AddAssetDetails message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encode(message: google.ads.googleads.v19.resources.AdStrengthActionItem.IAddAssetDetails, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Encodes the specified AddAssetDetails message, length delimited. Does not implicitly {@link google.ads.googleads.v19.resources.AdStrengthActionItem.AddAssetDetails.verify|verify} messages.
+                             * @param message AddAssetDetails message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encodeDelimited(message: google.ads.googleads.v19.resources.AdStrengthActionItem.IAddAssetDetails, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Decodes an AddAssetDetails message from the specified reader or buffer.
+                             * @param reader Reader or buffer to decode from
+                             * @param [length] Message length if known beforehand
+                             * @returns AddAssetDetails
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.resources.AdStrengthActionItem.AddAssetDetails;
+
+                            /**
+                             * Decodes an AddAssetDetails message from the specified reader or buffer, length delimited.
+                             * @param reader Reader or buffer to decode from
+                             * @returns AddAssetDetails
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.resources.AdStrengthActionItem.AddAssetDetails;
+
+                            /**
+                             * Verifies an AddAssetDetails message.
+                             * @param message Plain object to verify
+                             * @returns `null` if valid, otherwise the reason why it is not
+                             */
+                            public static verify(message: { [k: string]: any }): (string|null);
+
+                            /**
+                             * Creates an AddAssetDetails message from a plain object. Also converts values to their respective internal types.
+                             * @param object Plain object
+                             * @returns AddAssetDetails
+                             */
+                            public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.resources.AdStrengthActionItem.AddAssetDetails;
+
+                            /**
+                             * Creates a plain object from an AddAssetDetails message. Also converts values to other types if specified.
+                             * @param message AddAssetDetails
+                             * @param [options] Conversion options
+                             * @returns Plain object
+                             */
+                            public static toObject(message: google.ads.googleads.v19.resources.AdStrengthActionItem.AddAssetDetails, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                            /**
+                             * Converts this AddAssetDetails to JSON.
+                             * @returns JSON object
+                             */
+                            public toJSON(): { [k: string]: any };
+
+                            /**
+                             * Gets the default type url for AddAssetDetails
+                             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                             * @returns The default type url
+                             */
+                            public static getTypeUrl(typeUrlPrefix?: string): string;
+                        }
                     }
 
                     /** Properties of an AssetGroupAsset. */
@@ -101673,6 +103517,9 @@ export namespace google {
                         /** Campaign videoCampaignSettings */
                         videoCampaignSettings?: (google.ads.googleads.v19.resources.Campaign.IVideoCampaignSettings|null);
 
+                        /** Campaign pmaxCampaignSettings */
+                        pmaxCampaignSettings?: (google.ads.googleads.v19.resources.Campaign.IPmaxCampaignSettings|null);
+
                         /** Campaign realTimeBiddingSetting */
                         realTimeBiddingSetting?: (google.ads.googleads.v19.common.IRealTimeBiddingSetting|null);
 
@@ -101895,6 +103742,9 @@ export namespace google {
 
                         /** Campaign videoCampaignSettings. */
                         public videoCampaignSettings?: (google.ads.googleads.v19.resources.Campaign.IVideoCampaignSettings|null);
+
+                        /** Campaign pmaxCampaignSettings. */
+                        public pmaxCampaignSettings?: (google.ads.googleads.v19.resources.Campaign.IPmaxCampaignSettings|null);
 
                         /** Campaign realTimeBiddingSetting. */
                         public realTimeBiddingSetting?: (google.ads.googleads.v19.common.IRealTimeBiddingSetting|null);
@@ -104118,6 +105968,203 @@ export namespace google {
 
                                 /**
                                  * Gets the default type url for VideoAdInventoryControl
+                                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                                 * @returns The default type url
+                                 */
+                                public static getTypeUrl(typeUrlPrefix?: string): string;
+                            }
+                        }
+
+                        /** Properties of a PmaxCampaignSettings. */
+                        interface IPmaxCampaignSettings {
+
+                            /** PmaxCampaignSettings brandTargetingOverrides */
+                            brandTargetingOverrides?: (google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.IBrandTargetingOverrides|null);
+                        }
+
+                        /** Represents a PmaxCampaignSettings. */
+                        class PmaxCampaignSettings implements IPmaxCampaignSettings {
+
+                            /**
+                             * Constructs a new PmaxCampaignSettings.
+                             * @param [properties] Properties to set
+                             */
+                            constructor(properties?: google.ads.googleads.v19.resources.Campaign.IPmaxCampaignSettings);
+
+                            /** PmaxCampaignSettings brandTargetingOverrides. */
+                            public brandTargetingOverrides?: (google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.IBrandTargetingOverrides|null);
+
+                            /**
+                             * Creates a new PmaxCampaignSettings instance using the specified properties.
+                             * @param [properties] Properties to set
+                             * @returns PmaxCampaignSettings instance
+                             */
+                            public static create(properties?: google.ads.googleads.v19.resources.Campaign.IPmaxCampaignSettings): google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings;
+
+                            /**
+                             * Encodes the specified PmaxCampaignSettings message. Does not implicitly {@link google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.verify|verify} messages.
+                             * @param message PmaxCampaignSettings message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encode(message: google.ads.googleads.v19.resources.Campaign.IPmaxCampaignSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Encodes the specified PmaxCampaignSettings message, length delimited. Does not implicitly {@link google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.verify|verify} messages.
+                             * @param message PmaxCampaignSettings message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encodeDelimited(message: google.ads.googleads.v19.resources.Campaign.IPmaxCampaignSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Decodes a PmaxCampaignSettings message from the specified reader or buffer.
+                             * @param reader Reader or buffer to decode from
+                             * @param [length] Message length if known beforehand
+                             * @returns PmaxCampaignSettings
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings;
+
+                            /**
+                             * Decodes a PmaxCampaignSettings message from the specified reader or buffer, length delimited.
+                             * @param reader Reader or buffer to decode from
+                             * @returns PmaxCampaignSettings
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings;
+
+                            /**
+                             * Verifies a PmaxCampaignSettings message.
+                             * @param message Plain object to verify
+                             * @returns `null` if valid, otherwise the reason why it is not
+                             */
+                            public static verify(message: { [k: string]: any }): (string|null);
+
+                            /**
+                             * Creates a PmaxCampaignSettings message from a plain object. Also converts values to their respective internal types.
+                             * @param object Plain object
+                             * @returns PmaxCampaignSettings
+                             */
+                            public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings;
+
+                            /**
+                             * Creates a plain object from a PmaxCampaignSettings message. Also converts values to other types if specified.
+                             * @param message PmaxCampaignSettings
+                             * @param [options] Conversion options
+                             * @returns Plain object
+                             */
+                            public static toObject(message: google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                            /**
+                             * Converts this PmaxCampaignSettings to JSON.
+                             * @returns JSON object
+                             */
+                            public toJSON(): { [k: string]: any };
+
+                            /**
+                             * Gets the default type url for PmaxCampaignSettings
+                             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                             * @returns The default type url
+                             */
+                            public static getTypeUrl(typeUrlPrefix?: string): string;
+                        }
+
+                        namespace PmaxCampaignSettings {
+
+                            /** Properties of a BrandTargetingOverrides. */
+                            interface IBrandTargetingOverrides {
+
+                                /** BrandTargetingOverrides ignoreExclusionsForShoppingAds */
+                                ignoreExclusionsForShoppingAds?: (boolean|null);
+                            }
+
+                            /** Represents a BrandTargetingOverrides. */
+                            class BrandTargetingOverrides implements IBrandTargetingOverrides {
+
+                                /**
+                                 * Constructs a new BrandTargetingOverrides.
+                                 * @param [properties] Properties to set
+                                 */
+                                constructor(properties?: google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.IBrandTargetingOverrides);
+
+                                /** BrandTargetingOverrides ignoreExclusionsForShoppingAds. */
+                                public ignoreExclusionsForShoppingAds?: (boolean|null);
+
+                                /**
+                                 * Creates a new BrandTargetingOverrides instance using the specified properties.
+                                 * @param [properties] Properties to set
+                                 * @returns BrandTargetingOverrides instance
+                                 */
+                                public static create(properties?: google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.IBrandTargetingOverrides): google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.BrandTargetingOverrides;
+
+                                /**
+                                 * Encodes the specified BrandTargetingOverrides message. Does not implicitly {@link google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.BrandTargetingOverrides.verify|verify} messages.
+                                 * @param message BrandTargetingOverrides message or plain object to encode
+                                 * @param [writer] Writer to encode to
+                                 * @returns Writer
+                                 */
+                                public static encode(message: google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.IBrandTargetingOverrides, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                                /**
+                                 * Encodes the specified BrandTargetingOverrides message, length delimited. Does not implicitly {@link google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.BrandTargetingOverrides.verify|verify} messages.
+                                 * @param message BrandTargetingOverrides message or plain object to encode
+                                 * @param [writer] Writer to encode to
+                                 * @returns Writer
+                                 */
+                                public static encodeDelimited(message: google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.IBrandTargetingOverrides, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                                /**
+                                 * Decodes a BrandTargetingOverrides message from the specified reader or buffer.
+                                 * @param reader Reader or buffer to decode from
+                                 * @param [length] Message length if known beforehand
+                                 * @returns BrandTargetingOverrides
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.BrandTargetingOverrides;
+
+                                /**
+                                 * Decodes a BrandTargetingOverrides message from the specified reader or buffer, length delimited.
+                                 * @param reader Reader or buffer to decode from
+                                 * @returns BrandTargetingOverrides
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.BrandTargetingOverrides;
+
+                                /**
+                                 * Verifies a BrandTargetingOverrides message.
+                                 * @param message Plain object to verify
+                                 * @returns `null` if valid, otherwise the reason why it is not
+                                 */
+                                public static verify(message: { [k: string]: any }): (string|null);
+
+                                /**
+                                 * Creates a BrandTargetingOverrides message from a plain object. Also converts values to their respective internal types.
+                                 * @param object Plain object
+                                 * @returns BrandTargetingOverrides
+                                 */
+                                public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.BrandTargetingOverrides;
+
+                                /**
+                                 * Creates a plain object from a BrandTargetingOverrides message. Also converts values to other types if specified.
+                                 * @param message BrandTargetingOverrides
+                                 * @param [options] Conversion options
+                                 * @returns Plain object
+                                 */
+                                public static toObject(message: google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings.BrandTargetingOverrides, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                                /**
+                                 * Converts this BrandTargetingOverrides to JSON.
+                                 * @returns JSON object
+                                 */
+                                public toJSON(): { [k: string]: any };
+
+                                /**
+                                 * Gets the default type url for BrandTargetingOverrides
                                  * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
                                  * @returns The default type url
                                  */
@@ -107343,6 +109390,9 @@ export namespace google {
 
                         /** ChangeStatus assetGroup */
                         assetGroup?: (string|null);
+
+                        /** ChangeStatus campaignBudget */
+                        campaignBudget?: (string|null);
                     }
 
                     /** Represents a ChangeStatus. */
@@ -107407,6 +109457,9 @@ export namespace google {
 
                         /** ChangeStatus assetGroup. */
                         public assetGroup: string;
+
+                        /** ChangeStatus campaignBudget. */
+                        public campaignBudget: string;
 
                         /**
                          * Creates a new ChangeStatus instance using the specified properties.
@@ -120145,6 +122198,9 @@ export namespace google {
 
                         /** LocalServicesLead creditDetails */
                         creditDetails?: (google.ads.googleads.v19.resources.ICreditDetails|null);
+
+                        /** LocalServicesLead leadFeedbackSubmitted */
+                        leadFeedbackSubmitted?: (boolean|null);
                     }
 
                     /** Represents a LocalServicesLead. */
@@ -120191,6 +122247,9 @@ export namespace google {
 
                         /** LocalServicesLead creditDetails. */
                         public creditDetails?: (google.ads.googleads.v19.resources.ICreditDetails|null);
+
+                        /** LocalServicesLead leadFeedbackSubmitted. */
+                        public leadFeedbackSubmitted: boolean;
 
                         /**
                          * Creates a new LocalServicesLead instance using the specified properties.
@@ -122105,7 +124164,7 @@ export namespace google {
                     interface IMediaImage {
 
                         /** MediaImage data */
-                        data?: (Uint8Array|string|null);
+                        data?: (Uint8Array|Buffer|string|null);
 
                         /** MediaImage fullSizeImageUrl */
                         fullSizeImageUrl?: (string|null);
@@ -122124,7 +124183,7 @@ export namespace google {
                         constructor(properties?: google.ads.googleads.v19.resources.IMediaImage);
 
                         /** MediaImage data. */
-                        public data?: (Uint8Array|string|null);
+                        public data?: (Uint8Array|Buffer|string|null);
 
                         /** MediaImage fullSizeImageUrl. */
                         public fullSizeImageUrl?: (string|null);
@@ -122214,7 +124273,7 @@ export namespace google {
                     interface IMediaBundle {
 
                         /** MediaBundle data */
-                        data?: (Uint8Array|string|null);
+                        data?: (Uint8Array|Buffer|string|null);
 
                         /** MediaBundle url */
                         url?: (string|null);
@@ -122230,7 +124289,7 @@ export namespace google {
                         constructor(properties?: google.ads.googleads.v19.resources.IMediaBundle);
 
                         /** MediaBundle data. */
-                        public data?: (Uint8Array|string|null);
+                        public data?: (Uint8Array|Buffer|string|null);
 
                         /** MediaBundle url. */
                         public url?: (string|null);
@@ -130613,6 +132672,9 @@ export namespace google {
 
                             /** ImprovePerformanceMaxAdStrengthRecommendation assetGroup */
                             assetGroup?: (string|null);
+
+                            /** ImprovePerformanceMaxAdStrengthRecommendation adStrength */
+                            adStrength?: (google.ads.googleads.v19.enums.AdStrengthEnum.AdStrength|keyof typeof google.ads.googleads.v19.enums.AdStrengthEnum.AdStrength|null);
                         }
 
                         /** Represents an ImprovePerformanceMaxAdStrengthRecommendation. */
@@ -130626,6 +132688,9 @@ export namespace google {
 
                             /** ImprovePerformanceMaxAdStrengthRecommendation assetGroup. */
                             public assetGroup: string;
+
+                            /** ImprovePerformanceMaxAdStrengthRecommendation adStrength. */
+                            public adStrength: (google.ads.googleads.v19.enums.AdStrengthEnum.AdStrength|keyof typeof google.ads.googleads.v19.enums.AdStrengthEnum.AdStrength);
 
                             /**
                              * Creates a new ImprovePerformanceMaxAdStrengthRecommendation instance using the specified properties.
@@ -180783,6 +182848,15 @@ export namespace google {
 
                         /** ClickConversion consent */
                         consent?: (google.ads.googleads.v19.common.IConsent|null);
+
+                        /** ClickConversion customerType */
+                        customerType?: (google.ads.googleads.v19.enums.ConversionCustomerTypeEnum.ConversionCustomerType|keyof typeof google.ads.googleads.v19.enums.ConversionCustomerTypeEnum.ConversionCustomerType|null);
+
+                        /** ClickConversion sessionAttributesEncoded */
+                        sessionAttributesEncoded?: (Uint8Array|Buffer|string|null);
+
+                        /** ClickConversion sessionAttributesKeyValuePairs */
+                        sessionAttributesKeyValuePairs?: (google.ads.googleads.v19.services.ISessionAttributesKeyValuePairs|null);
                     }
 
                     /** Represents a ClickConversion. */
@@ -180835,6 +182909,18 @@ export namespace google {
 
                         /** ClickConversion consent. */
                         public consent?: (google.ads.googleads.v19.common.IConsent|null);
+
+                        /** ClickConversion customerType. */
+                        public customerType: (google.ads.googleads.v19.enums.ConversionCustomerTypeEnum.ConversionCustomerType|keyof typeof google.ads.googleads.v19.enums.ConversionCustomerTypeEnum.ConversionCustomerType);
+
+                        /** ClickConversion sessionAttributesEncoded. */
+                        public sessionAttributesEncoded?: (Uint8Array|Buffer|string|null);
+
+                        /** ClickConversion sessionAttributesKeyValuePairs. */
+                        public sessionAttributesKeyValuePairs?: (google.ads.googleads.v19.services.ISessionAttributesKeyValuePairs|null);
+
+                        /** ClickConversion sessionAttributes. */
+                        public sessionAttributes?: ("sessionAttributesEncoded"|"sessionAttributesKeyValuePairs");
 
                         /**
                          * Creates a new ClickConversion instance using the specified properties.
@@ -181732,6 +183818,206 @@ export namespace google {
                              */
                             public static getTypeUrl(typeUrlPrefix?: string): string;
                         }
+                    }
+
+                    /** Properties of a SessionAttributeKeyValuePair. */
+                    interface ISessionAttributeKeyValuePair {
+
+                        /** SessionAttributeKeyValuePair sessionAttributeKey */
+                        sessionAttributeKey?: (string|null);
+
+                        /** SessionAttributeKeyValuePair sessionAttributeValue */
+                        sessionAttributeValue?: (string|null);
+                    }
+
+                    /** Represents a SessionAttributeKeyValuePair. */
+                    class SessionAttributeKeyValuePair implements ISessionAttributeKeyValuePair {
+
+                        /**
+                         * Constructs a new SessionAttributeKeyValuePair.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.services.ISessionAttributeKeyValuePair);
+
+                        /** SessionAttributeKeyValuePair sessionAttributeKey. */
+                        public sessionAttributeKey: string;
+
+                        /** SessionAttributeKeyValuePair sessionAttributeValue. */
+                        public sessionAttributeValue: string;
+
+                        /**
+                         * Creates a new SessionAttributeKeyValuePair instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns SessionAttributeKeyValuePair instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.services.ISessionAttributeKeyValuePair): google.ads.googleads.v19.services.SessionAttributeKeyValuePair;
+
+                        /**
+                         * Encodes the specified SessionAttributeKeyValuePair message. Does not implicitly {@link google.ads.googleads.v19.services.SessionAttributeKeyValuePair.verify|verify} messages.
+                         * @param message SessionAttributeKeyValuePair message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.services.ISessionAttributeKeyValuePair, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified SessionAttributeKeyValuePair message, length delimited. Does not implicitly {@link google.ads.googleads.v19.services.SessionAttributeKeyValuePair.verify|verify} messages.
+                         * @param message SessionAttributeKeyValuePair message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.services.ISessionAttributeKeyValuePair, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a SessionAttributeKeyValuePair message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns SessionAttributeKeyValuePair
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.services.SessionAttributeKeyValuePair;
+
+                        /**
+                         * Decodes a SessionAttributeKeyValuePair message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns SessionAttributeKeyValuePair
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.services.SessionAttributeKeyValuePair;
+
+                        /**
+                         * Verifies a SessionAttributeKeyValuePair message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a SessionAttributeKeyValuePair message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns SessionAttributeKeyValuePair
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.services.SessionAttributeKeyValuePair;
+
+                        /**
+                         * Creates a plain object from a SessionAttributeKeyValuePair message. Also converts values to other types if specified.
+                         * @param message SessionAttributeKeyValuePair
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.services.SessionAttributeKeyValuePair, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this SessionAttributeKeyValuePair to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for SessionAttributeKeyValuePair
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    /** Properties of a SessionAttributesKeyValuePairs. */
+                    interface ISessionAttributesKeyValuePairs {
+
+                        /** SessionAttributesKeyValuePairs keyValuePairs */
+                        keyValuePairs?: (google.ads.googleads.v19.services.ISessionAttributeKeyValuePair[]|null);
+                    }
+
+                    /** Represents a SessionAttributesKeyValuePairs. */
+                    class SessionAttributesKeyValuePairs implements ISessionAttributesKeyValuePairs {
+
+                        /**
+                         * Constructs a new SessionAttributesKeyValuePairs.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.services.ISessionAttributesKeyValuePairs);
+
+                        /** SessionAttributesKeyValuePairs keyValuePairs. */
+                        public keyValuePairs: google.ads.googleads.v19.services.ISessionAttributeKeyValuePair[];
+
+                        /**
+                         * Creates a new SessionAttributesKeyValuePairs instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns SessionAttributesKeyValuePairs instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.services.ISessionAttributesKeyValuePairs): google.ads.googleads.v19.services.SessionAttributesKeyValuePairs;
+
+                        /**
+                         * Encodes the specified SessionAttributesKeyValuePairs message. Does not implicitly {@link google.ads.googleads.v19.services.SessionAttributesKeyValuePairs.verify|verify} messages.
+                         * @param message SessionAttributesKeyValuePairs message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.services.ISessionAttributesKeyValuePairs, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified SessionAttributesKeyValuePairs message, length delimited. Does not implicitly {@link google.ads.googleads.v19.services.SessionAttributesKeyValuePairs.verify|verify} messages.
+                         * @param message SessionAttributesKeyValuePairs message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.services.ISessionAttributesKeyValuePairs, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a SessionAttributesKeyValuePairs message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns SessionAttributesKeyValuePairs
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.services.SessionAttributesKeyValuePairs;
+
+                        /**
+                         * Decodes a SessionAttributesKeyValuePairs message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns SessionAttributesKeyValuePairs
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.services.SessionAttributesKeyValuePairs;
+
+                        /**
+                         * Verifies a SessionAttributesKeyValuePairs message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a SessionAttributesKeyValuePairs message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns SessionAttributesKeyValuePairs
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.services.SessionAttributesKeyValuePairs;
+
+                        /**
+                         * Creates a plain object from a SessionAttributesKeyValuePairs message. Also converts values to other types if specified.
+                         * @param message SessionAttributesKeyValuePairs
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.services.SessionAttributesKeyValuePairs, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this SessionAttributesKeyValuePairs to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for SessionAttributesKeyValuePairs
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
                     }
 
                     /** Represents a CustomAudienceService */
@@ -191901,6 +194187,20 @@ export namespace google {
                          * @returns Promise
                          */
                         public appendLeadConversation(request: google.ads.googleads.v19.services.IAppendLeadConversationRequest): Promise<google.ads.googleads.v19.services.AppendLeadConversationResponse>;
+
+                        /**
+                         * Calls ProvideLeadFeedback.
+                         * @param request ProvideLeadFeedbackRequest message or plain object
+                         * @param callback Node-style callback called with the error, if any, and ProvideLeadFeedbackResponse
+                         */
+                        public provideLeadFeedback(request: google.ads.googleads.v19.services.IProvideLeadFeedbackRequest, callback: google.ads.googleads.v19.services.LocalServicesLeadService.ProvideLeadFeedbackCallback): void;
+
+                        /**
+                         * Calls ProvideLeadFeedback.
+                         * @param request ProvideLeadFeedbackRequest message or plain object
+                         * @returns Promise
+                         */
+                        public provideLeadFeedback(request: google.ads.googleads.v19.services.IProvideLeadFeedbackRequest): Promise<google.ads.googleads.v19.services.ProvideLeadFeedbackResponse>;
                     }
 
                     namespace LocalServicesLeadService {
@@ -191911,6 +194211,13 @@ export namespace google {
                          * @param [response] AppendLeadConversationResponse
                          */
                         type AppendLeadConversationCallback = (error: (Error|null), response?: google.ads.googleads.v19.services.AppendLeadConversationResponse) => void;
+
+                        /**
+                         * Callback as used by {@link google.ads.googleads.v19.services.LocalServicesLeadService|provideLeadFeedback}.
+                         * @param error Error, if any
+                         * @param [response] ProvideLeadFeedbackResponse
+                         */
+                        type ProvideLeadFeedbackCallback = (error: (Error|null), response?: google.ads.googleads.v19.services.ProvideLeadFeedbackResponse) => void;
                     }
 
                     /** Properties of an AppendLeadConversationRequest. */
@@ -192316,6 +194623,427 @@ export namespace google {
 
                         /**
                          * Gets the default type url for ConversationOrError
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    /** Properties of a SurveySatisfied. */
+                    interface ISurveySatisfied {
+
+                        /** SurveySatisfied surveySatisfiedReason */
+                        surveySatisfiedReason?: (google.ads.googleads.v19.enums.LocalServicesLeadSurveySatisfiedReasonEnum.SurveySatisfiedReason|keyof typeof google.ads.googleads.v19.enums.LocalServicesLeadSurveySatisfiedReasonEnum.SurveySatisfiedReason|null);
+
+                        /** SurveySatisfied otherReasonComment */
+                        otherReasonComment?: (string|null);
+                    }
+
+                    /** Represents a SurveySatisfied. */
+                    class SurveySatisfied implements ISurveySatisfied {
+
+                        /**
+                         * Constructs a new SurveySatisfied.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.services.ISurveySatisfied);
+
+                        /** SurveySatisfied surveySatisfiedReason. */
+                        public surveySatisfiedReason: (google.ads.googleads.v19.enums.LocalServicesLeadSurveySatisfiedReasonEnum.SurveySatisfiedReason|keyof typeof google.ads.googleads.v19.enums.LocalServicesLeadSurveySatisfiedReasonEnum.SurveySatisfiedReason);
+
+                        /** SurveySatisfied otherReasonComment. */
+                        public otherReasonComment: string;
+
+                        /**
+                         * Creates a new SurveySatisfied instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns SurveySatisfied instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.services.ISurveySatisfied): google.ads.googleads.v19.services.SurveySatisfied;
+
+                        /**
+                         * Encodes the specified SurveySatisfied message. Does not implicitly {@link google.ads.googleads.v19.services.SurveySatisfied.verify|verify} messages.
+                         * @param message SurveySatisfied message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.services.ISurveySatisfied, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified SurveySatisfied message, length delimited. Does not implicitly {@link google.ads.googleads.v19.services.SurveySatisfied.verify|verify} messages.
+                         * @param message SurveySatisfied message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.services.ISurveySatisfied, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a SurveySatisfied message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns SurveySatisfied
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.services.SurveySatisfied;
+
+                        /**
+                         * Decodes a SurveySatisfied message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns SurveySatisfied
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.services.SurveySatisfied;
+
+                        /**
+                         * Verifies a SurveySatisfied message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a SurveySatisfied message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns SurveySatisfied
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.services.SurveySatisfied;
+
+                        /**
+                         * Creates a plain object from a SurveySatisfied message. Also converts values to other types if specified.
+                         * @param message SurveySatisfied
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.services.SurveySatisfied, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this SurveySatisfied to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for SurveySatisfied
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    /** Properties of a SurveyDissatisfied. */
+                    interface ISurveyDissatisfied {
+
+                        /** SurveyDissatisfied surveyDissatisfiedReason */
+                        surveyDissatisfiedReason?: (google.ads.googleads.v19.enums.LocalServicesLeadSurveyDissatisfiedReasonEnum.SurveyDissatisfiedReason|keyof typeof google.ads.googleads.v19.enums.LocalServicesLeadSurveyDissatisfiedReasonEnum.SurveyDissatisfiedReason|null);
+
+                        /** SurveyDissatisfied otherReasonComment */
+                        otherReasonComment?: (string|null);
+                    }
+
+                    /** Represents a SurveyDissatisfied. */
+                    class SurveyDissatisfied implements ISurveyDissatisfied {
+
+                        /**
+                         * Constructs a new SurveyDissatisfied.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.services.ISurveyDissatisfied);
+
+                        /** SurveyDissatisfied surveyDissatisfiedReason. */
+                        public surveyDissatisfiedReason: (google.ads.googleads.v19.enums.LocalServicesLeadSurveyDissatisfiedReasonEnum.SurveyDissatisfiedReason|keyof typeof google.ads.googleads.v19.enums.LocalServicesLeadSurveyDissatisfiedReasonEnum.SurveyDissatisfiedReason);
+
+                        /** SurveyDissatisfied otherReasonComment. */
+                        public otherReasonComment: string;
+
+                        /**
+                         * Creates a new SurveyDissatisfied instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns SurveyDissatisfied instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.services.ISurveyDissatisfied): google.ads.googleads.v19.services.SurveyDissatisfied;
+
+                        /**
+                         * Encodes the specified SurveyDissatisfied message. Does not implicitly {@link google.ads.googleads.v19.services.SurveyDissatisfied.verify|verify} messages.
+                         * @param message SurveyDissatisfied message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.services.ISurveyDissatisfied, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified SurveyDissatisfied message, length delimited. Does not implicitly {@link google.ads.googleads.v19.services.SurveyDissatisfied.verify|verify} messages.
+                         * @param message SurveyDissatisfied message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.services.ISurveyDissatisfied, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a SurveyDissatisfied message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns SurveyDissatisfied
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.services.SurveyDissatisfied;
+
+                        /**
+                         * Decodes a SurveyDissatisfied message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns SurveyDissatisfied
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.services.SurveyDissatisfied;
+
+                        /**
+                         * Verifies a SurveyDissatisfied message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a SurveyDissatisfied message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns SurveyDissatisfied
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.services.SurveyDissatisfied;
+
+                        /**
+                         * Creates a plain object from a SurveyDissatisfied message. Also converts values to other types if specified.
+                         * @param message SurveyDissatisfied
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.services.SurveyDissatisfied, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this SurveyDissatisfied to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for SurveyDissatisfied
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    /** Properties of a ProvideLeadFeedbackRequest. */
+                    interface IProvideLeadFeedbackRequest {
+
+                        /** ProvideLeadFeedbackRequest resourceName */
+                        resourceName?: (string|null);
+
+                        /** ProvideLeadFeedbackRequest surveyAnswer */
+                        surveyAnswer?: (google.ads.googleads.v19.enums.LocalServicesLeadSurveyAnswerEnum.SurveyAnswer|keyof typeof google.ads.googleads.v19.enums.LocalServicesLeadSurveyAnswerEnum.SurveyAnswer|null);
+
+                        /** ProvideLeadFeedbackRequest surveySatisfied */
+                        surveySatisfied?: (google.ads.googleads.v19.services.ISurveySatisfied|null);
+
+                        /** ProvideLeadFeedbackRequest surveyDissatisfied */
+                        surveyDissatisfied?: (google.ads.googleads.v19.services.ISurveyDissatisfied|null);
+                    }
+
+                    /** Represents a ProvideLeadFeedbackRequest. */
+                    class ProvideLeadFeedbackRequest implements IProvideLeadFeedbackRequest {
+
+                        /**
+                         * Constructs a new ProvideLeadFeedbackRequest.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.services.IProvideLeadFeedbackRequest);
+
+                        /** ProvideLeadFeedbackRequest resourceName. */
+                        public resourceName: string;
+
+                        /** ProvideLeadFeedbackRequest surveyAnswer. */
+                        public surveyAnswer: (google.ads.googleads.v19.enums.LocalServicesLeadSurveyAnswerEnum.SurveyAnswer|keyof typeof google.ads.googleads.v19.enums.LocalServicesLeadSurveyAnswerEnum.SurveyAnswer);
+
+                        /** ProvideLeadFeedbackRequest surveySatisfied. */
+                        public surveySatisfied?: (google.ads.googleads.v19.services.ISurveySatisfied|null);
+
+                        /** ProvideLeadFeedbackRequest surveyDissatisfied. */
+                        public surveyDissatisfied?: (google.ads.googleads.v19.services.ISurveyDissatisfied|null);
+
+                        /** ProvideLeadFeedbackRequest surveyDetails. */
+                        public surveyDetails?: ("surveySatisfied"|"surveyDissatisfied");
+
+                        /**
+                         * Creates a new ProvideLeadFeedbackRequest instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns ProvideLeadFeedbackRequest instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.services.IProvideLeadFeedbackRequest): google.ads.googleads.v19.services.ProvideLeadFeedbackRequest;
+
+                        /**
+                         * Encodes the specified ProvideLeadFeedbackRequest message. Does not implicitly {@link google.ads.googleads.v19.services.ProvideLeadFeedbackRequest.verify|verify} messages.
+                         * @param message ProvideLeadFeedbackRequest message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.services.IProvideLeadFeedbackRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified ProvideLeadFeedbackRequest message, length delimited. Does not implicitly {@link google.ads.googleads.v19.services.ProvideLeadFeedbackRequest.verify|verify} messages.
+                         * @param message ProvideLeadFeedbackRequest message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.services.IProvideLeadFeedbackRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a ProvideLeadFeedbackRequest message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns ProvideLeadFeedbackRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.services.ProvideLeadFeedbackRequest;
+
+                        /**
+                         * Decodes a ProvideLeadFeedbackRequest message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns ProvideLeadFeedbackRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.services.ProvideLeadFeedbackRequest;
+
+                        /**
+                         * Verifies a ProvideLeadFeedbackRequest message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a ProvideLeadFeedbackRequest message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns ProvideLeadFeedbackRequest
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.services.ProvideLeadFeedbackRequest;
+
+                        /**
+                         * Creates a plain object from a ProvideLeadFeedbackRequest message. Also converts values to other types if specified.
+                         * @param message ProvideLeadFeedbackRequest
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.services.ProvideLeadFeedbackRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this ProvideLeadFeedbackRequest to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for ProvideLeadFeedbackRequest
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    /** Properties of a ProvideLeadFeedbackResponse. */
+                    interface IProvideLeadFeedbackResponse {
+
+                        /** ProvideLeadFeedbackResponse creditIssuanceDecision */
+                        creditIssuanceDecision?: (google.ads.googleads.v19.enums.LocalServicesLeadCreditIssuanceDecisionEnum.CreditIssuanceDecision|keyof typeof google.ads.googleads.v19.enums.LocalServicesLeadCreditIssuanceDecisionEnum.CreditIssuanceDecision|null);
+                    }
+
+                    /** Represents a ProvideLeadFeedbackResponse. */
+                    class ProvideLeadFeedbackResponse implements IProvideLeadFeedbackResponse {
+
+                        /**
+                         * Constructs a new ProvideLeadFeedbackResponse.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.services.IProvideLeadFeedbackResponse);
+
+                        /** ProvideLeadFeedbackResponse creditIssuanceDecision. */
+                        public creditIssuanceDecision: (google.ads.googleads.v19.enums.LocalServicesLeadCreditIssuanceDecisionEnum.CreditIssuanceDecision|keyof typeof google.ads.googleads.v19.enums.LocalServicesLeadCreditIssuanceDecisionEnum.CreditIssuanceDecision);
+
+                        /**
+                         * Creates a new ProvideLeadFeedbackResponse instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns ProvideLeadFeedbackResponse instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.services.IProvideLeadFeedbackResponse): google.ads.googleads.v19.services.ProvideLeadFeedbackResponse;
+
+                        /**
+                         * Encodes the specified ProvideLeadFeedbackResponse message. Does not implicitly {@link google.ads.googleads.v19.services.ProvideLeadFeedbackResponse.verify|verify} messages.
+                         * @param message ProvideLeadFeedbackResponse message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.services.IProvideLeadFeedbackResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified ProvideLeadFeedbackResponse message, length delimited. Does not implicitly {@link google.ads.googleads.v19.services.ProvideLeadFeedbackResponse.verify|verify} messages.
+                         * @param message ProvideLeadFeedbackResponse message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.services.IProvideLeadFeedbackResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a ProvideLeadFeedbackResponse message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns ProvideLeadFeedbackResponse
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.services.ProvideLeadFeedbackResponse;
+
+                        /**
+                         * Decodes a ProvideLeadFeedbackResponse message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns ProvideLeadFeedbackResponse
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.services.ProvideLeadFeedbackResponse;
+
+                        /**
+                         * Verifies a ProvideLeadFeedbackResponse message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a ProvideLeadFeedbackResponse message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns ProvideLeadFeedbackResponse
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.services.ProvideLeadFeedbackResponse;
+
+                        /**
+                         * Creates a plain object from a ProvideLeadFeedbackResponse message. Also converts values to other types if specified.
+                         * @param message ProvideLeadFeedbackResponse
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.services.ProvideLeadFeedbackResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this ProvideLeadFeedbackResponse to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for ProvideLeadFeedbackResponse
                          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
                          * @returns The default type url
                          */
@@ -194485,6 +197213,20 @@ export namespace google {
                         public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): ReachPlanService;
 
                         /**
+                         * Calls GenerateConversionRates.
+                         * @param request GenerateConversionRatesRequest message or plain object
+                         * @param callback Node-style callback called with the error, if any, and GenerateConversionRatesResponse
+                         */
+                        public generateConversionRates(request: google.ads.googleads.v19.services.IGenerateConversionRatesRequest, callback: google.ads.googleads.v19.services.ReachPlanService.GenerateConversionRatesCallback): void;
+
+                        /**
+                         * Calls GenerateConversionRates.
+                         * @param request GenerateConversionRatesRequest message or plain object
+                         * @returns Promise
+                         */
+                        public generateConversionRates(request: google.ads.googleads.v19.services.IGenerateConversionRatesRequest): Promise<google.ads.googleads.v19.services.GenerateConversionRatesResponse>;
+
+                        /**
                          * Calls ListPlannableLocations.
                          * @param request ListPlannableLocationsRequest message or plain object
                          * @param callback Node-style callback called with the error, if any, and ListPlannableLocationsResponse
@@ -194530,6 +197272,13 @@ export namespace google {
                     namespace ReachPlanService {
 
                         /**
+                         * Callback as used by {@link google.ads.googleads.v19.services.ReachPlanService|generateConversionRates}.
+                         * @param error Error, if any
+                         * @param [response] GenerateConversionRatesResponse
+                         */
+                        type GenerateConversionRatesCallback = (error: (Error|null), response?: google.ads.googleads.v19.services.GenerateConversionRatesResponse) => void;
+
+                        /**
                          * Callback as used by {@link google.ads.googleads.v19.services.ReachPlanService|listPlannableLocations}.
                          * @param error Error, if any
                          * @param [response] ListPlannableLocationsResponse
@@ -194549,6 +197298,315 @@ export namespace google {
                          * @param [response] GenerateReachForecastResponse
                          */
                         type GenerateReachForecastCallback = (error: (Error|null), response?: google.ads.googleads.v19.services.GenerateReachForecastResponse) => void;
+                    }
+
+                    /** Properties of a GenerateConversionRatesRequest. */
+                    interface IGenerateConversionRatesRequest {
+
+                        /** GenerateConversionRatesRequest customerId */
+                        customerId?: (string|null);
+
+                        /** GenerateConversionRatesRequest customerReachGroup */
+                        customerReachGroup?: (string|null);
+                    }
+
+                    /** Represents a GenerateConversionRatesRequest. */
+                    class GenerateConversionRatesRequest implements IGenerateConversionRatesRequest {
+
+                        /**
+                         * Constructs a new GenerateConversionRatesRequest.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.services.IGenerateConversionRatesRequest);
+
+                        /** GenerateConversionRatesRequest customerId. */
+                        public customerId: string;
+
+                        /** GenerateConversionRatesRequest customerReachGroup. */
+                        public customerReachGroup?: (string|null);
+
+                        /**
+                         * Creates a new GenerateConversionRatesRequest instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns GenerateConversionRatesRequest instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.services.IGenerateConversionRatesRequest): google.ads.googleads.v19.services.GenerateConversionRatesRequest;
+
+                        /**
+                         * Encodes the specified GenerateConversionRatesRequest message. Does not implicitly {@link google.ads.googleads.v19.services.GenerateConversionRatesRequest.verify|verify} messages.
+                         * @param message GenerateConversionRatesRequest message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.services.IGenerateConversionRatesRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified GenerateConversionRatesRequest message, length delimited. Does not implicitly {@link google.ads.googleads.v19.services.GenerateConversionRatesRequest.verify|verify} messages.
+                         * @param message GenerateConversionRatesRequest message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.services.IGenerateConversionRatesRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a GenerateConversionRatesRequest message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns GenerateConversionRatesRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.services.GenerateConversionRatesRequest;
+
+                        /**
+                         * Decodes a GenerateConversionRatesRequest message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns GenerateConversionRatesRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.services.GenerateConversionRatesRequest;
+
+                        /**
+                         * Verifies a GenerateConversionRatesRequest message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a GenerateConversionRatesRequest message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns GenerateConversionRatesRequest
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.services.GenerateConversionRatesRequest;
+
+                        /**
+                         * Creates a plain object from a GenerateConversionRatesRequest message. Also converts values to other types if specified.
+                         * @param message GenerateConversionRatesRequest
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.services.GenerateConversionRatesRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this GenerateConversionRatesRequest to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for GenerateConversionRatesRequest
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    /** Properties of a GenerateConversionRatesResponse. */
+                    interface IGenerateConversionRatesResponse {
+
+                        /** GenerateConversionRatesResponse conversionRateSuggestions */
+                        conversionRateSuggestions?: (google.ads.googleads.v19.services.IConversionRateSuggestion[]|null);
+                    }
+
+                    /** Represents a GenerateConversionRatesResponse. */
+                    class GenerateConversionRatesResponse implements IGenerateConversionRatesResponse {
+
+                        /**
+                         * Constructs a new GenerateConversionRatesResponse.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.services.IGenerateConversionRatesResponse);
+
+                        /** GenerateConversionRatesResponse conversionRateSuggestions. */
+                        public conversionRateSuggestions: google.ads.googleads.v19.services.IConversionRateSuggestion[];
+
+                        /**
+                         * Creates a new GenerateConversionRatesResponse instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns GenerateConversionRatesResponse instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.services.IGenerateConversionRatesResponse): google.ads.googleads.v19.services.GenerateConversionRatesResponse;
+
+                        /**
+                         * Encodes the specified GenerateConversionRatesResponse message. Does not implicitly {@link google.ads.googleads.v19.services.GenerateConversionRatesResponse.verify|verify} messages.
+                         * @param message GenerateConversionRatesResponse message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.services.IGenerateConversionRatesResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified GenerateConversionRatesResponse message, length delimited. Does not implicitly {@link google.ads.googleads.v19.services.GenerateConversionRatesResponse.verify|verify} messages.
+                         * @param message GenerateConversionRatesResponse message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.services.IGenerateConversionRatesResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a GenerateConversionRatesResponse message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns GenerateConversionRatesResponse
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.services.GenerateConversionRatesResponse;
+
+                        /**
+                         * Decodes a GenerateConversionRatesResponse message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns GenerateConversionRatesResponse
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.services.GenerateConversionRatesResponse;
+
+                        /**
+                         * Verifies a GenerateConversionRatesResponse message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a GenerateConversionRatesResponse message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns GenerateConversionRatesResponse
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.services.GenerateConversionRatesResponse;
+
+                        /**
+                         * Creates a plain object from a GenerateConversionRatesResponse message. Also converts values to other types if specified.
+                         * @param message GenerateConversionRatesResponse
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.services.GenerateConversionRatesResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this GenerateConversionRatesResponse to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for GenerateConversionRatesResponse
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
+
+                    /** Properties of a ConversionRateSuggestion. */
+                    interface IConversionRateSuggestion {
+
+                        /** ConversionRateSuggestion conversionRateModel */
+                        conversionRateModel?: (google.ads.googleads.v19.enums.ReachPlanConversionRateModelEnum.ReachPlanConversionRateModel|keyof typeof google.ads.googleads.v19.enums.ReachPlanConversionRateModelEnum.ReachPlanConversionRateModel|null);
+
+                        /** ConversionRateSuggestion plannableProductCode */
+                        plannableProductCode?: (string|null);
+
+                        /** ConversionRateSuggestion conversionRate */
+                        conversionRate?: (number|null);
+                    }
+
+                    /** Represents a ConversionRateSuggestion. */
+                    class ConversionRateSuggestion implements IConversionRateSuggestion {
+
+                        /**
+                         * Constructs a new ConversionRateSuggestion.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: google.ads.googleads.v19.services.IConversionRateSuggestion);
+
+                        /** ConversionRateSuggestion conversionRateModel. */
+                        public conversionRateModel: (google.ads.googleads.v19.enums.ReachPlanConversionRateModelEnum.ReachPlanConversionRateModel|keyof typeof google.ads.googleads.v19.enums.ReachPlanConversionRateModelEnum.ReachPlanConversionRateModel);
+
+                        /** ConversionRateSuggestion plannableProductCode. */
+                        public plannableProductCode: string;
+
+                        /** ConversionRateSuggestion conversionRate. */
+                        public conversionRate: number;
+
+                        /**
+                         * Creates a new ConversionRateSuggestion instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns ConversionRateSuggestion instance
+                         */
+                        public static create(properties?: google.ads.googleads.v19.services.IConversionRateSuggestion): google.ads.googleads.v19.services.ConversionRateSuggestion;
+
+                        /**
+                         * Encodes the specified ConversionRateSuggestion message. Does not implicitly {@link google.ads.googleads.v19.services.ConversionRateSuggestion.verify|verify} messages.
+                         * @param message ConversionRateSuggestion message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: google.ads.googleads.v19.services.IConversionRateSuggestion, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified ConversionRateSuggestion message, length delimited. Does not implicitly {@link google.ads.googleads.v19.services.ConversionRateSuggestion.verify|verify} messages.
+                         * @param message ConversionRateSuggestion message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: google.ads.googleads.v19.services.IConversionRateSuggestion, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a ConversionRateSuggestion message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns ConversionRateSuggestion
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.ads.googleads.v19.services.ConversionRateSuggestion;
+
+                        /**
+                         * Decodes a ConversionRateSuggestion message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns ConversionRateSuggestion
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.ads.googleads.v19.services.ConversionRateSuggestion;
+
+                        /**
+                         * Verifies a ConversionRateSuggestion message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a ConversionRateSuggestion message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns ConversionRateSuggestion
+                         */
+                        public static fromObject(object: { [k: string]: any }): google.ads.googleads.v19.services.ConversionRateSuggestion;
+
+                        /**
+                         * Creates a plain object from a ConversionRateSuggestion message. Also converts values to other types if specified.
+                         * @param message ConversionRateSuggestion
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: google.ads.googleads.v19.services.ConversionRateSuggestion, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this ConversionRateSuggestion to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for ConversionRateSuggestion
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
                     }
 
                     /** Properties of a ListPlannableLocationsRequest. */
@@ -195892,6 +198950,9 @@ export namespace google {
                         /** PlannedProduct budgetMicros */
                         budgetMicros?: (number|Long|string|null);
 
+                        /** PlannedProduct conversionRate */
+                        conversionRate?: (number|null);
+
                         /** PlannedProduct advancedProductTargeting */
                         advancedProductTargeting?: (google.ads.googleads.v19.services.IAdvancedProductTargeting|null);
                     }
@@ -195910,6 +198971,9 @@ export namespace google {
 
                         /** PlannedProduct budgetMicros. */
                         public budgetMicros?: (number|Long|string|null);
+
+                        /** PlannedProduct conversionRate. */
+                        public conversionRate?: (number|null);
 
                         /** PlannedProduct advancedProductTargeting. */
                         public advancedProductTargeting?: (google.ads.googleads.v19.services.IAdvancedProductTargeting|null);
@@ -196336,6 +199400,9 @@ export namespace google {
 
                         /** Forecast views */
                         views?: (number|Long|string|null);
+
+                        /** Forecast conversions */
+                        conversions?: (number|null);
                     }
 
                     /** Represents a Forecast. */
@@ -196379,6 +199446,9 @@ export namespace google {
 
                         /** Forecast views. */
                         public views?: (number|Long|string|null);
+
+                        /** Forecast conversions. */
+                        public conversions?: (number|null);
 
                         /**
                          * Creates a new Forecast instance using the specified properties.
@@ -196602,6 +199672,9 @@ export namespace google {
 
                         /** PlannedProductForecast views */
                         views?: (number|Long|string|null);
+
+                        /** PlannedProductForecast conversions */
+                        conversions?: (number|null);
                     }
 
                     /** Represents a PlannedProductForecast. */
@@ -196645,6 +199718,9 @@ export namespace google {
 
                         /** PlannedProductForecast views. */
                         public views?: (number|Long|string|null);
+
+                        /** PlannedProductForecast conversions. */
+                        public conversions?: (number|null);
 
                         /**
                          * Creates a new PlannedProductForecast instance using the specified properties.
@@ -210900,7 +213976,7 @@ export namespace google {
             doubleValue?: (number|null);
 
             /** UninterpretedOption stringValue */
-            stringValue?: (Uint8Array|string|null);
+            stringValue?: (Uint8Array|Buffer|string|null);
 
             /** UninterpretedOption aggregateValue */
             aggregateValue?: (string|null);
@@ -210931,7 +214007,7 @@ export namespace google {
             public doubleValue: number;
 
             /** UninterpretedOption stringValue. */
-            public stringValue: (Uint8Array|string);
+            public stringValue: (Uint8Array|Buffer|string);
 
             /** UninterpretedOption aggregateValue. */
             public aggregateValue: string;
@@ -212167,7 +215243,7 @@ export namespace google {
             type_url?: (string|null);
 
             /** Any value */
-            value?: (Uint8Array|string|null);
+            value?: (Uint8Array|Buffer|string|null);
         }
 
         /** Represents an Any. */
@@ -212183,7 +215259,7 @@ export namespace google {
             public type_url: string;
 
             /** Any value. */
-            public value: (Uint8Array|string);
+            public value: (Uint8Array|Buffer|string);
 
             /**
              * Creates a new Any instance using the specified properties.

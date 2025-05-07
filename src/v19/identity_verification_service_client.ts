@@ -914,7 +914,7 @@ export class IdentityVerificationServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('startIdentityVerification request %j', request);
     const wrappedCallback: Callback<
         protos.google.protobuf.IEmpty,
@@ -1011,7 +1011,7 @@ export class IdentityVerificationServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('getIdentityVerification request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IGetIdentityVerificationResponse,

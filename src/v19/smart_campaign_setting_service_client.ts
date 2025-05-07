@@ -902,7 +902,7 @@ export class SmartCampaignSettingServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resourceName ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('getSmartCampaignStatus request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IGetSmartCampaignStatusResponse,
@@ -1005,7 +1005,7 @@ export class SmartCampaignSettingServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('mutateSmartCampaignSettings request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IMutateSmartCampaignSettingsResponse,

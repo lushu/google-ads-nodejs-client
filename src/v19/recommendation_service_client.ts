@@ -923,7 +923,7 @@ export class RecommendationServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('applyRecommendation request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IApplyRecommendationResponse,
@@ -1029,7 +1029,7 @@ export class RecommendationServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('dismissRecommendation request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IDismissRecommendationResponse,
@@ -1212,7 +1212,7 @@ export class RecommendationServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('generateRecommendations request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IGenerateRecommendationsResponse,

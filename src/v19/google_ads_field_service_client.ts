@@ -918,7 +918,7 @@ export class GoogleAdsFieldServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resourceName ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('getGoogleAdsField request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.resources.IGoogleAdsField,
@@ -1024,7 +1024,7 @@ export class GoogleAdsFieldServiceClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     const wrappedCallback: PaginationCallback<
       protos.google.ads.googleads.v19.services.ISearchGoogleAdsFieldsRequest,
       protos.google.ads.googleads.v19.services.ISearchGoogleAdsFieldsResponse|null|undefined,
@@ -1082,7 +1082,7 @@ export class GoogleAdsFieldServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['searchGoogleAdsFields'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('searchGoogleAdsFields stream %j', request);
     return this.descriptors.page.searchGoogleAdsFields.createStream(
       this.innerApiCalls.searchGoogleAdsFields as GaxCall,
@@ -1129,7 +1129,7 @@ export class GoogleAdsFieldServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['searchGoogleAdsFields'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('searchGoogleAdsFields iterate %j', request);
     return this.descriptors.page.searchGoogleAdsFields.asyncIterate(
       this.innerApiCalls['searchGoogleAdsFields'] as GaxCall,

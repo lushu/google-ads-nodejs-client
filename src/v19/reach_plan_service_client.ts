@@ -736,7 +736,7 @@ export class ReachPlanServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const reachPlanServiceStubMethods =
-        ['listPlannableLocations', 'listPlannableProducts', 'generateReachForecast'];
+        ['generateConversionRates', 'listPlannableLocations', 'listPlannableProducts', 'generateReachForecast'];
     for (const methodName of reachPlanServiceStubMethods) {
       const callPromise = this.reachPlanServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -839,6 +839,101 @@ export class ReachPlanServiceClient {
   // -- Service calls --
   // -------------------
 /**
+ * Returns a collection of conversion rate suggestions for supported plannable
+ * products.
+ *
+ * List of thrown errors:
+ *   [AuthenticationError]()
+ *   [AuthorizationError]()
+ *   [HeaderError]()
+ *   [InternalError]()
+ *   [QuotaError]()
+ *   [RequestError]()
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.customerId
+ *   Required. The ID of the customer. A conversion rate based on the historical
+ *   data of this customer may be suggested.
+ * @param {string} request.customerReachGroup
+ *   The name of the customer being planned for. This is a user-defined value.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing {@link protos.google.ads.googleads.v19.services.GenerateConversionRatesResponse|GenerateConversionRatesResponse}.
+ *   Please see the {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods | documentation }
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v19/reach_plan_service.generate_conversion_rates.js</caption>
+ * region_tag:googleads_v19_generated_ReachPlanService_GenerateConversionRates_async
+ */
+  generateConversionRates(
+      request?: protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|undefined, {}|undefined
+      ]>;
+  generateConversionRates(
+      request: protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateConversionRates(
+      request: protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateConversionRates(
+      request?: protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateConversionRates request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('generateConversionRates response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.generateConversionRates(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('generateConversionRates response %j', response);
+        return [response, options, rawResponse];
+      });
+  }
+/**
  * Returns the list of plannable locations (for example, countries).
  *
  * List of thrown errors:
@@ -906,7 +1001,7 @@ export class ReachPlanServiceClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('listPlannableLocations request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IListPlannableLocationsResponse,
@@ -1000,7 +1095,7 @@ export class ReachPlanServiceClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('listPlannableProducts request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IListPlannableProductsResponse,
@@ -1153,7 +1248,7 @@ export class ReachPlanServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('generateReachForecast request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IGenerateReachForecastResponse,

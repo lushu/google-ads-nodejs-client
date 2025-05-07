@@ -916,7 +916,7 @@ export class AccountLinkServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('createAccountLink request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.ICreateAccountLinkResponse,
@@ -1028,7 +1028,7 @@ export class AccountLinkServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('mutateAccountLink request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IMutateAccountLinkResponse,

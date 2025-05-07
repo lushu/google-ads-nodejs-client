@@ -951,7 +951,7 @@ export class CampaignServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('mutateCampaigns request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IMutateCampaignsResponse,
@@ -1056,7 +1056,7 @@ export class CampaignServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('enablePMaxBrandGuidelines request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IEnablePMaxBrandGuidelinesResponse,

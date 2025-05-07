@@ -915,7 +915,7 @@ export class ProductLinkServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('createProductLink request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.ICreateProductLinkResponse,
@@ -1021,7 +1021,7 @@ export class ProductLinkServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('removeProductLink request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IRemoveProductLinkResponse,

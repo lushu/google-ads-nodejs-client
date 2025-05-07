@@ -917,7 +917,7 @@ export class ConversionValueRuleSetServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('mutateConversionValueRuleSets request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IMutateConversionValueRuleSetsResponse,

@@ -909,7 +909,7 @@ export class CustomerConversionGoalServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customerId ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
     this._log.info('mutateCustomerConversionGoals request %j', request);
     const wrappedCallback: Callback<
         protos.google.ads.googleads.v19.services.IMutateCustomerConversionGoalsResponse,
