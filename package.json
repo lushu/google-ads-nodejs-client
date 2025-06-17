@@ -1,6 +1,6 @@
 {
   "name": "google-ads-nodejs-client",
-  "version": "19.1.0",
+  "version": "20.0.0",
   "description": "Googleads client for Node.js",
   "repository": {
     "type": "git",
