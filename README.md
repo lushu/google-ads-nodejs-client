@@ -2,7 +2,8 @@ Googleads: Node.js Client
 
 This library (google-ads-nodejs-client) is the compiled output of the Google Ads API Bazel build files.
 
-If you would like to build this library by yourself:
+If you would like to build this library by yourself (we will take `v20` as the
+example):
 
 1. Install bazel: `npm install -g @bazel/bazelisk`
 2. Clone the Google APIs' original interface definitions: `git clone https://github.com/googleapis/googleapis.git`

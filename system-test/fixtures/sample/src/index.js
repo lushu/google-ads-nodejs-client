@@ -45,6 +45,7 @@ function main() {
   const assetSetServiceClient = new googleads.AssetSetServiceClient();
   const audienceInsightsServiceClient = new googleads.AudienceInsightsServiceClient();
   const audienceServiceClient = new googleads.AudienceServiceClient();
+  const automaticallyCreatedAssetRemovalServiceClient = new googleads.AutomaticallyCreatedAssetRemovalServiceClient();
   const batchJobServiceClient = new googleads.BatchJobServiceClient();
   const biddingDataExclusionServiceClient = new googleads.BiddingDataExclusionServiceClient();
   const biddingSeasonalityAdjustmentServiceClient = new googleads.BiddingSeasonalityAdjustmentServiceClient();
