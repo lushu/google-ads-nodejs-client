@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {AccountBudgetProposalServiceClient, AccountLinkServiceClient, AdGroupAdLabelServiceClient, AdGroupAdServiceClient, AdGroupAssetServiceClient, AdGroupAssetSetServiceClient, AdGroupBidModifierServiceClient, AdGroupCriterionCustomizerServiceClient, AdGroupCriterionLabelServiceClient, AdGroupCriterionServiceClient, AdGroupCustomizerServiceClient, AdGroupLabelServiceClient, AdGroupServiceClient, AdParameterServiceClient, AdServiceClient, AssetGroupAssetServiceClient, AssetGroupListingGroupFilterServiceClient, AssetGroupServiceClient, AssetGroupSignalServiceClient, AssetServiceClient, AssetSetAssetServiceClient, AssetSetServiceClient, AudienceInsightsServiceClient, AudienceServiceClient, AutomaticallyCreatedAssetRemovalServiceClient, BatchJobServiceClient, BiddingDataExclusionServiceClient, BiddingSeasonalityAdjustmentServiceClient, BiddingStrategyServiceClient, BillingSetupServiceClient, BrandSuggestionServiceClient, CampaignAssetServiceClient, CampaignAssetSetServiceClient, CampaignBidModifierServiceClient, CampaignBudgetServiceClient, CampaignConversionGoalServiceClient, CampaignCriterionServiceClient, CampaignCustomizerServiceClient, CampaignDraftServiceClient, CampaignGroupServiceClient, CampaignLabelServiceClient, CampaignLifecycleGoalServiceClient, CampaignServiceClient, CampaignSharedSetServiceClient, ContentCreatorInsightsServiceClient, ConversionActionServiceClient, ConversionAdjustmentUploadServiceClient, ConversionCustomVariableServiceClient, ConversionGoalCampaignConfigServiceClient, ConversionUploadServiceClient, ConversionValueRuleServiceClient, ConversionValueRuleSetServiceClient, CustomAudienceServiceClient, CustomConversionGoalServiceClient, CustomerAssetServiceClient, CustomerAssetSetServiceClient, CustomerClientLinkServiceClient, CustomerConversionGoalServiceClient, CustomerCustomizerServiceClient, CustomerLabelServiceClient, CustomerLifecycleGoalServiceClient, CustomerManagerLinkServiceClient, CustomerNegativeCriterionServiceClient, CustomerServiceClient, CustomerSkAdNetworkConversionValueSchemaServiceClient, CustomerUserAccessInvitationServiceClient, CustomerUserAccessServiceClient, CustomInterestServiceClient, CustomizerAttributeServiceClient, DataLinkServiceClient, ExperimentArmServiceClient, ExperimentServiceClient, GeoTargetConstantServiceClient, GoogleAdsFieldServiceClient, GoogleAdsServiceClient, IdentityVerificationServiceClient, InvoiceServiceClient, KeywordPlanAdGroupKeywordServiceClient, KeywordPlanAdGroupServiceClient, KeywordPlanCampaignKeywordServiceClient, KeywordPlanCampaignServiceClient, KeywordPlanIdeaServiceClient, KeywordPlanServiceClient, KeywordThemeConstantServiceClient, LabelServiceClient, LocalServicesLeadServiceClient, OfflineUserDataJobServiceClient, PaymentsAccountServiceClient, ProductLinkInvitationServiceClient, ProductLinkServiceClient, ReachPlanServiceClient, RecommendationServiceClient, RecommendationSubscriptionServiceClient, RemarketingActionServiceClient, ShareablePreviewServiceClient, SharedCriterionServiceClient, SharedSetServiceClient, SmartCampaignSettingServiceClient, SmartCampaignSuggestServiceClient, ThirdPartyAppAnalyticsLinkServiceClient, TravelAssetSuggestionServiceClient, UserDataServiceClient, UserListCustomerTypeServiceClient, UserListServiceClient} from 'google-ads';
+import {AccountBudgetProposalServiceClient, AccountLinkServiceClient, AdGroupAdLabelServiceClient, AdGroupAdServiceClient, AdGroupAssetServiceClient, AdGroupAssetSetServiceClient, AdGroupBidModifierServiceClient, AdGroupCriterionCustomizerServiceClient, AdGroupCriterionLabelServiceClient, AdGroupCriterionServiceClient, AdGroupCustomizerServiceClient, AdGroupLabelServiceClient, AdGroupServiceClient, AdParameterServiceClient, AdServiceClient, AssetGenerationServiceClient, AssetGroupAssetServiceClient, AssetGroupListingGroupFilterServiceClient, AssetGroupServiceClient, AssetGroupSignalServiceClient, AssetServiceClient, AssetSetAssetServiceClient, AssetSetServiceClient, AudienceInsightsServiceClient, AudienceServiceClient, AutomaticallyCreatedAssetRemovalServiceClient, BatchJobServiceClient, BiddingDataExclusionServiceClient, BiddingSeasonalityAdjustmentServiceClient, BiddingStrategyServiceClient, BillingSetupServiceClient, BrandSuggestionServiceClient, CampaignAssetServiceClient, CampaignAssetSetServiceClient, CampaignBidModifierServiceClient, CampaignBudgetServiceClient, CampaignConversionGoalServiceClient, CampaignCriterionServiceClient, CampaignCustomizerServiceClient, CampaignDraftServiceClient, CampaignGoalConfigServiceClient, CampaignGroupServiceClient, CampaignLabelServiceClient, CampaignLifecycleGoalServiceClient, CampaignServiceClient, CampaignSharedSetServiceClient, ContentCreatorInsightsServiceClient, ConversionActionServiceClient, ConversionAdjustmentUploadServiceClient, ConversionCustomVariableServiceClient, ConversionGoalCampaignConfigServiceClient, ConversionUploadServiceClient, ConversionValueRuleServiceClient, ConversionValueRuleSetServiceClient, CustomAudienceServiceClient, CustomConversionGoalServiceClient, CustomerAssetServiceClient, CustomerAssetSetServiceClient, CustomerClientLinkServiceClient, CustomerConversionGoalServiceClient, CustomerCustomizerServiceClient, CustomerLabelServiceClient, CustomerLifecycleGoalServiceClient, CustomerManagerLinkServiceClient, CustomerNegativeCriterionServiceClient, CustomerServiceClient, CustomerSkAdNetworkConversionValueSchemaServiceClient, CustomerUserAccessInvitationServiceClient, CustomerUserAccessServiceClient, CustomInterestServiceClient, CustomizerAttributeServiceClient, DataLinkServiceClient, ExperimentArmServiceClient, ExperimentServiceClient, GeoTargetConstantServiceClient, GoalServiceClient, GoogleAdsFieldServiceClient, GoogleAdsServiceClient, IdentityVerificationServiceClient, InvoiceServiceClient, KeywordPlanAdGroupKeywordServiceClient, KeywordPlanAdGroupServiceClient, KeywordPlanCampaignKeywordServiceClient, KeywordPlanCampaignServiceClient, KeywordPlanIdeaServiceClient, KeywordPlanServiceClient, KeywordThemeConstantServiceClient, LabelServiceClient, LocalServicesLeadServiceClient, OfflineUserDataJobServiceClient, PaymentsAccountServiceClient, ProductLinkInvitationServiceClient, ProductLinkServiceClient, ReachPlanServiceClient, RecommendationServiceClient, RecommendationSubscriptionServiceClient, RemarketingActionServiceClient, ShareablePreviewServiceClient, SharedCriterionServiceClient, SharedSetServiceClient, SmartCampaignSettingServiceClient, SmartCampaignSuggestServiceClient, ThirdPartyAppAnalyticsLinkServiceClient, TravelAssetSuggestionServiceClient, UserDataServiceClient, UserListCustomerTypeServiceClient, UserListServiceClient} from 'google-ads';
 
 // check that the client class type name can be used
 function doStuffWithAccountBudgetProposalServiceClient(client: AccountBudgetProposalServiceClient) {
@@ -62,6 +62,9 @@ function doStuffWithAdParameterServiceClient(client: AdParameterServiceClient) {
   client.close();
 }
 function doStuffWithAdServiceClient(client: AdServiceClient) {
+  client.close();
+}
+function doStuffWithAssetGenerationServiceClient(client: AssetGenerationServiceClient) {
   client.close();
 }
 function doStuffWithAssetGroupAssetServiceClient(client: AssetGroupAssetServiceClient) {
@@ -134,6 +137,9 @@ function doStuffWithCampaignCustomizerServiceClient(client: CampaignCustomizerSe
   client.close();
 }
 function doStuffWithCampaignDraftServiceClient(client: CampaignDraftServiceClient) {
+  client.close();
+}
+function doStuffWithCampaignGoalConfigServiceClient(client: CampaignGoalConfigServiceClient) {
   client.close();
 }
 function doStuffWithCampaignGroupServiceClient(client: CampaignGroupServiceClient) {
@@ -236,6 +242,9 @@ function doStuffWithExperimentServiceClient(client: ExperimentServiceClient) {
   client.close();
 }
 function doStuffWithGeoTargetConstantServiceClient(client: GeoTargetConstantServiceClient) {
+  client.close();
+}
+function doStuffWithGoalServiceClient(client: GoalServiceClient) {
   client.close();
 }
 function doStuffWithGoogleAdsFieldServiceClient(client: GoogleAdsFieldServiceClient) {
@@ -379,6 +388,9 @@ function main() {
   const adServiceClient = new AdServiceClient();
   doStuffWithAdServiceClient(adServiceClient);
   // check that the client instance can be created
+  const assetGenerationServiceClient = new AssetGenerationServiceClient();
+  doStuffWithAssetGenerationServiceClient(assetGenerationServiceClient);
+  // check that the client instance can be created
   const assetGroupAssetServiceClient = new AssetGroupAssetServiceClient();
   doStuffWithAssetGroupAssetServiceClient(assetGroupAssetServiceClient);
   // check that the client instance can be created
@@ -450,6 +462,9 @@ function main() {
   // check that the client instance can be created
   const campaignDraftServiceClient = new CampaignDraftServiceClient();
   doStuffWithCampaignDraftServiceClient(campaignDraftServiceClient);
+  // check that the client instance can be created
+  const campaignGoalConfigServiceClient = new CampaignGoalConfigServiceClient();
+  doStuffWithCampaignGoalConfigServiceClient(campaignGoalConfigServiceClient);
   // check that the client instance can be created
   const campaignGroupServiceClient = new CampaignGroupServiceClient();
   doStuffWithCampaignGroupServiceClient(campaignGroupServiceClient);
@@ -552,6 +567,9 @@ function main() {
   // check that the client instance can be created
   const geoTargetConstantServiceClient = new GeoTargetConstantServiceClient();
   doStuffWithGeoTargetConstantServiceClient(geoTargetConstantServiceClient);
+  // check that the client instance can be created
+  const goalServiceClient = new GoalServiceClient();
+  doStuffWithGoalServiceClient(goalServiceClient);
   // check that the client instance can be created
   const googleAdsFieldServiceClient = new GoogleAdsFieldServiceClient();
   doStuffWithGoogleAdsFieldServiceClient(googleAdsFieldServiceClient);

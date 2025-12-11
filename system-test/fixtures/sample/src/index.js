@@ -36,6 +36,7 @@ function main() {
   const adGroupServiceClient = new googleads.AdGroupServiceClient();
   const adParameterServiceClient = new googleads.AdParameterServiceClient();
   const adServiceClient = new googleads.AdServiceClient();
+  const assetGenerationServiceClient = new googleads.AssetGenerationServiceClient();
   const assetGroupAssetServiceClient = new googleads.AssetGroupAssetServiceClient();
   const assetGroupListingGroupFilterServiceClient = new googleads.AssetGroupListingGroupFilterServiceClient();
   const assetGroupServiceClient = new googleads.AssetGroupServiceClient();
@@ -60,6 +61,7 @@ function main() {
   const campaignCriterionServiceClient = new googleads.CampaignCriterionServiceClient();
   const campaignCustomizerServiceClient = new googleads.CampaignCustomizerServiceClient();
   const campaignDraftServiceClient = new googleads.CampaignDraftServiceClient();
+  const campaignGoalConfigServiceClient = new googleads.CampaignGoalConfigServiceClient();
   const campaignGroupServiceClient = new googleads.CampaignGroupServiceClient();
   const campaignLabelServiceClient = new googleads.CampaignLabelServiceClient();
   const campaignLifecycleGoalServiceClient = new googleads.CampaignLifecycleGoalServiceClient();
@@ -94,6 +96,7 @@ function main() {
   const experimentArmServiceClient = new googleads.ExperimentArmServiceClient();
   const experimentServiceClient = new googleads.ExperimentServiceClient();
   const geoTargetConstantServiceClient = new googleads.GeoTargetConstantServiceClient();
+  const goalServiceClient = new googleads.GoalServiceClient();
   const googleAdsFieldServiceClient = new googleads.GoogleAdsFieldServiceClient();
   const googleAdsServiceClient = new googleads.GoogleAdsServiceClient();
   const identityVerificationServiceClient = new googleads.IdentityVerificationServiceClient();
