@@ -1,4 +1,4 @@
-Googleads: Node.js Client
+This is NOT an officially supported Google product. 
 
 This library (google-ads-nodejs-client) is the compiled output of the Google Ads API Bazel build files.
 
